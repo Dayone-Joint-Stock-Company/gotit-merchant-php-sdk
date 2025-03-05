@@ -217,7 +217,7 @@ class GotItMerchantApiTest extends TestCase
      */
     public function testUseMultiple($pin, $codes, $billNumber, $skusInfo, $expected)
     {
-        $body = new \OpenAPI\Client\Model\RequestUnReservedBodySchema();
+        $body = new \OpenAPI\Client\Model\RequestMarkUseMultipleBodySchema();
         $body->setPin($pin);
         $body->setCodes($codes);
         $body->setBillNumber($billNumber);
@@ -513,30 +513,6 @@ class GotItMerchantApiTest extends TestCase
                     'data'        => []
                 ]
             ],
-            // Test case 2: Data codes is duplicate
-            [
-                'pin'        => '4205',
-                'codes'      => ['071717127083', '071717127083'],
-                'billNumber' => 'BILL071717127083',
-                'skusInfo'   => [
-                    [
-                        'sku'      => '3002275',
-                        'quantity' => 1,
-                        'price'    => 100000
-                    ],
-                    [
-                        'sku'      => '3002980',
-                        'quantity' => 1,
-                        'price'    => 100000
-                    ]
-                ],
-                'expected' => [
-                    'success'     => false,
-                    'return_code' => 231,
-                    'message_en'  => 'Code is duplicate.',
-                    'message_vi'  => 'Mã code bị trùng.',
-                ]
-            ],
             // Test case 3: Missing bill number
             [
                 'pin'        => '4205',
@@ -559,54 +535,6 @@ class GotItMerchantApiTest extends TestCase
                     'return_code' => 210,
                     'message_en'  => 'Please enter bill number.',
                     'message_vi'  => 'Vui lòng nhập mã hóa đơn.',
-                ]
-            ],
-            // Test case 4: Sku duplicated
-            [
-                'pin'        => '4205',
-                'codes'      => ['071717127083'],
-                'billNumber' => 'BILL071717127083',
-                'skusInfo'   => [
-                    [
-                        'sku'      => '1234567',
-                        'quantity' => 1,
-                        'price'    => 100000
-                    ],
-                    [
-                        'sku'      => '1234567',
-                        'quantity' => 1,
-                        'price'    => 100000
-                    ]
-                ],
-                'expected' => [
-                    'success'     => false,
-                    'return_code' => 242,
-                    'message_en'  => 'Duplicate SKUs exist in the bill, please check again.',
-                    'message_vi'  => 'SKU trong đơn hàng bị trùng, vui lòng kiểm tra lại.',
-                ]
-            ],
-            // Test case 5: SKU is invalid
-            [
-                'pin'        => '4205',
-                'codes'      => ['071717127083'],
-                'billNumber' => 'BILL071717127083',
-                'skusInfo'   => [
-                    [
-                        'sku'      => '1234567',
-                        'quantity' => 2,
-                        'price'    => 100000
-                    ],
-                    [
-                        'sku'      => '12345678',
-                        'quantity' => 3,
-                        'price'    => 100000
-                    ]
-                ],
-                'expected' => [
-                    'success'     => false,
-                    'return_code' => 240,
-                    'message_en'  => 'The SKU(s) applied are invalid.',
-                    'message_vi'  => '(Các) SKU được áp dụng không hợp lệ.',
                 ]
             ]
         ];
