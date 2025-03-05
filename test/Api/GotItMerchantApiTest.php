@@ -179,12 +179,6 @@ class GotItMerchantApiTest extends TestCase
         $body->setCodes($codes);
         $body->setBillNumber($billNumber);
 
-        $arraySkusInfo = [];
-        foreach ($skusInfo as $skuInfoRaw) {
-            $arraySkusInfo[] = $this->prepareSkusInfo($skuInfoRaw);
-        }
-        $body->setSkusInfo($arraySkusInfo);
-
         try {
             $result = $this->api->unreserved($body);
             $object = $result->jsonSerialize();
