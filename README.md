@@ -50,18 +50,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\MerchantApiV60Api(
+$apiInstance = new OpenAPI\Client\Api\GotItMerchantApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$requestCheckMultipleBodySchemaV60 = new \OpenAPI\Client\Model\RequestCheckMultipleBodySchemaV60(); // \OpenAPI\Client\Model\RequestCheckMultipleBodySchemaV60
+$requestCheckMultipleBodySchema = new \OpenAPI\Client\Model\RequestCheckMultipleBodySchema(); // \OpenAPI\Client\Model\RequestCheckMultipleBodySchema
 
 try {
-    $result = $apiInstance->checkMultiple($requestCheckMultipleBodySchemaV60);
+    $result = $apiInstance->checkMultiple($requestCheckMultipleBodySchema);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling MerchantApiV60Api->checkMultiple: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling GotItMerchantApi->checkMultiple: ', $e->getMessage(), PHP_EOL;
 }
 
 ```
@@ -72,31 +72,34 @@ All URIs are relative to *https://openapi-stg.gotit.vn*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*MerchantApiV60Api* | [**checkMultiple**](docs/Api/MerchantApiV60Api.md#checkmultiple) | **POST** /merchant/v6.0/checkmultiple | Check multiple vouchers are valid or not
-*MerchantApiV60Api* | [**reserved**](docs/Api/MerchantApiV60Api.md#reserved) | **POST** /merchant/v6.0/reserved | Reserved multiple vouchers for a fixed bill number.
-*MerchantApiV60Api* | [**unreserved**](docs/Api/MerchantApiV60Api.md#unreserved) | **POST** /merchant/v6.0/unreserved | Reserved multiple vouchers for a fixed bill number.
-*MerchantApiV60Api* | [**useMultiple**](docs/Api/MerchantApiV60Api.md#usemultiple) | **POST** /merchant/v6.0/usemultiple | Reserved multiple vouchers for a fixed bill number.
+*GotItMerchantApi* | [**checkMultiple**](docs/Api/GotItMerchantApi.md#checkmultiple) | **POST** /merchant/v6.0/checkmultiple | Check multiple vouchers are valid or not
+*GotItMerchantApi* | [**reserved**](docs/Api/GotItMerchantApi.md#reserved) | **POST** /merchant/v6.0/reserved | Reserved multiple vouchers for a fixed bill number.
+*GotItMerchantApi* | [**unreserved**](docs/Api/GotItMerchantApi.md#unreserved) | **POST** /merchant/v6.0/unreserved | Reserved multiple vouchers for a fixed bill number.
+*GotItMerchantApi* | [**useMultiple**](docs/Api/GotItMerchantApi.md#usemultiple) | **POST** /merchant/v6.0/usemultiple | Reserved multiple vouchers for a fixed bill number.
 
 ## Models
 
-- [RequestCheckMultipleBodySchemaV60](docs/Model/RequestCheckMultipleBodySchemaV60.md)
-- [RequestCheckMultipleBodySchemaV60SkusInfoInner](docs/Model/RequestCheckMultipleBodySchemaV60SkusInfoInner.md)
-- [RequestMarkUseMultipleBodySchemaV60](docs/Model/RequestMarkUseMultipleBodySchemaV60.md)
-- [RequestReservedBodySchemaV60](docs/Model/RequestReservedBodySchemaV60.md)
-- [RequestUnReservedBodySchemaV60](docs/Model/RequestUnReservedBodySchemaV60.md)
-- [ResponseCheckMultipleSchemaV60](docs/Model/ResponseCheckMultipleSchemaV60.md)
-- [ResponseCheckMultipleSchemaV60DataInner](docs/Model/ResponseCheckMultipleSchemaV60DataInner.md)
-- [ResponseCheckMultipleSchemaV60DataInnerProduct](docs/Model/ResponseCheckMultipleSchemaV60DataInnerProduct.md)
-- [ResponseCheckMultipleSchemaV60DataInnerRedeemSku](docs/Model/ResponseCheckMultipleSchemaV60DataInnerRedeemSku.md)
-- [ResponseCheckMultipleSchemaV60DataInnerRedeemSkuRedeemSkuCodesInner](docs/Model/ResponseCheckMultipleSchemaV60DataInnerRedeemSkuRedeemSkuCodesInner.md)
-- [ResponseCheckMultipleSchemaV60DataInnerUsedStore](docs/Model/ResponseCheckMultipleSchemaV60DataInnerUsedStore.md)
-- [ResponseMarkUseMultipleSchemaV60](docs/Model/ResponseMarkUseMultipleSchemaV60.md)
-- [ResponseMarkUseMultipleSchemaV60DataInner](docs/Model/ResponseMarkUseMultipleSchemaV60DataInner.md)
-- [ResponseMarkUseMultipleSchemaV60DataInnerUsedStore](docs/Model/ResponseMarkUseMultipleSchemaV60DataInnerUsedStore.md)
-- [ResponseReservedSchemaV60](docs/Model/ResponseReservedSchemaV60.md)
-- [ResponseReservedSchemaV60DataInner](docs/Model/ResponseReservedSchemaV60DataInner.md)
-- [ResponseReservedSchemaV60UsedStore](docs/Model/ResponseReservedSchemaV60UsedStore.md)
-- [ResponseUnReservedSchemaV60](docs/Model/ResponseUnReservedSchemaV60.md)
+- [RequestCheckMultipleBodySchema](docs/Model/RequestCheckMultipleBodySchema.md)
+- [RequestCheckMultipleBodySchemaSkusInfoInner](docs/Model/RequestCheckMultipleBodySchemaSkusInfoInner.md)
+- [RequestMarkUseMultipleBodySchema](docs/Model/RequestMarkUseMultipleBodySchema.md)
+- [RequestReservedBodySchema](docs/Model/RequestReservedBodySchema.md)
+- [RequestUnReservedBodySchema](docs/Model/RequestUnReservedBodySchema.md)
+- [ResponseCheckMultipleSchema](docs/Model/ResponseCheckMultipleSchema.md)
+- [ResponseCheckMultipleSchemaDataInner](docs/Model/ResponseCheckMultipleSchemaDataInner.md)
+- [ResponseCheckMultipleSchemaDataInnerConditions](docs/Model/ResponseCheckMultipleSchemaDataInnerConditions.md)
+- [ResponseCheckMultipleSchemaDataInnerRedemptions](docs/Model/ResponseCheckMultipleSchemaDataInnerRedemptions.md)
+- [ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner](docs/Model/ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner.md)
+- [ResponseCheckMultipleSchemaDataInnerRedemptionsUsedStore](docs/Model/ResponseCheckMultipleSchemaDataInnerRedemptionsUsedStore.md)
+- [ResponseMarkUseMultipleSchema](docs/Model/ResponseMarkUseMultipleSchema.md)
+- [ResponseMarkUseMultipleSchemaDataInner](docs/Model/ResponseMarkUseMultipleSchemaDataInner.md)
+- [ResponseMarkUseMultipleSchemaDataInnerConditions](docs/Model/ResponseMarkUseMultipleSchemaDataInnerConditions.md)
+- [ResponseMarkUseMultipleSchemaDataInnerRedemptions](docs/Model/ResponseMarkUseMultipleSchemaDataInnerRedemptions.md)
+- [ResponseReservedSchema](docs/Model/ResponseReservedSchema.md)
+- [ResponseReservedSchemaDataInner](docs/Model/ResponseReservedSchemaDataInner.md)
+- [ResponseReservedSchemaDataInnerRedemptions](docs/Model/ResponseReservedSchemaDataInnerRedemptions.md)
+- [ResponseReservedSchemaUsedStore](docs/Model/ResponseReservedSchemaUsedStore.md)
+- [ResponseUnReservedSchema](docs/Model/ResponseUnReservedSchema.md)
+- [ResponseUnReservedSchemaDataInner](docs/Model/ResponseUnReservedSchemaDataInner.md)
 
 ## Authorization
 Endpoints do not require authorization.
@@ -119,5 +122,5 @@ duong.vu@gotit.vn
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
 - API version: `6.0`
-    - Generator version: `7.11.0`
+    - Generator version: `7.12.0`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`
