@@ -90,15 +90,6 @@ class ResponseCheckMultipleSchemaDataInnerConditionsTest extends TestCase
     }
 
     /**
-     * Test attribute "endDate"
-     */
-    public function testPropertyEndDate()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "excludeSpecificDate"
      */
     public function testPropertyExcludeSpecificDate()

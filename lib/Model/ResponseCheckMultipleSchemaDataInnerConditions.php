@@ -60,7 +60,6 @@ class ResponseCheckMultipleSchemaDataInnerConditions implements ModelInterface, 
       */
     protected static $openAPITypes = [
         'startDate' => 'string',
-        'endDate' => 'string',
         'excludeSpecificDate' => 'string[]',
         'excludeRecurringDay' => 'string[]',
         'redeemableSkus' => 'string[]'
@@ -75,7 +74,6 @@ class ResponseCheckMultipleSchemaDataInnerConditions implements ModelInterface, 
       */
     protected static $openAPIFormats = [
         'startDate' => null,
-        'endDate' => null,
         'excludeSpecificDate' => null,
         'excludeRecurringDay' => null,
         'redeemableSkus' => null
@@ -88,7 +86,6 @@ class ResponseCheckMultipleSchemaDataInnerConditions implements ModelInterface, 
       */
     protected static array $openAPINullables = [
         'startDate' => false,
-        'endDate' => false,
         'excludeSpecificDate' => false,
         'excludeRecurringDay' => false,
         'redeemableSkus' => false
@@ -181,7 +178,6 @@ class ResponseCheckMultipleSchemaDataInnerConditions implements ModelInterface, 
      */
     protected static $attributeMap = [
         'startDate' => 'start_date',
-        'endDate' => 'end_date',
         'excludeSpecificDate' => 'exclude_specific_date',
         'excludeRecurringDay' => 'exclude_recurring_day',
         'redeemableSkus' => 'redeemable_skus'
@@ -194,7 +190,6 @@ class ResponseCheckMultipleSchemaDataInnerConditions implements ModelInterface, 
      */
     protected static $setters = [
         'startDate' => 'setStartDate',
-        'endDate' => 'setEndDate',
         'excludeSpecificDate' => 'setExcludeSpecificDate',
         'excludeRecurringDay' => 'setExcludeRecurringDay',
         'redeemableSkus' => 'setRedeemableSkus'
@@ -207,7 +202,6 @@ class ResponseCheckMultipleSchemaDataInnerConditions implements ModelInterface, 
      */
     protected static $getters = [
         'startDate' => 'getStartDate',
-        'endDate' => 'getEndDate',
         'excludeSpecificDate' => 'getExcludeSpecificDate',
         'excludeRecurringDay' => 'getExcludeRecurringDay',
         'redeemableSkus' => 'getRedeemableSkus'
@@ -271,7 +265,6 @@ class ResponseCheckMultipleSchemaDataInnerConditions implements ModelInterface, 
     public function __construct(?array $data = null)
     {
         $this->setIfExists('startDate', $data ?? [], null);
-        $this->setIfExists('endDate', $data ?? [], null);
         $this->setIfExists('excludeSpecificDate', $data ?? [], null);
         $this->setIfExists('excludeRecurringDay', $data ?? [], null);
         $this->setIfExists('redeemableSkus', $data ?? [], null);
@@ -342,33 +335,6 @@ class ResponseCheckMultipleSchemaDataInnerConditions implements ModelInterface, 
             throw new \InvalidArgumentException('non-nullable startDate cannot be null');
         }
         $this->container['startDate'] = $startDate;
-
-        return $this;
-    }
-
-    /**
-     * Gets endDate
-     *
-     * @return string|null
-     */
-    public function getEndDate()
-    {
-        return $this->container['endDate'];
-    }
-
-    /**
-     * Sets endDate
-     *
-     * @param string|null $endDate Promo end date (YYYY-MM-DD)
-     *
-     * @return self
-     */
-    public function setEndDate($endDate)
-    {
-        if (is_null($endDate)) {
-            throw new \InvalidArgumentException('non-nullable endDate cannot be null');
-        }
-        $this->container['endDate'] = $endDate;
 
         return $this;
     }
