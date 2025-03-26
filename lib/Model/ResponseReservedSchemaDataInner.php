@@ -60,6 +60,7 @@ class ResponseReservedSchemaDataInner implements ModelInterface, ArrayAccess, \J
     protected static $openAPITypes = [
         'code' => 'string',
         'value' => 'int',
+        'state' => 'int',
         'voucherType' => 'string',
         'conditions' => '\OpenAPI\Client\Model\ResponseMarkUseMultipleSchemaDataInnerConditions',
         'redemptions' => '\OpenAPI\Client\Model\ResponseReservedSchemaDataInnerRedemptions'
@@ -75,6 +76,7 @@ class ResponseReservedSchemaDataInner implements ModelInterface, ArrayAccess, \J
     protected static $openAPIFormats = [
         'code' => null,
         'value' => null,
+        'state' => null,
         'voucherType' => null,
         'conditions' => null,
         'redemptions' => null
@@ -88,6 +90,7 @@ class ResponseReservedSchemaDataInner implements ModelInterface, ArrayAccess, \J
     protected static array $openAPINullables = [
         'code' => false,
         'value' => true,
+        'state' => true,
         'voucherType' => false,
         'conditions' => false,
         'redemptions' => false
@@ -181,6 +184,7 @@ class ResponseReservedSchemaDataInner implements ModelInterface, ArrayAccess, \J
     protected static $attributeMap = [
         'code' => 'code',
         'value' => 'value',
+        'state' => 'state',
         'voucherType' => 'voucher_type',
         'conditions' => 'conditions',
         'redemptions' => 'redemptions'
@@ -194,6 +198,7 @@ class ResponseReservedSchemaDataInner implements ModelInterface, ArrayAccess, \J
     protected static $setters = [
         'code' => 'setCode',
         'value' => 'setValue',
+        'state' => 'setState',
         'voucherType' => 'setVoucherType',
         'conditions' => 'setConditions',
         'redemptions' => 'setRedemptions'
@@ -207,6 +212,7 @@ class ResponseReservedSchemaDataInner implements ModelInterface, ArrayAccess, \J
     protected static $getters = [
         'code' => 'getCode',
         'value' => 'getValue',
+        'state' => 'getState',
         'voucherType' => 'getVoucherType',
         'conditions' => 'getConditions',
         'redemptions' => 'getRedemptions'
@@ -271,6 +277,7 @@ class ResponseReservedSchemaDataInner implements ModelInterface, ArrayAccess, \J
     {
         $this->setIfExists('code', $data ?? [], null);
         $this->setIfExists('value', $data ?? [], null);
+        $this->setIfExists('state', $data ?? [], null);
         $this->setIfExists('voucherType', $data ?? [], null);
         $this->setIfExists('conditions', $data ?? [], null);
         $this->setIfExists('redemptions', $data ?? [], null);
@@ -375,6 +382,40 @@ class ResponseReservedSchemaDataInner implements ModelInterface, ArrayAccess, \J
             }
         }
         $this->container['value'] = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets state
+     *
+     * @return int|null
+     */
+    public function getState()
+    {
+        return $this->container['state'];
+    }
+
+    /**
+     * Sets state
+     *
+     * @param int|null $state State of voucher
+     *
+     * @return self
+     */
+    public function setState($state)
+    {
+        if (is_null($state)) {
+            array_push($this->openAPINullablesSetToNull, 'state');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('state', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['state'] = $state;
 
         return $this;
     }

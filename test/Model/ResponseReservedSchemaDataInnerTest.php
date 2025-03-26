@@ -99,6 +99,15 @@ class ResponseReservedSchemaDataInnerTest extends TestCase
     }
 
     /**
+     * Test attribute "state"
+     */
+    public function testPropertyState()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "voucherType"
      */
     public function testPropertyVoucherType()
