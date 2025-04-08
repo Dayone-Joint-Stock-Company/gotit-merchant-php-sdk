@@ -1,6 +1,5 @@
 # GotIt Merchant SDK
-
-Technical document APIs for Merchant APIs
+SDK Technical document for Merchant APIs
 
 
 ## Installation & Usage
