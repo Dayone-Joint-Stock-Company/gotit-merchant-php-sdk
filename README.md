@@ -36,21 +36,81 @@ Simple usage looks like:
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
 
+namespace App\Http\Controllers;
 
-$apiInstance = new OpenAPI\Client\Api\GotItMerchantApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$requestCheckMultipleBodySchema = new \OpenAPI\Client\Model\RequestCheckMultipleBodySchema(); // \OpenAPI\Client\Model\RequestCheckMultipleBodySchema
+use OpenAPI\Client\Api\GotItMerchantApi;
+use OpenAPI\Client\Model\RequestCheckMultipleBodySchema;
+use OpenAPI\Client\Model\RequestMarkUseMultipleBodySchema;
+use OpenAPI\Client\Model\RequestReservedBodySchema;
+use OpenAPI\Client\Model\RequestUnReservedBodySchema;
 
-try {
-    $result = $apiInstance->checkMultiple($requestCheckMultipleBodySchema);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling GotItMerchantApi->checkMultiple: ', $e->getMessage(), PHP_EOL;
+class ApiController extends Controller
+{
+    public function index(
+        GotItMerchantApi $api,
+        RequestCheckMultipleBodySchema $bodySchema,
+        RequestReservedBodySchema $reservedBodySchema,
+        RequestUnReservedBodySchema $unReservedBodySchema,
+        RequestMarkUseMultipleBodySchema $markUseMultipleBodySchema
+    ) {
+        // Change domain API if needed
+        $api->getConfig()->setHost('https://openapi-stg.gotit.vn');
+        
+        // Below is sample data
+        $codes = ['079888311234', '059996784321'];
+        $pin = '1212';
+        $sku = 'SKU001';
+
+        // Check multiple body
+        $bodySchema->setPin($pin);
+        $bodySchema->setCodes($codes);
+        $bodySchema->setBillNumber('BILL123456');
+        $skuInfo = new \OpenAPI\Client\Model\RequestCheckMultipleBodySchemaSkusInfoInner();
+        $skuInfo->setSku($sku);
+        $skuInfo->setQuantity(1);
+        $skuInfo->setPrice(100000);
+        $bodySchema->setSkusInfo([$skuInfo]);
+
+        // Reserved body
+        $reservedBodySchema->setPin($pin);
+        $reservedBodySchema->setCodes($codes);
+        $reservedBodySchema->setBillNumber('BILL123456');
+        $reservedBodySchema->setSkusInfo([$skuInfo]);
+
+        // UnReserved body
+        $unReservedBodySchema->setPin($pin);
+        $unReservedBodySchema->setCodes($codes);
+        $unReservedBodySchema->setBillNumber('BILL123456');
+        $unReservedBodySchema->setSkusInfo([$skuInfo]);
+
+        // Mark used body
+        $markUseMultipleBodySchema->setPin($pin);
+        $markUseMultipleBodySchema->setCodes($codes);
+        $markUseMultipleBodySchema->setBillNumber('BILL123456');
+        $markUseMultipleBodySchema->setSkusInfo([$skuInfo]);
+
+        // Step 2: Call the API
+        try {
+            // Check codes
+            //$response = $api->checkMultiple($bodySchemaV60);
+
+            // Reserved codes
+            //$response = $api->reserved($reservedBodySchemaV60);
+
+            // UnReserved codes
+            //$response = $api->unreserved($unReservedBodySchemaV60);
+
+            // Mark use multiple
+            //$response = $api->useMultiple($markUseMultipleBodySchemaV60);
+
+            return response()->json($response);
+        } catch (\OpenAPI\Client\ApiException $e) {
+            return response()->json([
+                'error' => "Error from Merchant API"
+            ], 500);
+        }
+    }
 }
 
 ```
