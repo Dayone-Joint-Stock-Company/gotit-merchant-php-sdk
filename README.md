@@ -1,4 +1,4 @@
-# OpenAPIClient-php
+# GotIt Merchant SDK
 
 Technical document APIs for Merchant APIs
 
