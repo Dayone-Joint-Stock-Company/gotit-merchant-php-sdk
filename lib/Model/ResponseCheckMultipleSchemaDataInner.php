@@ -60,6 +60,7 @@ class ResponseCheckMultipleSchemaDataInner implements ModelInterface, ArrayAcces
     protected static $openAPITypes = [
         'code' => 'string',
         'value' => 'int',
+        'productId' => 'int',
         'state' => 'int',
         'voucherType' => 'string',
         'expiryDate' => 'string',
@@ -78,6 +79,7 @@ class ResponseCheckMultipleSchemaDataInner implements ModelInterface, ArrayAcces
     protected static $openAPIFormats = [
         'code' => null,
         'value' => null,
+        'productId' => null,
         'state' => null,
         'voucherType' => null,
         'expiryDate' => null,
@@ -94,6 +96,7 @@ class ResponseCheckMultipleSchemaDataInner implements ModelInterface, ArrayAcces
     protected static array $openAPINullables = [
         'code' => false,
         'value' => true,
+        'productId' => true,
         'state' => true,
         'voucherType' => false,
         'expiryDate' => false,
@@ -190,6 +193,7 @@ class ResponseCheckMultipleSchemaDataInner implements ModelInterface, ArrayAcces
     protected static $attributeMap = [
         'code' => 'code',
         'value' => 'value',
+        'productId' => 'product_id',
         'state' => 'state',
         'voucherType' => 'voucher_type',
         'expiryDate' => 'expiry_date',
@@ -206,6 +210,7 @@ class ResponseCheckMultipleSchemaDataInner implements ModelInterface, ArrayAcces
     protected static $setters = [
         'code' => 'setCode',
         'value' => 'setValue',
+        'productId' => 'setProductId',
         'state' => 'setState',
         'voucherType' => 'setVoucherType',
         'expiryDate' => 'setExpiryDate',
@@ -222,6 +227,7 @@ class ResponseCheckMultipleSchemaDataInner implements ModelInterface, ArrayAcces
     protected static $getters = [
         'code' => 'getCode',
         'value' => 'getValue',
+        'productId' => 'getProductId',
         'state' => 'getState',
         'voucherType' => 'getVoucherType',
         'expiryDate' => 'getExpiryDate',
@@ -289,6 +295,7 @@ class ResponseCheckMultipleSchemaDataInner implements ModelInterface, ArrayAcces
     {
         $this->setIfExists('code', $data ?? [], null);
         $this->setIfExists('value', $data ?? [], null);
+        $this->setIfExists('productId', $data ?? [], null);
         $this->setIfExists('state', $data ?? [], null);
         $this->setIfExists('voucherType', $data ?? [], null);
         $this->setIfExists('expiryDate', $data ?? [], null);
@@ -396,6 +403,40 @@ class ResponseCheckMultipleSchemaDataInner implements ModelInterface, ArrayAcces
             }
         }
         $this->container['value'] = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets productId
+     *
+     * @return int|null
+     */
+    public function getProductId()
+    {
+        return $this->container['productId'];
+    }
+
+    /**
+     * Sets productId
+     *
+     * @param int|null $productId Product ID
+     *
+     * @return self
+     */
+    public function setProductId($productId)
+    {
+        if (is_null($productId)) {
+            array_push($this->openAPINullablesSetToNull, 'productId');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('productId', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['productId'] = $productId;
 
         return $this;
     }

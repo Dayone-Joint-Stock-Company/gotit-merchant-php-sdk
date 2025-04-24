@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **code** | **string** | Voucher code | [optional]
 **value** | **int** | Value of voucher | [optional]
+**productId** | **int** | Product ID | [optional]
 **state** | **int** | State of voucher | [optional]
 **voucherType** | **string** | Voucher type, standard or conditional | [optional]
 **expiryDate** | **string** | Expiry date of voucher (YYYY-MM-DD) | [optional]

@@ -60,6 +60,7 @@ class ResponseUnReservedSchemaDataInner implements ModelInterface, ArrayAccess, 
     protected static $openAPITypes = [
         'code' => 'string',
         'value' => 'int',
+        'productId' => 'int',
         'voucherType' => 'string'
     ];
 
@@ -73,6 +74,7 @@ class ResponseUnReservedSchemaDataInner implements ModelInterface, ArrayAccess, 
     protected static $openAPIFormats = [
         'code' => null,
         'value' => null,
+        'productId' => null,
         'voucherType' => null
     ];
 
@@ -84,6 +86,7 @@ class ResponseUnReservedSchemaDataInner implements ModelInterface, ArrayAccess, 
     protected static array $openAPINullables = [
         'code' => false,
         'value' => true,
+        'productId' => true,
         'voucherType' => false
     ];
 
@@ -175,6 +178,7 @@ class ResponseUnReservedSchemaDataInner implements ModelInterface, ArrayAccess, 
     protected static $attributeMap = [
         'code' => 'code',
         'value' => 'value',
+        'productId' => 'product_id',
         'voucherType' => 'voucher_type'
     ];
 
@@ -186,6 +190,7 @@ class ResponseUnReservedSchemaDataInner implements ModelInterface, ArrayAccess, 
     protected static $setters = [
         'code' => 'setCode',
         'value' => 'setValue',
+        'productId' => 'setProductId',
         'voucherType' => 'setVoucherType'
     ];
 
@@ -197,6 +202,7 @@ class ResponseUnReservedSchemaDataInner implements ModelInterface, ArrayAccess, 
     protected static $getters = [
         'code' => 'getCode',
         'value' => 'getValue',
+        'productId' => 'getProductId',
         'voucherType' => 'getVoucherType'
     ];
 
@@ -259,6 +265,7 @@ class ResponseUnReservedSchemaDataInner implements ModelInterface, ArrayAccess, 
     {
         $this->setIfExists('code', $data ?? [], null);
         $this->setIfExists('value', $data ?? [], null);
+        $this->setIfExists('productId', $data ?? [], null);
         $this->setIfExists('voucherType', $data ?? [], null);
     }
 
@@ -361,6 +368,40 @@ class ResponseUnReservedSchemaDataInner implements ModelInterface, ArrayAccess, 
             }
         }
         $this->container['value'] = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets productId
+     *
+     * @return int|null
+     */
+    public function getProductId()
+    {
+        return $this->container['productId'];
+    }
+
+    /**
+     * Sets productId
+     *
+     * @param int|null $productId Product ID
+     *
+     * @return self
+     */
+    public function setProductId($productId)
+    {
+        if (is_null($productId)) {
+            array_push($this->openAPINullablesSetToNull, 'productId');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('productId', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['productId'] = $productId;
 
         return $this;
     }

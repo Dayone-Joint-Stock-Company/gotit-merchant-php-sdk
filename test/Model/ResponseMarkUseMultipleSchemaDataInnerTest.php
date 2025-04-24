@@ -99,6 +99,15 @@ class ResponseMarkUseMultipleSchemaDataInnerTest extends TestCase
     }
 
     /**
+     * Test attribute "productId"
+     */
+    public function testPropertyProductId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "state"
      */
     public function testPropertyState()

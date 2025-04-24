@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **code** | **string** | Voucher code | [optional]
 **value** | **int** | Value of voucher | [optional]
 **state** | **int** | State of voucher | [optional]
+**productId** | **int** | Product ID | [optional]
 **voucherType** | **string** | Voucher type, standard or conditional | [optional]
 **conditions** | [**\OpenAPI\Client\Model\ResponseMarkUseMultipleSchemaDataInnerConditions**](ResponseMarkUseMultipleSchemaDataInnerConditions.md) |  | [optional]
 **redemptions** | [**\OpenAPI\Client\Model\ResponseReservedSchemaDataInnerRedemptions**](ResponseReservedSchemaDataInnerRedemptions.md) |  | [optional]

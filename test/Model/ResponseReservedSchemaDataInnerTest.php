@@ -108,6 +108,15 @@ class ResponseReservedSchemaDataInnerTest extends TestCase
     }
 
     /**
+     * Test attribute "productId"
+     */
+    public function testPropertyProductId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "voucherType"
      */
     public function testPropertyVoucherType()
