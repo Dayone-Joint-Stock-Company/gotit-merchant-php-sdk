@@ -159,4 +159,3 @@ To run the tests, use:
 ```bash
 vendor/bin/phpunit vendor/dayonevn/gotit-merchant-php-sdk/test/Api/GotItMerchantApiTest.php
 ```
-
