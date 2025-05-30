@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .php-cs-fixer.dist.php
 .travis.yml
 README.md
@@ -18,7 +17,6 @@ docs/Model/ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner.md
 docs/Model/ResponseCheckMultipleSchemaDataInnerRedemptionsUsedStore.md
 docs/Model/ResponseMarkUseMultipleSchema.md
 docs/Model/ResponseMarkUseMultipleSchemaDataInner.md
-docs/Model/ResponseMarkUseMultipleSchemaDataInnerConditions.md
 docs/Model/ResponseMarkUseMultipleSchemaDataInnerRedemptions.md
 docs/Model/ResponseReservedSchema.md
 docs/Model/ResponseReservedSchemaDataInner.md
@@ -45,7 +43,6 @@ lib/Model/ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner.php
 lib/Model/ResponseCheckMultipleSchemaDataInnerRedemptionsUsedStore.php
 lib/Model/ResponseMarkUseMultipleSchema.php
 lib/Model/ResponseMarkUseMultipleSchemaDataInner.php
-lib/Model/ResponseMarkUseMultipleSchemaDataInnerConditions.php
 lib/Model/ResponseMarkUseMultipleSchemaDataInnerRedemptions.php
 lib/Model/ResponseReservedSchema.php
 lib/Model/ResponseReservedSchemaDataInner.php
@@ -55,25 +52,3 @@ lib/Model/ResponseUnReservedSchema.php
 lib/Model/ResponseUnReservedSchemaDataInner.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Api/GotItMerchantApiTest.php
-test/Model/RequestCheckMultipleBodySchemaSkusInfoInnerTest.php
-test/Model/RequestCheckMultipleBodySchemaTest.php
-test/Model/RequestMarkUseMultipleBodySchemaTest.php
-test/Model/RequestReservedBodySchemaTest.php
-test/Model/RequestUnReservedBodySchemaTest.php
-test/Model/ResponseCheckMultipleSchemaDataInnerConditionsTest.php
-test/Model/ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInnerTest.php
-test/Model/ResponseCheckMultipleSchemaDataInnerRedemptionsTest.php
-test/Model/ResponseCheckMultipleSchemaDataInnerRedemptionsUsedStoreTest.php
-test/Model/ResponseCheckMultipleSchemaDataInnerTest.php
-test/Model/ResponseCheckMultipleSchemaTest.php
-test/Model/ResponseMarkUseMultipleSchemaDataInnerConditionsTest.php
-test/Model/ResponseMarkUseMultipleSchemaDataInnerRedemptionsTest.php
-test/Model/ResponseMarkUseMultipleSchemaDataInnerTest.php
-test/Model/ResponseMarkUseMultipleSchemaTest.php
-test/Model/ResponseReservedSchemaDataInnerRedemptionsTest.php
-test/Model/ResponseReservedSchemaDataInnerTest.php
-test/Model/ResponseReservedSchemaTest.php
-test/Model/ResponseReservedSchemaUsedStoreTest.php
-test/Model/ResponseUnReservedSchemaDataInnerTest.php
-test/Model/ResponseUnReservedSchemaTest.php

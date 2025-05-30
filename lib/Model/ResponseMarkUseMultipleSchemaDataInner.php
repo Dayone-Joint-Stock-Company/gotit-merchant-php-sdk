@@ -63,7 +63,7 @@ class ResponseMarkUseMultipleSchemaDataInner implements ModelInterface, ArrayAcc
         'productId' => 'int',
         'state' => 'int',
         'voucherType' => 'string',
-        'conditions' => '\OpenAPI\Client\Model\ResponseMarkUseMultipleSchemaDataInnerConditions',
+        'conditions' => '\OpenAPI\Client\Model\ResponseCheckMultipleSchemaDataInnerConditions',
         'redemptions' => '\OpenAPI\Client\Model\ResponseMarkUseMultipleSchemaDataInnerRedemptions'
     ];
 
@@ -491,7 +491,7 @@ class ResponseMarkUseMultipleSchemaDataInner implements ModelInterface, ArrayAcc
     /**
      * Gets conditions
      *
-     * @return \OpenAPI\Client\Model\ResponseMarkUseMultipleSchemaDataInnerConditions|null
+     * @return \OpenAPI\Client\Model\ResponseCheckMultipleSchemaDataInnerConditions|null
      */
     public function getConditions()
     {
@@ -501,7 +501,7 @@ class ResponseMarkUseMultipleSchemaDataInner implements ModelInterface, ArrayAcc
     /**
      * Sets conditions
      *
-     * @param \OpenAPI\Client\Model\ResponseMarkUseMultipleSchemaDataInnerConditions|null $conditions conditions
+     * @param \OpenAPI\Client\Model\ResponseCheckMultipleSchemaDataInnerConditions|null $conditions conditions
      *
      * @return self
      */

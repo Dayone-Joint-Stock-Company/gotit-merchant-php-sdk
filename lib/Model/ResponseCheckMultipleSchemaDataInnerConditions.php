@@ -62,6 +62,7 @@ class ResponseCheckMultipleSchemaDataInnerConditions implements ModelInterface, 
         'startDate' => 'string',
         'excludeSpecificDate' => 'string[]',
         'excludeRecurringDay' => 'string[]',
+        'orderValue' => 'int',
         'redeemableSkus' => 'string[]'
     ];
 
@@ -76,6 +77,7 @@ class ResponseCheckMultipleSchemaDataInnerConditions implements ModelInterface, 
         'startDate' => null,
         'excludeSpecificDate' => null,
         'excludeRecurringDay' => null,
+        'orderValue' => null,
         'redeemableSkus' => null
     ];
 
@@ -88,6 +90,7 @@ class ResponseCheckMultipleSchemaDataInnerConditions implements ModelInterface, 
         'startDate' => false,
         'excludeSpecificDate' => false,
         'excludeRecurringDay' => false,
+        'orderValue' => false,
         'redeemableSkus' => false
     ];
 
@@ -180,6 +183,7 @@ class ResponseCheckMultipleSchemaDataInnerConditions implements ModelInterface, 
         'startDate' => 'start_date',
         'excludeSpecificDate' => 'exclude_specific_date',
         'excludeRecurringDay' => 'exclude_recurring_day',
+        'orderValue' => 'order_value',
         'redeemableSkus' => 'redeemable_skus'
     ];
 
@@ -192,6 +196,7 @@ class ResponseCheckMultipleSchemaDataInnerConditions implements ModelInterface, 
         'startDate' => 'setStartDate',
         'excludeSpecificDate' => 'setExcludeSpecificDate',
         'excludeRecurringDay' => 'setExcludeRecurringDay',
+        'orderValue' => 'setOrderValue',
         'redeemableSkus' => 'setRedeemableSkus'
     ];
 
@@ -204,6 +209,7 @@ class ResponseCheckMultipleSchemaDataInnerConditions implements ModelInterface, 
         'startDate' => 'getStartDate',
         'excludeSpecificDate' => 'getExcludeSpecificDate',
         'excludeRecurringDay' => 'getExcludeRecurringDay',
+        'orderValue' => 'getOrderValue',
         'redeemableSkus' => 'getRedeemableSkus'
     ];
 
@@ -267,6 +273,7 @@ class ResponseCheckMultipleSchemaDataInnerConditions implements ModelInterface, 
         $this->setIfExists('startDate', $data ?? [], null);
         $this->setIfExists('excludeSpecificDate', $data ?? [], null);
         $this->setIfExists('excludeRecurringDay', $data ?? [], null);
+        $this->setIfExists('orderValue', $data ?? [], null);
         $this->setIfExists('redeemableSkus', $data ?? [], null);
     }
 
@@ -389,6 +396,33 @@ class ResponseCheckMultipleSchemaDataInnerConditions implements ModelInterface, 
             throw new \InvalidArgumentException('non-nullable excludeRecurringDay cannot be null');
         }
         $this->container['excludeRecurringDay'] = $excludeRecurringDay;
+
+        return $this;
+    }
+
+    /**
+     * Gets orderValue
+     *
+     * @return int|null
+     */
+    public function getOrderValue()
+    {
+        return $this->container['orderValue'];
+    }
+
+    /**
+     * Sets orderValue
+     *
+     * @param int|null $orderValue Order value of voucher type = conditional
+     *
+     * @return self
+     */
+    public function setOrderValue($orderValue)
+    {
+        if (is_null($orderValue)) {
+            throw new \InvalidArgumentException('non-nullable orderValue cannot be null');
+        }
+        $this->container['orderValue'] = $orderValue;
 
         return $this;
     }
