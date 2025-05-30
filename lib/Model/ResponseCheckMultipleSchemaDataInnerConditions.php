@@ -90,7 +90,7 @@ class ResponseCheckMultipleSchemaDataInnerConditions implements ModelInterface, 
         'startDate' => false,
         'excludeSpecificDate' => false,
         'excludeRecurringDay' => false,
-        'orderValue' => false,
+        'orderValue' => true,
         'redeemableSkus' => false
     ];
 
@@ -420,7 +420,14 @@ class ResponseCheckMultipleSchemaDataInnerConditions implements ModelInterface, 
     public function setOrderValue($orderValue)
     {
         if (is_null($orderValue)) {
-            throw new \InvalidArgumentException('non-nullable orderValue cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'orderValue');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('orderValue', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['orderValue'] = $orderValue;
 

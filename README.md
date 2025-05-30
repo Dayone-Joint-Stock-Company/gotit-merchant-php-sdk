@@ -140,7 +140,6 @@ Class | Method | HTTP request | Description
 - [ResponseCheckMultipleSchemaDataInnerRedemptionsUsedStore](docs/Model/ResponseCheckMultipleSchemaDataInnerRedemptionsUsedStore.md)
 - [ResponseMarkUseMultipleSchema](docs/Model/ResponseMarkUseMultipleSchema.md)
 - [ResponseMarkUseMultipleSchemaDataInner](docs/Model/ResponseMarkUseMultipleSchemaDataInner.md)
-- [ResponseMarkUseMultipleSchemaDataInnerConditions](docs/Model/ResponseMarkUseMultipleSchemaDataInnerConditions.md)
 - [ResponseMarkUseMultipleSchemaDataInnerRedemptions](docs/Model/ResponseMarkUseMultipleSchemaDataInnerRedemptions.md)
 - [ResponseReservedSchema](docs/Model/ResponseReservedSchema.md)
 - [ResponseReservedSchemaDataInner](docs/Model/ResponseReservedSchemaDataInner.md)
