@@ -1,11 +1,11 @@
 <?php
 /**
- * ResponseCheckMultipleSchemaDataInnerConditions
+ * RequestReservedBodySchema
  *
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Dayonevn
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,22 +27,21 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Dayonevn\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Dayonevn\ObjectSerializer;
 
 /**
- * ResponseCheckMultipleSchemaDataInnerConditions Class Doc Comment
+ * RequestReservedBodySchema Class Doc Comment
  *
  * @category Class
- * @description Include information involve with voucher type is conditional
- * @package  OpenAPI\Client
+ * @package  Dayonevn
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ResponseCheckMultipleSchemaDataInnerConditions implements ModelInterface, ArrayAccess, \JsonSerializable
+class RequestReservedBodySchema implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +50,7 @@ class ResponseCheckMultipleSchemaDataInnerConditions implements ModelInterface, 
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ResponseCheckMultipleSchema_data_inner_conditions';
+    protected static $openAPIModelName = 'RequestReservedBodySchema';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,11 +58,12 @@ class ResponseCheckMultipleSchemaDataInnerConditions implements ModelInterface, 
       * @var string[]
       */
     protected static $openAPITypes = [
-        'startDate' => 'string',
-        'excludeSpecificDate' => 'string[]',
-        'excludeRecurringDay' => 'string[]',
-        'orderValue' => 'int',
-        'redeemableSkus' => 'string[]'
+        'pin' => 'string',
+        'codes' => 'string[]',
+        'billNumber' => 'string',
+        'totalBill' => 'int',
+        'billCreatedAt' => 'string',
+        'skusInfo' => '\Dayonevn\Model\RequestCheckMultipleBodySchemaSkusInfoInner[]'
     ];
 
     /**
@@ -74,11 +74,12 @@ class ResponseCheckMultipleSchemaDataInnerConditions implements ModelInterface, 
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'startDate' => null,
-        'excludeSpecificDate' => null,
-        'excludeRecurringDay' => null,
-        'orderValue' => null,
-        'redeemableSkus' => null
+        'pin' => null,
+        'codes' => null,
+        'billNumber' => null,
+        'totalBill' => null,
+        'billCreatedAt' => null,
+        'skusInfo' => null
     ];
 
     /**
@@ -87,11 +88,12 @@ class ResponseCheckMultipleSchemaDataInnerConditions implements ModelInterface, 
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'startDate' => false,
-        'excludeSpecificDate' => false,
-        'excludeRecurringDay' => false,
-        'orderValue' => true,
-        'redeemableSkus' => false
+        'pin' => false,
+        'codes' => false,
+        'billNumber' => false,
+        'totalBill' => false,
+        'billCreatedAt' => false,
+        'skusInfo' => false
     ];
 
     /**
@@ -180,11 +182,12 @@ class ResponseCheckMultipleSchemaDataInnerConditions implements ModelInterface, 
      * @var string[]
      */
     protected static $attributeMap = [
-        'startDate' => 'start_date',
-        'excludeSpecificDate' => 'exclude_specific_date',
-        'excludeRecurringDay' => 'exclude_recurring_day',
-        'orderValue' => 'order_value',
-        'redeemableSkus' => 'redeemable_skus'
+        'pin' => 'pin',
+        'codes' => 'codes',
+        'billNumber' => 'bill_number',
+        'totalBill' => 'total_bill',
+        'billCreatedAt' => 'bill_created_at',
+        'skusInfo' => 'skus_info'
     ];
 
     /**
@@ -193,11 +196,12 @@ class ResponseCheckMultipleSchemaDataInnerConditions implements ModelInterface, 
      * @var string[]
      */
     protected static $setters = [
-        'startDate' => 'setStartDate',
-        'excludeSpecificDate' => 'setExcludeSpecificDate',
-        'excludeRecurringDay' => 'setExcludeRecurringDay',
-        'orderValue' => 'setOrderValue',
-        'redeemableSkus' => 'setRedeemableSkus'
+        'pin' => 'setPin',
+        'codes' => 'setCodes',
+        'billNumber' => 'setBillNumber',
+        'totalBill' => 'setTotalBill',
+        'billCreatedAt' => 'setBillCreatedAt',
+        'skusInfo' => 'setSkusInfo'
     ];
 
     /**
@@ -206,11 +210,12 @@ class ResponseCheckMultipleSchemaDataInnerConditions implements ModelInterface, 
      * @var string[]
      */
     protected static $getters = [
-        'startDate' => 'getStartDate',
-        'excludeSpecificDate' => 'getExcludeSpecificDate',
-        'excludeRecurringDay' => 'getExcludeRecurringDay',
-        'orderValue' => 'getOrderValue',
-        'redeemableSkus' => 'getRedeemableSkus'
+        'pin' => 'getPin',
+        'codes' => 'getCodes',
+        'billNumber' => 'getBillNumber',
+        'totalBill' => 'getTotalBill',
+        'billCreatedAt' => 'getBillCreatedAt',
+        'skusInfo' => 'getSkusInfo'
     ];
 
     /**
@@ -270,11 +275,12 @@ class ResponseCheckMultipleSchemaDataInnerConditions implements ModelInterface, 
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('startDate', $data ?? [], null);
-        $this->setIfExists('excludeSpecificDate', $data ?? [], null);
-        $this->setIfExists('excludeRecurringDay', $data ?? [], null);
-        $this->setIfExists('orderValue', $data ?? [], null);
-        $this->setIfExists('redeemableSkus', $data ?? [], null);
+        $this->setIfExists('pin', $data ?? [], null);
+        $this->setIfExists('codes', $data ?? [], null);
+        $this->setIfExists('billNumber', $data ?? [], null);
+        $this->setIfExists('totalBill', $data ?? [], null);
+        $this->setIfExists('billCreatedAt', $data ?? [], null);
+        $this->setIfExists('skusInfo', $data ?? [], null);
     }
 
     /**
@@ -320,143 +326,163 @@ class ResponseCheckMultipleSchemaDataInnerConditions implements ModelInterface, 
 
 
     /**
-     * Gets startDate
+     * Gets pin
      *
      * @return string|null
      */
-    public function getStartDate()
+    public function getPin()
     {
-        return $this->container['startDate'];
+        return $this->container['pin'];
     }
 
     /**
-     * Sets startDate
+     * Sets pin
      *
-     * @param string|null $startDate Promo start date (YYYY-MM-DD)
+     * @param string|null $pin Store pin
      *
      * @return self
      */
-    public function setStartDate($startDate)
+    public function setPin($pin)
     {
-        if (is_null($startDate)) {
-            throw new \InvalidArgumentException('non-nullable startDate cannot be null');
+        if (is_null($pin)) {
+            throw new \InvalidArgumentException('non-nullable pin cannot be null');
         }
-        $this->container['startDate'] = $startDate;
+        $this->container['pin'] = $pin;
 
         return $this;
     }
 
     /**
-     * Gets excludeSpecificDate
+     * Gets codes
      *
      * @return string[]|null
      */
-    public function getExcludeSpecificDate()
+    public function getCodes()
     {
-        return $this->container['excludeSpecificDate'];
+        return $this->container['codes'];
     }
 
     /**
-     * Sets excludeSpecificDate
+     * Sets codes
      *
-     * @param string[]|null $excludeSpecificDate Promo non-effective dates (YYYY-MM-DD)
+     * @param string[]|null $codes Array of 10-16 characters Got It voucher codes
      *
      * @return self
      */
-    public function setExcludeSpecificDate($excludeSpecificDate)
+    public function setCodes($codes)
     {
-        if (is_null($excludeSpecificDate)) {
-            throw new \InvalidArgumentException('non-nullable excludeSpecificDate cannot be null');
+        if (is_null($codes)) {
+            throw new \InvalidArgumentException('non-nullable codes cannot be null');
         }
-        $this->container['excludeSpecificDate'] = $excludeSpecificDate;
+        $this->container['codes'] = $codes;
 
         return $this;
     }
 
     /**
-     * Gets excludeRecurringDay
+     * Gets billNumber
      *
-     * @return string[]|null
+     * @return string|null
      */
-    public function getExcludeRecurringDay()
+    public function getBillNumber()
     {
-        return $this->container['excludeRecurringDay'];
+        return $this->container['billNumber'];
     }
 
     /**
-     * Sets excludeRecurringDay
+     * Sets billNumber
      *
-     * @param string[]|null $excludeRecurringDay Promo non-effective day of week
+     * @param string|null $billNumber Bill number will apply vouchers
      *
      * @return self
      */
-    public function setExcludeRecurringDay($excludeRecurringDay)
+    public function setBillNumber($billNumber)
     {
-        if (is_null($excludeRecurringDay)) {
-            throw new \InvalidArgumentException('non-nullable excludeRecurringDay cannot be null');
+        if (is_null($billNumber)) {
+            throw new \InvalidArgumentException('non-nullable billNumber cannot be null');
         }
-        $this->container['excludeRecurringDay'] = $excludeRecurringDay;
+        $this->container['billNumber'] = $billNumber;
 
         return $this;
     }
 
     /**
-     * Gets orderValue
+     * Gets totalBill
      *
      * @return int|null
      */
-    public function getOrderValue()
+    public function getTotalBill()
     {
-        return $this->container['orderValue'];
+        return $this->container['totalBill'];
     }
 
     /**
-     * Sets orderValue
+     * Sets totalBill
      *
-     * @param int|null $orderValue Order value of voucher type = conditional
+     * @param int|null $totalBill Total bill amount
      *
      * @return self
      */
-    public function setOrderValue($orderValue)
+    public function setTotalBill($totalBill)
     {
-        if (is_null($orderValue)) {
-            array_push($this->openAPINullablesSetToNull, 'orderValue');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('orderValue', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($totalBill)) {
+            throw new \InvalidArgumentException('non-nullable totalBill cannot be null');
         }
-        $this->container['orderValue'] = $orderValue;
+        $this->container['totalBill'] = $totalBill;
 
         return $this;
     }
 
     /**
-     * Gets redeemableSkus
+     * Gets billCreatedAt
      *
-     * @return string[]|null
+     * @return string|null
      */
-    public function getRedeemableSkus()
+    public function getBillCreatedAt()
     {
-        return $this->container['redeemableSkus'];
+        return $this->container['billCreatedAt'];
     }
 
     /**
-     * Sets redeemableSkus
+     * Sets billCreatedAt
      *
-     * @param string[]|null $redeemableSkus List of redeemable SKUs of the voucher code. For voucher type = conditional, bill number must contain at least 1 redeemable SKU of the voucher.
+     * @param string|null $billCreatedAt Bill creation time. Format: YYYY-MM-DD HH:MM:SS
      *
      * @return self
      */
-    public function setRedeemableSkus($redeemableSkus)
+    public function setBillCreatedAt($billCreatedAt)
     {
-        if (is_null($redeemableSkus)) {
-            throw new \InvalidArgumentException('non-nullable redeemableSkus cannot be null');
+        if (is_null($billCreatedAt)) {
+            throw new \InvalidArgumentException('non-nullable billCreatedAt cannot be null');
         }
-        $this->container['redeemableSkus'] = $redeemableSkus;
+        $this->container['billCreatedAt'] = $billCreatedAt;
+
+        return $this;
+    }
+
+    /**
+     * Gets skusInfo
+     *
+     * @return \Dayonevn\Model\RequestCheckMultipleBodySchemaSkusInfoInner[]|null
+     */
+    public function getSkusInfo()
+    {
+        return $this->container['skusInfo'];
+    }
+
+    /**
+     * Sets skusInfo
+     *
+     * @param \Dayonevn\Model\RequestCheckMultipleBodySchemaSkusInfoInner[]|null $skusInfo SKU information in bill_number
+     *
+     * @return self
+     */
+    public function setSkusInfo($skusInfo)
+    {
+        if (is_null($skusInfo)) {
+            throw new \InvalidArgumentException('non-nullable skusInfo cannot be null');
+        }
+        $this->container['skusInfo'] = $skusInfo;
 
         return $this;
     }

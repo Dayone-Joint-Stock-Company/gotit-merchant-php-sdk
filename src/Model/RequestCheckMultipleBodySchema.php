@@ -1,11 +1,11 @@
 <?php
 /**
- * RequestUnReservedBodySchema
+ * RequestCheckMultipleBodySchema
  *
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Dayonevn
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,21 +27,21 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Dayonevn\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Dayonevn\ObjectSerializer;
 
 /**
- * RequestUnReservedBodySchema Class Doc Comment
+ * RequestCheckMultipleBodySchema Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Dayonevn
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class RequestUnReservedBodySchema implements ModelInterface, ArrayAccess, \JsonSerializable
+class RequestCheckMultipleBodySchema implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class RequestUnReservedBodySchema implements ModelInterface, ArrayAccess, \JsonS
       *
       * @var string
       */
-    protected static $openAPIModelName = 'RequestUnReservedBodySchema';
+    protected static $openAPIModelName = 'RequestCheckMultipleBodySchema';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -61,7 +61,9 @@ class RequestUnReservedBodySchema implements ModelInterface, ArrayAccess, \JsonS
         'pin' => 'string',
         'codes' => 'string[]',
         'billNumber' => 'string',
-        'billCreatedAt' => 'string'
+        'totalBill' => 'int',
+        'skipReservedWhenMarkUsed' => 'bool',
+        'skusInfo' => '\Dayonevn\Model\RequestCheckMultipleBodySchemaSkusInfoInner[]'
     ];
 
     /**
@@ -75,7 +77,9 @@ class RequestUnReservedBodySchema implements ModelInterface, ArrayAccess, \JsonS
         'pin' => null,
         'codes' => null,
         'billNumber' => null,
-        'billCreatedAt' => null
+        'totalBill' => null,
+        'skipReservedWhenMarkUsed' => null,
+        'skusInfo' => null
     ];
 
     /**
@@ -87,7 +91,9 @@ class RequestUnReservedBodySchema implements ModelInterface, ArrayAccess, \JsonS
         'pin' => false,
         'codes' => false,
         'billNumber' => false,
-        'billCreatedAt' => false
+        'totalBill' => false,
+        'skipReservedWhenMarkUsed' => false,
+        'skusInfo' => false
     ];
 
     /**
@@ -179,7 +185,9 @@ class RequestUnReservedBodySchema implements ModelInterface, ArrayAccess, \JsonS
         'pin' => 'pin',
         'codes' => 'codes',
         'billNumber' => 'bill_number',
-        'billCreatedAt' => 'bill_created_at'
+        'totalBill' => 'total_bill',
+        'skipReservedWhenMarkUsed' => 'skip_reserved_when_mark_used',
+        'skusInfo' => 'skus_info'
     ];
 
     /**
@@ -191,7 +199,9 @@ class RequestUnReservedBodySchema implements ModelInterface, ArrayAccess, \JsonS
         'pin' => 'setPin',
         'codes' => 'setCodes',
         'billNumber' => 'setBillNumber',
-        'billCreatedAt' => 'setBillCreatedAt'
+        'totalBill' => 'setTotalBill',
+        'skipReservedWhenMarkUsed' => 'setSkipReservedWhenMarkUsed',
+        'skusInfo' => 'setSkusInfo'
     ];
 
     /**
@@ -203,7 +213,9 @@ class RequestUnReservedBodySchema implements ModelInterface, ArrayAccess, \JsonS
         'pin' => 'getPin',
         'codes' => 'getCodes',
         'billNumber' => 'getBillNumber',
-        'billCreatedAt' => 'getBillCreatedAt'
+        'totalBill' => 'getTotalBill',
+        'skipReservedWhenMarkUsed' => 'getSkipReservedWhenMarkUsed',
+        'skusInfo' => 'getSkusInfo'
     ];
 
     /**
@@ -266,7 +278,9 @@ class RequestUnReservedBodySchema implements ModelInterface, ArrayAccess, \JsonS
         $this->setIfExists('pin', $data ?? [], null);
         $this->setIfExists('codes', $data ?? [], null);
         $this->setIfExists('billNumber', $data ?? [], null);
-        $this->setIfExists('billCreatedAt', $data ?? [], null);
+        $this->setIfExists('totalBill', $data ?? [], null);
+        $this->setIfExists('skipReservedWhenMarkUsed', $data ?? [], null);
+        $this->setIfExists('skusInfo', $data ?? [], null);
     }
 
     /**
@@ -393,28 +407,82 @@ class RequestUnReservedBodySchema implements ModelInterface, ArrayAccess, \JsonS
     }
 
     /**
-     * Gets billCreatedAt
+     * Gets totalBill
      *
-     * @return string|null
+     * @return int|null
      */
-    public function getBillCreatedAt()
+    public function getTotalBill()
     {
-        return $this->container['billCreatedAt'];
+        return $this->container['totalBill'];
     }
 
     /**
-     * Sets billCreatedAt
+     * Sets totalBill
      *
-     * @param string|null $billCreatedAt Bill creation time. Format: YYYY-MM-DD HH:MM:SS
+     * @param int|null $totalBill Total bill amount
      *
      * @return self
      */
-    public function setBillCreatedAt($billCreatedAt)
+    public function setTotalBill($totalBill)
     {
-        if (is_null($billCreatedAt)) {
-            throw new \InvalidArgumentException('non-nullable billCreatedAt cannot be null');
+        if (is_null($totalBill)) {
+            throw new \InvalidArgumentException('non-nullable totalBill cannot be null');
         }
-        $this->container['billCreatedAt'] = $billCreatedAt;
+        $this->container['totalBill'] = $totalBill;
+
+        return $this;
+    }
+
+    /**
+     * Gets skipReservedWhenMarkUsed
+     *
+     * @return bool|null
+     */
+    public function getSkipReservedWhenMarkUsed()
+    {
+        return $this->container['skipReservedWhenMarkUsed'];
+    }
+
+    /**
+     * Sets skipReservedWhenMarkUsed
+     *
+     * @param bool|null $skipReservedWhenMarkUsed When true the system will execute the flow without reserve
+     *
+     * @return self
+     */
+    public function setSkipReservedWhenMarkUsed($skipReservedWhenMarkUsed)
+    {
+        if (is_null($skipReservedWhenMarkUsed)) {
+            throw new \InvalidArgumentException('non-nullable skipReservedWhenMarkUsed cannot be null');
+        }
+        $this->container['skipReservedWhenMarkUsed'] = $skipReservedWhenMarkUsed;
+
+        return $this;
+    }
+
+    /**
+     * Gets skusInfo
+     *
+     * @return \Dayonevn\Model\RequestCheckMultipleBodySchemaSkusInfoInner[]|null
+     */
+    public function getSkusInfo()
+    {
+        return $this->container['skusInfo'];
+    }
+
+    /**
+     * Sets skusInfo
+     *
+     * @param \Dayonevn\Model\RequestCheckMultipleBodySchemaSkusInfoInner[]|null $skusInfo SKU information in bill_number
+     *
+     * @return self
+     */
+    public function setSkusInfo($skusInfo)
+    {
+        if (is_null($skusInfo)) {
+            throw new \InvalidArgumentException('non-nullable skusInfo cannot be null');
+        }
+        $this->container['skusInfo'] = $skusInfo;
 
         return $this;
     }

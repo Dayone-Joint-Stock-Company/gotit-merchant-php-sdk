@@ -1,11 +1,11 @@
 <?php
 /**
- * ResponseCheckMultipleSchemaDataInnerRedemptions
+ * ResponseMarkUseMultipleSchemaDataInner
  *
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Dayonevn
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,22 +27,21 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Dayonevn\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Dayonevn\ObjectSerializer;
 
 /**
- * ResponseCheckMultipleSchemaDataInnerRedemptions Class Doc Comment
+ * ResponseMarkUseMultipleSchemaDataInner Class Doc Comment
  *
  * @category Class
- * @description Include information related to the use of the voucher (all types)
- * @package  OpenAPI\Client
+ * @package  Dayonevn
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ResponseCheckMultipleSchemaDataInnerRedemptions implements ModelInterface, ArrayAccess, \JsonSerializable
+class ResponseMarkUseMultipleSchemaDataInner implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +50,7 @@ class ResponseCheckMultipleSchemaDataInnerRedemptions implements ModelInterface,
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ResponseCheckMultipleSchema_data_inner_redemptions';
+    protected static $openAPIModelName = 'ResponseMarkUseMultipleSchema_data_inner';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,11 +58,13 @@ class ResponseCheckMultipleSchemaDataInnerRedemptions implements ModelInterface,
       * @var string[]
       */
     protected static $openAPITypes = [
-        'redeemSkuCodes' => '\OpenAPI\Client\Model\ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner[]',
-        'redemptionValue' => 'int',
-        'usedStore' => '\OpenAPI\Client\Model\ResponseCheckMultipleSchemaDataInnerRedemptionsUsedStore',
-        'usedDate' => 'string',
-        'billNumber' => 'string'
+        'code' => 'string',
+        'value' => 'int',
+        'productId' => 'int',
+        'state' => 'int',
+        'voucherType' => 'string',
+        'conditions' => '\Dayonevn\Model\ResponseCheckMultipleSchemaDataInnerConditions',
+        'redemptions' => '\Dayonevn\Model\ResponseMarkUseMultipleSchemaDataInnerRedemptions'
     ];
 
     /**
@@ -74,11 +75,13 @@ class ResponseCheckMultipleSchemaDataInnerRedemptions implements ModelInterface,
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'redeemSkuCodes' => null,
-        'redemptionValue' => null,
-        'usedStore' => null,
-        'usedDate' => null,
-        'billNumber' => null
+        'code' => null,
+        'value' => null,
+        'productId' => null,
+        'state' => null,
+        'voucherType' => null,
+        'conditions' => null,
+        'redemptions' => null
     ];
 
     /**
@@ -87,11 +90,13 @@ class ResponseCheckMultipleSchemaDataInnerRedemptions implements ModelInterface,
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'redeemSkuCodes' => false,
-        'redemptionValue' => false,
-        'usedStore' => false,
-        'usedDate' => false,
-        'billNumber' => false
+        'code' => false,
+        'value' => true,
+        'productId' => true,
+        'state' => true,
+        'voucherType' => false,
+        'conditions' => false,
+        'redemptions' => false
     ];
 
     /**
@@ -180,11 +185,13 @@ class ResponseCheckMultipleSchemaDataInnerRedemptions implements ModelInterface,
      * @var string[]
      */
     protected static $attributeMap = [
-        'redeemSkuCodes' => 'redeem_sku_codes',
-        'redemptionValue' => 'redemption_value',
-        'usedStore' => 'used_store',
-        'usedDate' => 'used_date',
-        'billNumber' => 'bill_number'
+        'code' => 'code',
+        'value' => 'value',
+        'productId' => 'product_id',
+        'state' => 'state',
+        'voucherType' => 'voucher_type',
+        'conditions' => 'conditions',
+        'redemptions' => 'redemptions'
     ];
 
     /**
@@ -193,11 +200,13 @@ class ResponseCheckMultipleSchemaDataInnerRedemptions implements ModelInterface,
      * @var string[]
      */
     protected static $setters = [
-        'redeemSkuCodes' => 'setRedeemSkuCodes',
-        'redemptionValue' => 'setRedemptionValue',
-        'usedStore' => 'setUsedStore',
-        'usedDate' => 'setUsedDate',
-        'billNumber' => 'setBillNumber'
+        'code' => 'setCode',
+        'value' => 'setValue',
+        'productId' => 'setProductId',
+        'state' => 'setState',
+        'voucherType' => 'setVoucherType',
+        'conditions' => 'setConditions',
+        'redemptions' => 'setRedemptions'
     ];
 
     /**
@@ -206,11 +215,13 @@ class ResponseCheckMultipleSchemaDataInnerRedemptions implements ModelInterface,
      * @var string[]
      */
     protected static $getters = [
-        'redeemSkuCodes' => 'getRedeemSkuCodes',
-        'redemptionValue' => 'getRedemptionValue',
-        'usedStore' => 'getUsedStore',
-        'usedDate' => 'getUsedDate',
-        'billNumber' => 'getBillNumber'
+        'code' => 'getCode',
+        'value' => 'getValue',
+        'productId' => 'getProductId',
+        'state' => 'getState',
+        'voucherType' => 'getVoucherType',
+        'conditions' => 'getConditions',
+        'redemptions' => 'getRedemptions'
     ];
 
     /**
@@ -270,11 +281,13 @@ class ResponseCheckMultipleSchemaDataInnerRedemptions implements ModelInterface,
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('redeemSkuCodes', $data ?? [], null);
-        $this->setIfExists('redemptionValue', $data ?? [], null);
-        $this->setIfExists('usedStore', $data ?? [], null);
-        $this->setIfExists('usedDate', $data ?? [], null);
-        $this->setIfExists('billNumber', $data ?? [], null);
+        $this->setIfExists('code', $data ?? [], null);
+        $this->setIfExists('value', $data ?? [], null);
+        $this->setIfExists('productId', $data ?? [], null);
+        $this->setIfExists('state', $data ?? [], null);
+        $this->setIfExists('voucherType', $data ?? [], null);
+        $this->setIfExists('conditions', $data ?? [], null);
+        $this->setIfExists('redemptions', $data ?? [], null);
     }
 
     /**
@@ -320,136 +333,211 @@ class ResponseCheckMultipleSchemaDataInnerRedemptions implements ModelInterface,
 
 
     /**
-     * Gets redeemSkuCodes
+     * Gets code
      *
-     * @return \OpenAPI\Client\Model\ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner[]|null
+     * @return string|null
      */
-    public function getRedeemSkuCodes()
+    public function getCode()
     {
-        return $this->container['redeemSkuCodes'];
+        return $this->container['code'];
     }
 
     /**
-     * Sets redeemSkuCodes
+     * Sets code
      *
-     * @param \OpenAPI\Client\Model\ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner[]|null $redeemSkuCodes Contains redeemed SKU information of the voucher (for voucher type is conditional and support sku)
+     * @param string|null $code Voucher code
      *
      * @return self
      */
-    public function setRedeemSkuCodes($redeemSkuCodes)
+    public function setCode($code)
     {
-        if (is_null($redeemSkuCodes)) {
-            throw new \InvalidArgumentException('non-nullable redeemSkuCodes cannot be null');
+        if (is_null($code)) {
+            throw new \InvalidArgumentException('non-nullable code cannot be null');
         }
-        $this->container['redeemSkuCodes'] = $redeemSkuCodes;
+        $this->container['code'] = $code;
 
         return $this;
     }
 
     /**
-     * Gets redemptionValue
+     * Gets value
      *
      * @return int|null
      */
-    public function getRedemptionValue()
+    public function getValue()
     {
-        return $this->container['redemptionValue'];
+        return $this->container['value'];
     }
 
     /**
-     * Sets redemptionValue
+     * Sets value
      *
-     * @param int|null $redemptionValue Actual redemption value of voucher type = conditional
+     * @param int|null $value Value of voucher
      *
      * @return self
      */
-    public function setRedemptionValue($redemptionValue)
+    public function setValue($value)
     {
-        if (is_null($redemptionValue)) {
-            throw new \InvalidArgumentException('non-nullable redemptionValue cannot be null');
+        if (is_null($value)) {
+            array_push($this->openAPINullablesSetToNull, 'value');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('value', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        $this->container['redemptionValue'] = $redemptionValue;
+        $this->container['value'] = $value;
 
         return $this;
     }
 
     /**
-     * Gets usedStore
+     * Gets productId
      *
-     * @return \OpenAPI\Client\Model\ResponseCheckMultipleSchemaDataInnerRedemptionsUsedStore|null
+     * @return int|null
      */
-    public function getUsedStore()
+    public function getProductId()
     {
-        return $this->container['usedStore'];
+        return $this->container['productId'];
     }
 
     /**
-     * Sets usedStore
+     * Sets productId
      *
-     * @param \OpenAPI\Client\Model\ResponseCheckMultipleSchemaDataInnerRedemptionsUsedStore|null $usedStore usedStore
+     * @param int|null $productId Product ID
      *
      * @return self
      */
-    public function setUsedStore($usedStore)
+    public function setProductId($productId)
     {
-        if (is_null($usedStore)) {
-            throw new \InvalidArgumentException('non-nullable usedStore cannot be null');
+        if (is_null($productId)) {
+            array_push($this->openAPINullablesSetToNull, 'productId');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('productId', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        $this->container['usedStore'] = $usedStore;
+        $this->container['productId'] = $productId;
 
         return $this;
     }
 
     /**
-     * Gets usedDate
+     * Gets state
+     *
+     * @return int|null
+     */
+    public function getState()
+    {
+        return $this->container['state'];
+    }
+
+    /**
+     * Sets state
+     *
+     * @param int|null $state State of voucher
+     *
+     * @return self
+     */
+    public function setState($state)
+    {
+        if (is_null($state)) {
+            array_push($this->openAPINullablesSetToNull, 'state');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('state', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['state'] = $state;
+
+        return $this;
+    }
+
+    /**
+     * Gets voucherType
      *
      * @return string|null
      */
-    public function getUsedDate()
+    public function getVoucherType()
     {
-        return $this->container['usedDate'];
+        return $this->container['voucherType'];
     }
 
     /**
-     * Sets usedDate
+     * Sets voucherType
      *
-     * @param string|null $usedDate Date voucher marked as used in case the voucher has been redeemed. Format (YYYY-MM-DD HH:MM:SS)
+     * @param string|null $voucherType Voucher type, standard or conditional
      *
      * @return self
      */
-    public function setUsedDate($usedDate)
+    public function setVoucherType($voucherType)
     {
-        if (is_null($usedDate)) {
-            throw new \InvalidArgumentException('non-nullable usedDate cannot be null');
+        if (is_null($voucherType)) {
+            throw new \InvalidArgumentException('non-nullable voucherType cannot be null');
         }
-        $this->container['usedDate'] = $usedDate;
+        $this->container['voucherType'] = $voucherType;
 
         return $this;
     }
 
     /**
-     * Gets billNumber
+     * Gets conditions
      *
-     * @return string|null
+     * @return \Dayonevn\Model\ResponseCheckMultipleSchemaDataInnerConditions|null
      */
-    public function getBillNumber()
+    public function getConditions()
     {
-        return $this->container['billNumber'];
+        return $this->container['conditions'];
     }
 
     /**
-     * Sets billNumber
+     * Sets conditions
      *
-     * @param string|null $billNumber Bill number for which voucher used/reserved
+     * @param \Dayonevn\Model\ResponseCheckMultipleSchemaDataInnerConditions|null $conditions conditions
      *
      * @return self
      */
-    public function setBillNumber($billNumber)
+    public function setConditions($conditions)
     {
-        if (is_null($billNumber)) {
-            throw new \InvalidArgumentException('non-nullable billNumber cannot be null');
+        if (is_null($conditions)) {
+            throw new \InvalidArgumentException('non-nullable conditions cannot be null');
         }
-        $this->container['billNumber'] = $billNumber;
+        $this->container['conditions'] = $conditions;
+
+        return $this;
+    }
+
+    /**
+     * Gets redemptions
+     *
+     * @return \Dayonevn\Model\ResponseMarkUseMultipleSchemaDataInnerRedemptions|null
+     */
+    public function getRedemptions()
+    {
+        return $this->container['redemptions'];
+    }
+
+    /**
+     * Sets redemptions
+     *
+     * @param \Dayonevn\Model\ResponseMarkUseMultipleSchemaDataInnerRedemptions|null $redemptions redemptions
+     *
+     * @return self
+     */
+    public function setRedemptions($redemptions)
+    {
+        if (is_null($redemptions)) {
+            throw new \InvalidArgumentException('non-nullable redemptions cannot be null');
+        }
+        $this->container['redemptions'] = $redemptions;
 
         return $this;
     }

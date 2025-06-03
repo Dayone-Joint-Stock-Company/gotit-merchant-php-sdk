@@ -9,6 +9,6 @@ Name | Type | Description | Notes
 **billNumber** | **string** | Bill number will apply vouchers | [optional]
 **totalBill** | **int** | Total bill amount | [optional]
 **billCreatedAt** | **string** | Bill creation time. Format: YYYY-MM-DD HH:MM:SS | [optional]
-**skusInfo** | [**\OpenAPI\Client\Model\RequestCheckMultipleBodySchemaSkusInfoInner[]**](RequestCheckMultipleBodySchemaSkusInfoInner.md) | SKU information in bill_number | [optional]
+**skusInfo** | [**\Dayonevn\Model\RequestCheckMultipleBodySchemaSkusInfoInner[]**](RequestCheckMultipleBodySchemaSkusInfoInner.md) | SKU information in bill_number | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

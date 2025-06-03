@@ -1,11 +1,11 @@
 <?php
 /**
- * ResponseUnReservedSchema
+ * RequestUnReservedBodySchema
  *
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Dayonevn
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,21 +27,21 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Dayonevn\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Dayonevn\ObjectSerializer;
 
 /**
- * ResponseUnReservedSchema Class Doc Comment
+ * RequestUnReservedBodySchema Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Dayonevn
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ResponseUnReservedSchema implements ModelInterface, ArrayAccess, \JsonSerializable
+class RequestUnReservedBodySchema implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class ResponseUnReservedSchema implements ModelInterface, ArrayAccess, \JsonSeri
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ResponseUnReservedSchema';
+    protected static $openAPIModelName = 'RequestUnReservedBodySchema';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,13 +58,10 @@ class ResponseUnReservedSchema implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
-        'success' => 'bool',
-        'returnCode' => 'string',
-        'messageEn' => 'string',
-        'messageVi' => 'string',
-        'usedStore' => '\OpenAPI\Client\Model\ResponseReservedSchemaUsedStore',
+        'pin' => 'string',
+        'codes' => 'string[]',
         'billNumber' => 'string',
-        'data' => '\OpenAPI\Client\Model\ResponseUnReservedSchemaDataInner[]'
+        'billCreatedAt' => 'string'
     ];
 
     /**
@@ -75,13 +72,10 @@ class ResponseUnReservedSchema implements ModelInterface, ArrayAccess, \JsonSeri
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'success' => null,
-        'returnCode' => null,
-        'messageEn' => null,
-        'messageVi' => null,
-        'usedStore' => null,
+        'pin' => null,
+        'codes' => null,
         'billNumber' => null,
-        'data' => null
+        'billCreatedAt' => null
     ];
 
     /**
@@ -90,13 +84,10 @@ class ResponseUnReservedSchema implements ModelInterface, ArrayAccess, \JsonSeri
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'success' => false,
-        'returnCode' => true,
-        'messageEn' => false,
-        'messageVi' => false,
-        'usedStore' => false,
+        'pin' => false,
+        'codes' => false,
         'billNumber' => false,
-        'data' => false
+        'billCreatedAt' => false
     ];
 
     /**
@@ -185,13 +176,10 @@ class ResponseUnReservedSchema implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $attributeMap = [
-        'success' => 'success',
-        'returnCode' => 'return_code',
-        'messageEn' => 'message_en',
-        'messageVi' => 'message_vi',
-        'usedStore' => 'used_store',
+        'pin' => 'pin',
+        'codes' => 'codes',
         'billNumber' => 'bill_number',
-        'data' => 'data'
+        'billCreatedAt' => 'bill_created_at'
     ];
 
     /**
@@ -200,13 +188,10 @@ class ResponseUnReservedSchema implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-        'success' => 'setSuccess',
-        'returnCode' => 'setReturnCode',
-        'messageEn' => 'setMessageEn',
-        'messageVi' => 'setMessageVi',
-        'usedStore' => 'setUsedStore',
+        'pin' => 'setPin',
+        'codes' => 'setCodes',
         'billNumber' => 'setBillNumber',
-        'data' => 'setData'
+        'billCreatedAt' => 'setBillCreatedAt'
     ];
 
     /**
@@ -215,13 +200,10 @@ class ResponseUnReservedSchema implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $getters = [
-        'success' => 'getSuccess',
-        'returnCode' => 'getReturnCode',
-        'messageEn' => 'getMessageEn',
-        'messageVi' => 'getMessageVi',
-        'usedStore' => 'getUsedStore',
+        'pin' => 'getPin',
+        'codes' => 'getCodes',
         'billNumber' => 'getBillNumber',
-        'data' => 'getData'
+        'billCreatedAt' => 'getBillCreatedAt'
     ];
 
     /**
@@ -281,13 +263,10 @@ class ResponseUnReservedSchema implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('success', $data ?? [], null);
-        $this->setIfExists('returnCode', $data ?? [], null);
-        $this->setIfExists('messageEn', $data ?? [], null);
-        $this->setIfExists('messageVi', $data ?? [], null);
-        $this->setIfExists('usedStore', $data ?? [], null);
+        $this->setIfExists('pin', $data ?? [], null);
+        $this->setIfExists('codes', $data ?? [], null);
         $this->setIfExists('billNumber', $data ?? [], null);
-        $this->setIfExists('data', $data ?? [], null);
+        $this->setIfExists('billCreatedAt', $data ?? [], null);
     }
 
     /**
@@ -333,143 +312,55 @@ class ResponseUnReservedSchema implements ModelInterface, ArrayAccess, \JsonSeri
 
 
     /**
-     * Gets success
-     *
-     * @return bool|null
-     */
-    public function getSuccess()
-    {
-        return $this->container['success'];
-    }
-
-    /**
-     * Sets success
-     *
-     * @param bool|null $success success
-     *
-     * @return self
-     */
-    public function setSuccess($success)
-    {
-        if (is_null($success)) {
-            throw new \InvalidArgumentException('non-nullable success cannot be null');
-        }
-        $this->container['success'] = $success;
-
-        return $this;
-    }
-
-    /**
-     * Gets returnCode
+     * Gets pin
      *
      * @return string|null
      */
-    public function getReturnCode()
+    public function getPin()
     {
-        return $this->container['returnCode'];
+        return $this->container['pin'];
     }
 
     /**
-     * Sets returnCode
+     * Sets pin
      *
-     * @param string|null $returnCode Result code if failed. In case of successful request: value is null
+     * @param string|null $pin Store pin
      *
      * @return self
      */
-    public function setReturnCode($returnCode)
+    public function setPin($pin)
     {
-        if (is_null($returnCode)) {
-            array_push($this->openAPINullablesSetToNull, 'returnCode');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('returnCode', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($pin)) {
+            throw new \InvalidArgumentException('non-nullable pin cannot be null');
         }
-        $this->container['returnCode'] = $returnCode;
+        $this->container['pin'] = $pin;
 
         return $this;
     }
 
     /**
-     * Gets messageEn
+     * Gets codes
      *
-     * @return string|null
+     * @return string[]|null
      */
-    public function getMessageEn()
+    public function getCodes()
     {
-        return $this->container['messageEn'];
+        return $this->container['codes'];
     }
 
     /**
-     * Sets messageEn
+     * Sets codes
      *
-     * @param string|null $messageEn Message notification in English
+     * @param string[]|null $codes Array of 10-16 characters Got It voucher codes
      *
      * @return self
      */
-    public function setMessageEn($messageEn)
+    public function setCodes($codes)
     {
-        if (is_null($messageEn)) {
-            throw new \InvalidArgumentException('non-nullable messageEn cannot be null');
+        if (is_null($codes)) {
+            throw new \InvalidArgumentException('non-nullable codes cannot be null');
         }
-        $this->container['messageEn'] = $messageEn;
-
-        return $this;
-    }
-
-    /**
-     * Gets messageVi
-     *
-     * @return string|null
-     */
-    public function getMessageVi()
-    {
-        return $this->container['messageVi'];
-    }
-
-    /**
-     * Sets messageVi
-     *
-     * @param string|null $messageVi Message notification in Vietnamese
-     *
-     * @return self
-     */
-    public function setMessageVi($messageVi)
-    {
-        if (is_null($messageVi)) {
-            throw new \InvalidArgumentException('non-nullable messageVi cannot be null');
-        }
-        $this->container['messageVi'] = $messageVi;
-
-        return $this;
-    }
-
-    /**
-     * Gets usedStore
-     *
-     * @return \OpenAPI\Client\Model\ResponseReservedSchemaUsedStore|null
-     */
-    public function getUsedStore()
-    {
-        return $this->container['usedStore'];
-    }
-
-    /**
-     * Sets usedStore
-     *
-     * @param \OpenAPI\Client\Model\ResponseReservedSchemaUsedStore|null $usedStore usedStore
-     *
-     * @return self
-     */
-    public function setUsedStore($usedStore)
-    {
-        if (is_null($usedStore)) {
-            throw new \InvalidArgumentException('non-nullable usedStore cannot be null');
-        }
-        $this->container['usedStore'] = $usedStore;
+        $this->container['codes'] = $codes;
 
         return $this;
     }
@@ -487,7 +378,7 @@ class ResponseUnReservedSchema implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets billNumber
      *
-     * @param string|null $billNumber Bill number
+     * @param string|null $billNumber Bill number will apply vouchers
      *
      * @return self
      */
@@ -502,28 +393,28 @@ class ResponseUnReservedSchema implements ModelInterface, ArrayAccess, \JsonSeri
     }
 
     /**
-     * Gets data
+     * Gets billCreatedAt
      *
-     * @return \OpenAPI\Client\Model\ResponseUnReservedSchemaDataInner[]|null
+     * @return string|null
      */
-    public function getData()
+    public function getBillCreatedAt()
     {
-        return $this->container['data'];
+        return $this->container['billCreatedAt'];
     }
 
     /**
-     * Sets data
+     * Sets billCreatedAt
      *
-     * @param \OpenAPI\Client\Model\ResponseUnReservedSchemaDataInner[]|null $data Detail items of voucher, if result is failed, response will return the first voucher code which is invalid
+     * @param string|null $billCreatedAt Bill creation time. Format: YYYY-MM-DD HH:MM:SS
      *
      * @return self
      */
-    public function setData($data)
+    public function setBillCreatedAt($billCreatedAt)
     {
-        if (is_null($data)) {
-            throw new \InvalidArgumentException('non-nullable data cannot be null');
+        if (is_null($billCreatedAt)) {
+            throw new \InvalidArgumentException('non-nullable billCreatedAt cannot be null');
         }
-        $this->container['data'] = $data;
+        $this->container['billCreatedAt'] = $billCreatedAt;
 
         return $this;
     }

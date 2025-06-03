@@ -1,11 +1,11 @@
 <?php
 /**
- * ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner
+ * RequestMarkUseMultipleBodySchema
  *
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Dayonevn
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,21 +27,21 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Dayonevn\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Dayonevn\ObjectSerializer;
 
 /**
- * ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner Class Doc Comment
+ * RequestMarkUseMultipleBodySchema Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Dayonevn
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner implements ModelInterface, ArrayAccess, \JsonSerializable
+class RequestMarkUseMultipleBodySchema implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner impleme
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ResponseCheckMultipleSchema_data_inner_redemptions_redeem_sku_codes_inner';
+    protected static $openAPIModelName = 'RequestMarkUseMultipleBodySchema';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,9 +58,12 @@ class ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner impleme
       * @var string[]
       */
     protected static $openAPITypes = [
-        'sku' => 'string',
-        'quantity' => 'int',
-        'price' => 'int'
+        'pin' => 'string',
+        'codes' => 'string[]',
+        'billNumber' => 'string',
+        'totalBill' => 'int',
+        'skipReservedWhenMarkUsed' => 'bool',
+        'skusInfo' => '\Dayonevn\Model\RequestCheckMultipleBodySchemaSkusInfoInner[]'
     ];
 
     /**
@@ -71,9 +74,12 @@ class ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner impleme
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'sku' => null,
-        'quantity' => null,
-        'price' => null
+        'pin' => null,
+        'codes' => null,
+        'billNumber' => null,
+        'totalBill' => null,
+        'skipReservedWhenMarkUsed' => null,
+        'skusInfo' => null
     ];
 
     /**
@@ -82,9 +88,12 @@ class ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner impleme
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'sku' => false,
-        'quantity' => false,
-        'price' => false
+        'pin' => false,
+        'codes' => false,
+        'billNumber' => false,
+        'totalBill' => false,
+        'skipReservedWhenMarkUsed' => false,
+        'skusInfo' => false
     ];
 
     /**
@@ -173,9 +182,12 @@ class ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner impleme
      * @var string[]
      */
     protected static $attributeMap = [
-        'sku' => 'sku',
-        'quantity' => 'quantity',
-        'price' => 'price'
+        'pin' => 'pin',
+        'codes' => 'codes',
+        'billNumber' => 'bill_number',
+        'totalBill' => 'total_bill',
+        'skipReservedWhenMarkUsed' => 'skip_reserved_when_mark_used',
+        'skusInfo' => 'skus_info'
     ];
 
     /**
@@ -184,9 +196,12 @@ class ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner impleme
      * @var string[]
      */
     protected static $setters = [
-        'sku' => 'setSku',
-        'quantity' => 'setQuantity',
-        'price' => 'setPrice'
+        'pin' => 'setPin',
+        'codes' => 'setCodes',
+        'billNumber' => 'setBillNumber',
+        'totalBill' => 'setTotalBill',
+        'skipReservedWhenMarkUsed' => 'setSkipReservedWhenMarkUsed',
+        'skusInfo' => 'setSkusInfo'
     ];
 
     /**
@@ -195,9 +210,12 @@ class ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner impleme
      * @var string[]
      */
     protected static $getters = [
-        'sku' => 'getSku',
-        'quantity' => 'getQuantity',
-        'price' => 'getPrice'
+        'pin' => 'getPin',
+        'codes' => 'getCodes',
+        'billNumber' => 'getBillNumber',
+        'totalBill' => 'getTotalBill',
+        'skipReservedWhenMarkUsed' => 'getSkipReservedWhenMarkUsed',
+        'skusInfo' => 'getSkusInfo'
     ];
 
     /**
@@ -257,9 +275,12 @@ class ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner impleme
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('sku', $data ?? [], null);
-        $this->setIfExists('quantity', $data ?? [], null);
-        $this->setIfExists('price', $data ?? [], null);
+        $this->setIfExists('pin', $data ?? [], null);
+        $this->setIfExists('codes', $data ?? [], null);
+        $this->setIfExists('billNumber', $data ?? [], null);
+        $this->setIfExists('totalBill', $data ?? [], null);
+        $this->setIfExists('skipReservedWhenMarkUsed', $data ?? [], null);
+        $this->setIfExists('skusInfo', $data ?? [], null);
     }
 
     /**
@@ -305,82 +326,163 @@ class ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner impleme
 
 
     /**
-     * Gets sku
+     * Gets pin
      *
      * @return string|null
      */
-    public function getSku()
+    public function getPin()
     {
-        return $this->container['sku'];
+        return $this->container['pin'];
     }
 
     /**
-     * Sets sku
+     * Sets pin
      *
-     * @param string|null $sku SKU code is redeemed for voucher
+     * @param string|null $pin Store pin
      *
      * @return self
      */
-    public function setSku($sku)
+    public function setPin($pin)
     {
-        if (is_null($sku)) {
-            throw new \InvalidArgumentException('non-nullable sku cannot be null');
+        if (is_null($pin)) {
+            throw new \InvalidArgumentException('non-nullable pin cannot be null');
         }
-        $this->container['sku'] = $sku;
+        $this->container['pin'] = $pin;
 
         return $this;
     }
 
     /**
-     * Gets quantity
+     * Gets codes
      *
-     * @return int|null
+     * @return string[]|null
      */
-    public function getQuantity()
+    public function getCodes()
     {
-        return $this->container['quantity'];
+        return $this->container['codes'];
     }
 
     /**
-     * Sets quantity
+     * Sets codes
      *
-     * @param int|null $quantity SKU quantity is redeemed for voucher
+     * @param string[]|null $codes Array of 10-16 characters Got It voucher codes
      *
      * @return self
      */
-    public function setQuantity($quantity)
+    public function setCodes($codes)
     {
-        if (is_null($quantity)) {
-            throw new \InvalidArgumentException('non-nullable quantity cannot be null');
+        if (is_null($codes)) {
+            throw new \InvalidArgumentException('non-nullable codes cannot be null');
         }
-        $this->container['quantity'] = $quantity;
+        $this->container['codes'] = $codes;
 
         return $this;
     }
 
     /**
-     * Gets price
+     * Gets billNumber
      *
-     * @return int|null
+     * @return string|null
      */
-    public function getPrice()
+    public function getBillNumber()
     {
-        return $this->container['price'];
+        return $this->container['billNumber'];
     }
 
     /**
-     * Sets price
+     * Sets billNumber
      *
-     * @param int|null $price Selling price of SKU in bill.
+     * @param string|null $billNumber Bill number will apply vouchers
      *
      * @return self
      */
-    public function setPrice($price)
+    public function setBillNumber($billNumber)
     {
-        if (is_null($price)) {
-            throw new \InvalidArgumentException('non-nullable price cannot be null');
+        if (is_null($billNumber)) {
+            throw new \InvalidArgumentException('non-nullable billNumber cannot be null');
         }
-        $this->container['price'] = $price;
+        $this->container['billNumber'] = $billNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets totalBill
+     *
+     * @return int|null
+     */
+    public function getTotalBill()
+    {
+        return $this->container['totalBill'];
+    }
+
+    /**
+     * Sets totalBill
+     *
+     * @param int|null $totalBill Total bill amount
+     *
+     * @return self
+     */
+    public function setTotalBill($totalBill)
+    {
+        if (is_null($totalBill)) {
+            throw new \InvalidArgumentException('non-nullable totalBill cannot be null');
+        }
+        $this->container['totalBill'] = $totalBill;
+
+        return $this;
+    }
+
+    /**
+     * Gets skipReservedWhenMarkUsed
+     *
+     * @return bool|null
+     */
+    public function getSkipReservedWhenMarkUsed()
+    {
+        return $this->container['skipReservedWhenMarkUsed'];
+    }
+
+    /**
+     * Sets skipReservedWhenMarkUsed
+     *
+     * @param bool|null $skipReservedWhenMarkUsed When true the system will execute the flow without reserve
+     *
+     * @return self
+     */
+    public function setSkipReservedWhenMarkUsed($skipReservedWhenMarkUsed)
+    {
+        if (is_null($skipReservedWhenMarkUsed)) {
+            throw new \InvalidArgumentException('non-nullable skipReservedWhenMarkUsed cannot be null');
+        }
+        $this->container['skipReservedWhenMarkUsed'] = $skipReservedWhenMarkUsed;
+
+        return $this;
+    }
+
+    /**
+     * Gets skusInfo
+     *
+     * @return \Dayonevn\Model\RequestCheckMultipleBodySchemaSkusInfoInner[]|null
+     */
+    public function getSkusInfo()
+    {
+        return $this->container['skusInfo'];
+    }
+
+    /**
+     * Sets skusInfo
+     *
+     * @param \Dayonevn\Model\RequestCheckMultipleBodySchemaSkusInfoInner[]|null $skusInfo SKU information in bill_number
+     *
+     * @return self
+     */
+    public function setSkusInfo($skusInfo)
+    {
+        if (is_null($skusInfo)) {
+            throw new \InvalidArgumentException('non-nullable skusInfo cannot be null');
+        }
+        $this->container['skusInfo'] = $skusInfo;
 
         return $this;
     }

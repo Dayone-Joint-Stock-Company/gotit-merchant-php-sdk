@@ -1,11 +1,11 @@
 <?php
 /**
- * ResponseMarkUseMultipleSchemaDataInner
+ * ResponseReservedSchemaDataInner
  *
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Dayonevn
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,21 +27,21 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Dayonevn\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Dayonevn\ObjectSerializer;
 
 /**
- * ResponseMarkUseMultipleSchemaDataInner Class Doc Comment
+ * ResponseReservedSchemaDataInner Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Dayonevn
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ResponseMarkUseMultipleSchemaDataInner implements ModelInterface, ArrayAccess, \JsonSerializable
+class ResponseReservedSchemaDataInner implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class ResponseMarkUseMultipleSchemaDataInner implements ModelInterface, ArrayAcc
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ResponseMarkUseMultipleSchema_data_inner';
+    protected static $openAPIModelName = 'ResponseReservedSchema_data_inner';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -60,11 +60,11 @@ class ResponseMarkUseMultipleSchemaDataInner implements ModelInterface, ArrayAcc
     protected static $openAPITypes = [
         'code' => 'string',
         'value' => 'int',
-        'productId' => 'int',
         'state' => 'int',
+        'productId' => 'int',
         'voucherType' => 'string',
-        'conditions' => '\OpenAPI\Client\Model\ResponseCheckMultipleSchemaDataInnerConditions',
-        'redemptions' => '\OpenAPI\Client\Model\ResponseMarkUseMultipleSchemaDataInnerRedemptions'
+        'conditions' => '\Dayonevn\Model\ResponseCheckMultipleSchemaDataInnerConditions',
+        'redemptions' => '\Dayonevn\Model\ResponseReservedSchemaDataInnerRedemptions'
     ];
 
     /**
@@ -77,8 +77,8 @@ class ResponseMarkUseMultipleSchemaDataInner implements ModelInterface, ArrayAcc
     protected static $openAPIFormats = [
         'code' => null,
         'value' => null,
-        'productId' => null,
         'state' => null,
+        'productId' => null,
         'voucherType' => null,
         'conditions' => null,
         'redemptions' => null
@@ -92,8 +92,8 @@ class ResponseMarkUseMultipleSchemaDataInner implements ModelInterface, ArrayAcc
     protected static array $openAPINullables = [
         'code' => false,
         'value' => true,
-        'productId' => true,
         'state' => true,
+        'productId' => true,
         'voucherType' => false,
         'conditions' => false,
         'redemptions' => false
@@ -187,8 +187,8 @@ class ResponseMarkUseMultipleSchemaDataInner implements ModelInterface, ArrayAcc
     protected static $attributeMap = [
         'code' => 'code',
         'value' => 'value',
-        'productId' => 'product_id',
         'state' => 'state',
+        'productId' => 'product_id',
         'voucherType' => 'voucher_type',
         'conditions' => 'conditions',
         'redemptions' => 'redemptions'
@@ -202,8 +202,8 @@ class ResponseMarkUseMultipleSchemaDataInner implements ModelInterface, ArrayAcc
     protected static $setters = [
         'code' => 'setCode',
         'value' => 'setValue',
-        'productId' => 'setProductId',
         'state' => 'setState',
+        'productId' => 'setProductId',
         'voucherType' => 'setVoucherType',
         'conditions' => 'setConditions',
         'redemptions' => 'setRedemptions'
@@ -217,8 +217,8 @@ class ResponseMarkUseMultipleSchemaDataInner implements ModelInterface, ArrayAcc
     protected static $getters = [
         'code' => 'getCode',
         'value' => 'getValue',
-        'productId' => 'getProductId',
         'state' => 'getState',
+        'productId' => 'getProductId',
         'voucherType' => 'getVoucherType',
         'conditions' => 'getConditions',
         'redemptions' => 'getRedemptions'
@@ -283,8 +283,8 @@ class ResponseMarkUseMultipleSchemaDataInner implements ModelInterface, ArrayAcc
     {
         $this->setIfExists('code', $data ?? [], null);
         $this->setIfExists('value', $data ?? [], null);
-        $this->setIfExists('productId', $data ?? [], null);
         $this->setIfExists('state', $data ?? [], null);
+        $this->setIfExists('productId', $data ?? [], null);
         $this->setIfExists('voucherType', $data ?? [], null);
         $this->setIfExists('conditions', $data ?? [], null);
         $this->setIfExists('redemptions', $data ?? [], null);
@@ -394,40 +394,6 @@ class ResponseMarkUseMultipleSchemaDataInner implements ModelInterface, ArrayAcc
     }
 
     /**
-     * Gets productId
-     *
-     * @return int|null
-     */
-    public function getProductId()
-    {
-        return $this->container['productId'];
-    }
-
-    /**
-     * Sets productId
-     *
-     * @param int|null $productId Product ID
-     *
-     * @return self
-     */
-    public function setProductId($productId)
-    {
-        if (is_null($productId)) {
-            array_push($this->openAPINullablesSetToNull, 'productId');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('productId', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['productId'] = $productId;
-
-        return $this;
-    }
-
-    /**
      * Gets state
      *
      * @return int|null
@@ -462,6 +428,40 @@ class ResponseMarkUseMultipleSchemaDataInner implements ModelInterface, ArrayAcc
     }
 
     /**
+     * Gets productId
+     *
+     * @return int|null
+     */
+    public function getProductId()
+    {
+        return $this->container['productId'];
+    }
+
+    /**
+     * Sets productId
+     *
+     * @param int|null $productId Product ID
+     *
+     * @return self
+     */
+    public function setProductId($productId)
+    {
+        if (is_null($productId)) {
+            array_push($this->openAPINullablesSetToNull, 'productId');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('productId', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['productId'] = $productId;
+
+        return $this;
+    }
+
+    /**
      * Gets voucherType
      *
      * @return string|null
@@ -491,7 +491,7 @@ class ResponseMarkUseMultipleSchemaDataInner implements ModelInterface, ArrayAcc
     /**
      * Gets conditions
      *
-     * @return \OpenAPI\Client\Model\ResponseCheckMultipleSchemaDataInnerConditions|null
+     * @return \Dayonevn\Model\ResponseCheckMultipleSchemaDataInnerConditions|null
      */
     public function getConditions()
     {
@@ -501,7 +501,7 @@ class ResponseMarkUseMultipleSchemaDataInner implements ModelInterface, ArrayAcc
     /**
      * Sets conditions
      *
-     * @param \OpenAPI\Client\Model\ResponseCheckMultipleSchemaDataInnerConditions|null $conditions conditions
+     * @param \Dayonevn\Model\ResponseCheckMultipleSchemaDataInnerConditions|null $conditions conditions
      *
      * @return self
      */
@@ -518,7 +518,7 @@ class ResponseMarkUseMultipleSchemaDataInner implements ModelInterface, ArrayAcc
     /**
      * Gets redemptions
      *
-     * @return \OpenAPI\Client\Model\ResponseMarkUseMultipleSchemaDataInnerRedemptions|null
+     * @return \Dayonevn\Model\ResponseReservedSchemaDataInnerRedemptions|null
      */
     public function getRedemptions()
     {
@@ -528,7 +528,7 @@ class ResponseMarkUseMultipleSchemaDataInner implements ModelInterface, ArrayAcc
     /**
      * Sets redemptions
      *
-     * @param \OpenAPI\Client\Model\ResponseMarkUseMultipleSchemaDataInnerRedemptions|null $redemptions redemptions
+     * @param \Dayonevn\Model\ResponseReservedSchemaDataInnerRedemptions|null $redemptions redemptions
      *
      * @return self
      */

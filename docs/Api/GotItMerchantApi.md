@@ -1,4 +1,4 @@
-# OpenAPI\Client\GotItMerchantApi
+# Dayonevn\GotItMerchantApi
 
 All URIs are relative to https://openapi-stg.gotit.vn, except if the operation defines another base path.
 
@@ -13,7 +13,7 @@ All URIs are relative to https://openapi-stg.gotit.vn, except if the operation d
 ## `checkMultiple()`
 
 ```php
-checkMultiple($requestCheckMultipleBodySchema): \OpenAPI\Client\Model\ResponseCheckMultipleSchema
+checkMultiple($requestCheckMultipleBodySchema): \Dayonevn\Model\ResponseCheckMultipleSchema
 ```
 
 Check multiple vouchers are valid or not
@@ -28,12 +28,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\GotItMerchantApi(
+$apiInstance = new Dayonevn\Api\GotItMerchantApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$requestCheckMultipleBodySchema = new \OpenAPI\Client\Model\RequestCheckMultipleBodySchema(); // \OpenAPI\Client\Model\RequestCheckMultipleBodySchema
+$requestCheckMultipleBodySchema = new \Dayonevn\Model\RequestCheckMultipleBodySchema(); // \Dayonevn\Model\RequestCheckMultipleBodySchema
 
 try {
     $result = $apiInstance->checkMultiple($requestCheckMultipleBodySchema);
@@ -47,11 +47,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **requestCheckMultipleBodySchema** | [**\OpenAPI\Client\Model\RequestCheckMultipleBodySchema**](../Model/RequestCheckMultipleBodySchema.md)|  | [optional] |
+| **requestCheckMultipleBodySchema** | [**\Dayonevn\Model\RequestCheckMultipleBodySchema**](../Model/RequestCheckMultipleBodySchema.md)|  | [optional] |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\ResponseCheckMultipleSchema**](../Model/ResponseCheckMultipleSchema.md)
+[**\Dayonevn\Model\ResponseCheckMultipleSchema**](../Model/ResponseCheckMultipleSchema.md)
 
 ### Authorization
 
@@ -69,7 +69,7 @@ No authorization required
 ## `reserved()`
 
 ```php
-reserved($requestReservedBodySchema): \OpenAPI\Client\Model\ResponseReservedSchema
+reserved($requestReservedBodySchema): \Dayonevn\Model\ResponseReservedSchema
 ```
 
 Reserved multiple vouchers for a fixed bill number.
@@ -84,12 +84,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\GotItMerchantApi(
+$apiInstance = new Dayonevn\Api\GotItMerchantApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$requestReservedBodySchema = new \OpenAPI\Client\Model\RequestReservedBodySchema(); // \OpenAPI\Client\Model\RequestReservedBodySchema
+$requestReservedBodySchema = new \Dayonevn\Model\RequestReservedBodySchema(); // \Dayonevn\Model\RequestReservedBodySchema
 
 try {
     $result = $apiInstance->reserved($requestReservedBodySchema);
@@ -103,11 +103,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **requestReservedBodySchema** | [**\OpenAPI\Client\Model\RequestReservedBodySchema**](../Model/RequestReservedBodySchema.md)|  | [optional] |
+| **requestReservedBodySchema** | [**\Dayonevn\Model\RequestReservedBodySchema**](../Model/RequestReservedBodySchema.md)|  | [optional] |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\ResponseReservedSchema**](../Model/ResponseReservedSchema.md)
+[**\Dayonevn\Model\ResponseReservedSchema**](../Model/ResponseReservedSchema.md)
 
 ### Authorization
 
@@ -125,7 +125,7 @@ No authorization required
 ## `unreserved()`
 
 ```php
-unreserved($requestUnReservedBodySchema): \OpenAPI\Client\Model\ResponseUnReservedSchema
+unreserved($requestUnReservedBodySchema): \Dayonevn\Model\ResponseUnReservedSchema
 ```
 
 Reserved multiple vouchers for a fixed bill number.
@@ -140,12 +140,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\GotItMerchantApi(
+$apiInstance = new Dayonevn\Api\GotItMerchantApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$requestUnReservedBodySchema = new \OpenAPI\Client\Model\RequestUnReservedBodySchema(); // \OpenAPI\Client\Model\RequestUnReservedBodySchema
+$requestUnReservedBodySchema = new \Dayonevn\Model\RequestUnReservedBodySchema(); // \Dayonevn\Model\RequestUnReservedBodySchema
 
 try {
     $result = $apiInstance->unreserved($requestUnReservedBodySchema);
@@ -159,11 +159,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **requestUnReservedBodySchema** | [**\OpenAPI\Client\Model\RequestUnReservedBodySchema**](../Model/RequestUnReservedBodySchema.md)|  | [optional] |
+| **requestUnReservedBodySchema** | [**\Dayonevn\Model\RequestUnReservedBodySchema**](../Model/RequestUnReservedBodySchema.md)|  | [optional] |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\ResponseUnReservedSchema**](../Model/ResponseUnReservedSchema.md)
+[**\Dayonevn\Model\ResponseUnReservedSchema**](../Model/ResponseUnReservedSchema.md)
 
 ### Authorization
 
@@ -181,7 +181,7 @@ No authorization required
 ## `useMultiple()`
 
 ```php
-useMultiple($requestMarkUseMultipleBodySchema): \OpenAPI\Client\Model\ResponseMarkUseMultipleSchema
+useMultiple($requestMarkUseMultipleBodySchema): \Dayonevn\Model\ResponseMarkUseMultipleSchema
 ```
 
 Reserved multiple vouchers for a fixed bill number.
@@ -196,12 +196,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new OpenAPI\Client\Api\GotItMerchantApi(
+$apiInstance = new Dayonevn\Api\GotItMerchantApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$requestMarkUseMultipleBodySchema = new \OpenAPI\Client\Model\RequestMarkUseMultipleBodySchema(); // \OpenAPI\Client\Model\RequestMarkUseMultipleBodySchema
+$requestMarkUseMultipleBodySchema = new \Dayonevn\Model\RequestMarkUseMultipleBodySchema(); // \Dayonevn\Model\RequestMarkUseMultipleBodySchema
 
 try {
     $result = $apiInstance->useMultiple($requestMarkUseMultipleBodySchema);
@@ -215,11 +215,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **requestMarkUseMultipleBodySchema** | [**\OpenAPI\Client\Model\RequestMarkUseMultipleBodySchema**](../Model/RequestMarkUseMultipleBodySchema.md)|  | [optional] |
+| **requestMarkUseMultipleBodySchema** | [**\Dayonevn\Model\RequestMarkUseMultipleBodySchema**](../Model/RequestMarkUseMultipleBodySchema.md)|  | [optional] |
 
 ### Return type
 
-[**\OpenAPI\Client\Model\ResponseMarkUseMultipleSchema**](../Model/ResponseMarkUseMultipleSchema.md)
+[**\Dayonevn\Model\ResponseMarkUseMultipleSchema**](../Model/ResponseMarkUseMultipleSchema.md)
 
 ### Authorization
 

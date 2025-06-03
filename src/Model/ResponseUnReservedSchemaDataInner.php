@@ -1,11 +1,11 @@
 <?php
 /**
- * ResponseReservedSchemaDataInner
+ * ResponseUnReservedSchemaDataInner
  *
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Dayonevn
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,21 +27,21 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Dayonevn\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Dayonevn\ObjectSerializer;
 
 /**
- * ResponseReservedSchemaDataInner Class Doc Comment
+ * ResponseUnReservedSchemaDataInner Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Dayonevn
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ResponseReservedSchemaDataInner implements ModelInterface, ArrayAccess, \JsonSerializable
+class ResponseUnReservedSchemaDataInner implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class ResponseReservedSchemaDataInner implements ModelInterface, ArrayAccess, \J
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ResponseReservedSchema_data_inner';
+    protected static $openAPIModelName = 'ResponseUnReservedSchema_data_inner';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -60,11 +60,8 @@ class ResponseReservedSchemaDataInner implements ModelInterface, ArrayAccess, \J
     protected static $openAPITypes = [
         'code' => 'string',
         'value' => 'int',
-        'state' => 'int',
         'productId' => 'int',
-        'voucherType' => 'string',
-        'conditions' => '\OpenAPI\Client\Model\ResponseCheckMultipleSchemaDataInnerConditions',
-        'redemptions' => '\OpenAPI\Client\Model\ResponseReservedSchemaDataInnerRedemptions'
+        'voucherType' => 'string'
     ];
 
     /**
@@ -77,11 +74,8 @@ class ResponseReservedSchemaDataInner implements ModelInterface, ArrayAccess, \J
     protected static $openAPIFormats = [
         'code' => null,
         'value' => null,
-        'state' => null,
         'productId' => null,
-        'voucherType' => null,
-        'conditions' => null,
-        'redemptions' => null
+        'voucherType' => null
     ];
 
     /**
@@ -92,11 +86,8 @@ class ResponseReservedSchemaDataInner implements ModelInterface, ArrayAccess, \J
     protected static array $openAPINullables = [
         'code' => false,
         'value' => true,
-        'state' => true,
         'productId' => true,
-        'voucherType' => false,
-        'conditions' => false,
-        'redemptions' => false
+        'voucherType' => false
     ];
 
     /**
@@ -187,11 +178,8 @@ class ResponseReservedSchemaDataInner implements ModelInterface, ArrayAccess, \J
     protected static $attributeMap = [
         'code' => 'code',
         'value' => 'value',
-        'state' => 'state',
         'productId' => 'product_id',
-        'voucherType' => 'voucher_type',
-        'conditions' => 'conditions',
-        'redemptions' => 'redemptions'
+        'voucherType' => 'voucher_type'
     ];
 
     /**
@@ -202,11 +190,8 @@ class ResponseReservedSchemaDataInner implements ModelInterface, ArrayAccess, \J
     protected static $setters = [
         'code' => 'setCode',
         'value' => 'setValue',
-        'state' => 'setState',
         'productId' => 'setProductId',
-        'voucherType' => 'setVoucherType',
-        'conditions' => 'setConditions',
-        'redemptions' => 'setRedemptions'
+        'voucherType' => 'setVoucherType'
     ];
 
     /**
@@ -217,11 +202,8 @@ class ResponseReservedSchemaDataInner implements ModelInterface, ArrayAccess, \J
     protected static $getters = [
         'code' => 'getCode',
         'value' => 'getValue',
-        'state' => 'getState',
         'productId' => 'getProductId',
-        'voucherType' => 'getVoucherType',
-        'conditions' => 'getConditions',
-        'redemptions' => 'getRedemptions'
+        'voucherType' => 'getVoucherType'
     ];
 
     /**
@@ -283,11 +265,8 @@ class ResponseReservedSchemaDataInner implements ModelInterface, ArrayAccess, \J
     {
         $this->setIfExists('code', $data ?? [], null);
         $this->setIfExists('value', $data ?? [], null);
-        $this->setIfExists('state', $data ?? [], null);
         $this->setIfExists('productId', $data ?? [], null);
         $this->setIfExists('voucherType', $data ?? [], null);
-        $this->setIfExists('conditions', $data ?? [], null);
-        $this->setIfExists('redemptions', $data ?? [], null);
     }
 
     /**
@@ -394,40 +373,6 @@ class ResponseReservedSchemaDataInner implements ModelInterface, ArrayAccess, \J
     }
 
     /**
-     * Gets state
-     *
-     * @return int|null
-     */
-    public function getState()
-    {
-        return $this->container['state'];
-    }
-
-    /**
-     * Sets state
-     *
-     * @param int|null $state State of voucher
-     *
-     * @return self
-     */
-    public function setState($state)
-    {
-        if (is_null($state)) {
-            array_push($this->openAPINullablesSetToNull, 'state');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('state', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['state'] = $state;
-
-        return $this;
-    }
-
-    /**
      * Gets productId
      *
      * @return int|null
@@ -484,60 +429,6 @@ class ResponseReservedSchemaDataInner implements ModelInterface, ArrayAccess, \J
             throw new \InvalidArgumentException('non-nullable voucherType cannot be null');
         }
         $this->container['voucherType'] = $voucherType;
-
-        return $this;
-    }
-
-    /**
-     * Gets conditions
-     *
-     * @return \OpenAPI\Client\Model\ResponseCheckMultipleSchemaDataInnerConditions|null
-     */
-    public function getConditions()
-    {
-        return $this->container['conditions'];
-    }
-
-    /**
-     * Sets conditions
-     *
-     * @param \OpenAPI\Client\Model\ResponseCheckMultipleSchemaDataInnerConditions|null $conditions conditions
-     *
-     * @return self
-     */
-    public function setConditions($conditions)
-    {
-        if (is_null($conditions)) {
-            throw new \InvalidArgumentException('non-nullable conditions cannot be null');
-        }
-        $this->container['conditions'] = $conditions;
-
-        return $this;
-    }
-
-    /**
-     * Gets redemptions
-     *
-     * @return \OpenAPI\Client\Model\ResponseReservedSchemaDataInnerRedemptions|null
-     */
-    public function getRedemptions()
-    {
-        return $this->container['redemptions'];
-    }
-
-    /**
-     * Sets redemptions
-     *
-     * @param \OpenAPI\Client\Model\ResponseReservedSchemaDataInnerRedemptions|null $redemptions redemptions
-     *
-     * @return self
-     */
-    public function setRedemptions($redemptions)
-    {
-        if (is_null($redemptions)) {
-            throw new \InvalidArgumentException('non-nullable redemptions cannot be null');
-        }
-        $this->container['redemptions'] = $redemptions;
 
         return $this;
     }

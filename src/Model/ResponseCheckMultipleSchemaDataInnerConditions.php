@@ -1,11 +1,11 @@
 <?php
 /**
- * ResponseReservedSchema
+ * ResponseCheckMultipleSchemaDataInnerConditions
  *
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Dayonevn
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,21 +27,22 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Dayonevn\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Dayonevn\ObjectSerializer;
 
 /**
- * ResponseReservedSchema Class Doc Comment
+ * ResponseCheckMultipleSchemaDataInnerConditions Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @description Include information involve with voucher type is conditional
+ * @package  Dayonevn
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ResponseReservedSchema implements ModelInterface, ArrayAccess, \JsonSerializable
+class ResponseCheckMultipleSchemaDataInnerConditions implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +51,7 @@ class ResponseReservedSchema implements ModelInterface, ArrayAccess, \JsonSerial
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ResponseReservedSchema';
+    protected static $openAPIModelName = 'ResponseCheckMultipleSchema_data_inner_conditions';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,13 +59,11 @@ class ResponseReservedSchema implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'success' => 'bool',
-        'returnCode' => 'string',
-        'messageEn' => 'string',
-        'messageVi' => 'string',
-        'usedStore' => '\OpenAPI\Client\Model\ResponseReservedSchemaUsedStore',
-        'billNumber' => 'string',
-        'data' => '\OpenAPI\Client\Model\ResponseReservedSchemaDataInner[]'
+        'startDate' => 'string',
+        'excludeSpecificDate' => 'string[]',
+        'excludeRecurringDay' => 'string[]',
+        'orderValue' => 'int',
+        'redeemableSkus' => 'string[]'
     ];
 
     /**
@@ -75,13 +74,11 @@ class ResponseReservedSchema implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'success' => null,
-        'returnCode' => null,
-        'messageEn' => null,
-        'messageVi' => null,
-        'usedStore' => null,
-        'billNumber' => null,
-        'data' => null
+        'startDate' => null,
+        'excludeSpecificDate' => null,
+        'excludeRecurringDay' => null,
+        'orderValue' => null,
+        'redeemableSkus' => null
     ];
 
     /**
@@ -90,13 +87,11 @@ class ResponseReservedSchema implements ModelInterface, ArrayAccess, \JsonSerial
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'success' => false,
-        'returnCode' => true,
-        'messageEn' => false,
-        'messageVi' => false,
-        'usedStore' => false,
-        'billNumber' => false,
-        'data' => false
+        'startDate' => false,
+        'excludeSpecificDate' => false,
+        'excludeRecurringDay' => false,
+        'orderValue' => true,
+        'redeemableSkus' => false
     ];
 
     /**
@@ -185,13 +180,11 @@ class ResponseReservedSchema implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $attributeMap = [
-        'success' => 'success',
-        'returnCode' => 'return_code',
-        'messageEn' => 'message_en',
-        'messageVi' => 'message_vi',
-        'usedStore' => 'used_store',
-        'billNumber' => 'bill_number',
-        'data' => 'data'
+        'startDate' => 'start_date',
+        'excludeSpecificDate' => 'exclude_specific_date',
+        'excludeRecurringDay' => 'exclude_recurring_day',
+        'orderValue' => 'order_value',
+        'redeemableSkus' => 'redeemable_skus'
     ];
 
     /**
@@ -200,13 +193,11 @@ class ResponseReservedSchema implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
-        'success' => 'setSuccess',
-        'returnCode' => 'setReturnCode',
-        'messageEn' => 'setMessageEn',
-        'messageVi' => 'setMessageVi',
-        'usedStore' => 'setUsedStore',
-        'billNumber' => 'setBillNumber',
-        'data' => 'setData'
+        'startDate' => 'setStartDate',
+        'excludeSpecificDate' => 'setExcludeSpecificDate',
+        'excludeRecurringDay' => 'setExcludeRecurringDay',
+        'orderValue' => 'setOrderValue',
+        'redeemableSkus' => 'setRedeemableSkus'
     ];
 
     /**
@@ -215,13 +206,11 @@ class ResponseReservedSchema implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $getters = [
-        'success' => 'getSuccess',
-        'returnCode' => 'getReturnCode',
-        'messageEn' => 'getMessageEn',
-        'messageVi' => 'getMessageVi',
-        'usedStore' => 'getUsedStore',
-        'billNumber' => 'getBillNumber',
-        'data' => 'getData'
+        'startDate' => 'getStartDate',
+        'excludeSpecificDate' => 'getExcludeSpecificDate',
+        'excludeRecurringDay' => 'getExcludeRecurringDay',
+        'orderValue' => 'getOrderValue',
+        'redeemableSkus' => 'getRedeemableSkus'
     ];
 
     /**
@@ -281,13 +270,11 @@ class ResponseReservedSchema implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('success', $data ?? [], null);
-        $this->setIfExists('returnCode', $data ?? [], null);
-        $this->setIfExists('messageEn', $data ?? [], null);
-        $this->setIfExists('messageVi', $data ?? [], null);
-        $this->setIfExists('usedStore', $data ?? [], null);
-        $this->setIfExists('billNumber', $data ?? [], null);
-        $this->setIfExists('data', $data ?? [], null);
+        $this->setIfExists('startDate', $data ?? [], null);
+        $this->setIfExists('excludeSpecificDate', $data ?? [], null);
+        $this->setIfExists('excludeRecurringDay', $data ?? [], null);
+        $this->setIfExists('orderValue', $data ?? [], null);
+        $this->setIfExists('redeemableSkus', $data ?? [], null);
     }
 
     /**
@@ -333,197 +320,143 @@ class ResponseReservedSchema implements ModelInterface, ArrayAccess, \JsonSerial
 
 
     /**
-     * Gets success
+     * Gets startDate
      *
-     * @return bool|null
+     * @return string|null
      */
-    public function getSuccess()
+    public function getStartDate()
     {
-        return $this->container['success'];
+        return $this->container['startDate'];
     }
 
     /**
-     * Sets success
+     * Sets startDate
      *
-     * @param bool|null $success success
+     * @param string|null $startDate Promo start date (YYYY-MM-DD)
      *
      * @return self
      */
-    public function setSuccess($success)
+    public function setStartDate($startDate)
     {
-        if (is_null($success)) {
-            throw new \InvalidArgumentException('non-nullable success cannot be null');
+        if (is_null($startDate)) {
+            throw new \InvalidArgumentException('non-nullable startDate cannot be null');
         }
-        $this->container['success'] = $success;
+        $this->container['startDate'] = $startDate;
 
         return $this;
     }
 
     /**
-     * Gets returnCode
+     * Gets excludeSpecificDate
      *
-     * @return string|null
+     * @return string[]|null
      */
-    public function getReturnCode()
+    public function getExcludeSpecificDate()
     {
-        return $this->container['returnCode'];
+        return $this->container['excludeSpecificDate'];
     }
 
     /**
-     * Sets returnCode
+     * Sets excludeSpecificDate
      *
-     * @param string|null $returnCode Result code if failed. In case of successful request: value is null
+     * @param string[]|null $excludeSpecificDate Promo non-effective dates (YYYY-MM-DD)
      *
      * @return self
      */
-    public function setReturnCode($returnCode)
+    public function setExcludeSpecificDate($excludeSpecificDate)
     {
-        if (is_null($returnCode)) {
-            array_push($this->openAPINullablesSetToNull, 'returnCode');
+        if (is_null($excludeSpecificDate)) {
+            throw new \InvalidArgumentException('non-nullable excludeSpecificDate cannot be null');
+        }
+        $this->container['excludeSpecificDate'] = $excludeSpecificDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets excludeRecurringDay
+     *
+     * @return string[]|null
+     */
+    public function getExcludeRecurringDay()
+    {
+        return $this->container['excludeRecurringDay'];
+    }
+
+    /**
+     * Sets excludeRecurringDay
+     *
+     * @param string[]|null $excludeRecurringDay Promo non-effective day of week
+     *
+     * @return self
+     */
+    public function setExcludeRecurringDay($excludeRecurringDay)
+    {
+        if (is_null($excludeRecurringDay)) {
+            throw new \InvalidArgumentException('non-nullable excludeRecurringDay cannot be null');
+        }
+        $this->container['excludeRecurringDay'] = $excludeRecurringDay;
+
+        return $this;
+    }
+
+    /**
+     * Gets orderValue
+     *
+     * @return int|null
+     */
+    public function getOrderValue()
+    {
+        return $this->container['orderValue'];
+    }
+
+    /**
+     * Sets orderValue
+     *
+     * @param int|null $orderValue Order value of voucher type = conditional
+     *
+     * @return self
+     */
+    public function setOrderValue($orderValue)
+    {
+        if (is_null($orderValue)) {
+            array_push($this->openAPINullablesSetToNull, 'orderValue');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('returnCode', $nullablesSetToNull);
+            $index = array_search('orderValue', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['returnCode'] = $returnCode;
+        $this->container['orderValue'] = $orderValue;
 
         return $this;
     }
 
     /**
-     * Gets messageEn
+     * Gets redeemableSkus
      *
-     * @return string|null
+     * @return string[]|null
      */
-    public function getMessageEn()
+    public function getRedeemableSkus()
     {
-        return $this->container['messageEn'];
+        return $this->container['redeemableSkus'];
     }
 
     /**
-     * Sets messageEn
+     * Sets redeemableSkus
      *
-     * @param string|null $messageEn Message notification in English
+     * @param string[]|null $redeemableSkus List of redeemable SKUs of the voucher code. For voucher type = conditional, bill number must contain at least 1 redeemable SKU of the voucher.
      *
      * @return self
      */
-    public function setMessageEn($messageEn)
+    public function setRedeemableSkus($redeemableSkus)
     {
-        if (is_null($messageEn)) {
-            throw new \InvalidArgumentException('non-nullable messageEn cannot be null');
+        if (is_null($redeemableSkus)) {
+            throw new \InvalidArgumentException('non-nullable redeemableSkus cannot be null');
         }
-        $this->container['messageEn'] = $messageEn;
-
-        return $this;
-    }
-
-    /**
-     * Gets messageVi
-     *
-     * @return string|null
-     */
-    public function getMessageVi()
-    {
-        return $this->container['messageVi'];
-    }
-
-    /**
-     * Sets messageVi
-     *
-     * @param string|null $messageVi Message notification in Vietnamese
-     *
-     * @return self
-     */
-    public function setMessageVi($messageVi)
-    {
-        if (is_null($messageVi)) {
-            throw new \InvalidArgumentException('non-nullable messageVi cannot be null');
-        }
-        $this->container['messageVi'] = $messageVi;
-
-        return $this;
-    }
-
-    /**
-     * Gets usedStore
-     *
-     * @return \OpenAPI\Client\Model\ResponseReservedSchemaUsedStore|null
-     */
-    public function getUsedStore()
-    {
-        return $this->container['usedStore'];
-    }
-
-    /**
-     * Sets usedStore
-     *
-     * @param \OpenAPI\Client\Model\ResponseReservedSchemaUsedStore|null $usedStore usedStore
-     *
-     * @return self
-     */
-    public function setUsedStore($usedStore)
-    {
-        if (is_null($usedStore)) {
-            throw new \InvalidArgumentException('non-nullable usedStore cannot be null');
-        }
-        $this->container['usedStore'] = $usedStore;
-
-        return $this;
-    }
-
-    /**
-     * Gets billNumber
-     *
-     * @return string|null
-     */
-    public function getBillNumber()
-    {
-        return $this->container['billNumber'];
-    }
-
-    /**
-     * Sets billNumber
-     *
-     * @param string|null $billNumber Bill number
-     *
-     * @return self
-     */
-    public function setBillNumber($billNumber)
-    {
-        if (is_null($billNumber)) {
-            throw new \InvalidArgumentException('non-nullable billNumber cannot be null');
-        }
-        $this->container['billNumber'] = $billNumber;
-
-        return $this;
-    }
-
-    /**
-     * Gets data
-     *
-     * @return \OpenAPI\Client\Model\ResponseReservedSchemaDataInner[]|null
-     */
-    public function getData()
-    {
-        return $this->container['data'];
-    }
-
-    /**
-     * Sets data
-     *
-     * @param \OpenAPI\Client\Model\ResponseReservedSchemaDataInner[]|null $data Detail items of voucher, if result is failed, response will return the first voucher code which is invalid
-     *
-     * @return self
-     */
-    public function setData($data)
-    {
-        if (is_null($data)) {
-            throw new \InvalidArgumentException('non-nullable data cannot be null');
-        }
-        $this->container['data'] = $data;
+        $this->container['redeemableSkus'] = $redeemableSkus;
 
         return $this;
     }

@@ -1,11 +1,11 @@
 <?php
 /**
- * ResponseMarkUseMultipleSchema
+ * ResponseUnReservedSchema
  *
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Dayonevn
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,21 +27,21 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Dayonevn\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Dayonevn\ObjectSerializer;
 
 /**
- * ResponseMarkUseMultipleSchema Class Doc Comment
+ * ResponseUnReservedSchema Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Dayonevn
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ResponseMarkUseMultipleSchema implements ModelInterface, ArrayAccess, \JsonSerializable
+class ResponseUnReservedSchema implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class ResponseMarkUseMultipleSchema implements ModelInterface, ArrayAccess, \Jso
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ResponseMarkUseMultipleSchema';
+    protected static $openAPIModelName = 'ResponseUnReservedSchema';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -62,9 +62,9 @@ class ResponseMarkUseMultipleSchema implements ModelInterface, ArrayAccess, \Jso
         'returnCode' => 'string',
         'messageEn' => 'string',
         'messageVi' => 'string',
-        'data' => '\OpenAPI\Client\Model\ResponseMarkUseMultipleSchemaDataInner[]',
-        'transactionId' => 'string',
-        'billNumber' => 'string'
+        'usedStore' => '\Dayonevn\Model\ResponseReservedSchemaUsedStore',
+        'billNumber' => 'string',
+        'data' => '\Dayonevn\Model\ResponseUnReservedSchemaDataInner[]'
     ];
 
     /**
@@ -79,9 +79,9 @@ class ResponseMarkUseMultipleSchema implements ModelInterface, ArrayAccess, \Jso
         'returnCode' => null,
         'messageEn' => null,
         'messageVi' => null,
-        'data' => null,
-        'transactionId' => null,
-        'billNumber' => null
+        'usedStore' => null,
+        'billNumber' => null,
+        'data' => null
     ];
 
     /**
@@ -94,9 +94,9 @@ class ResponseMarkUseMultipleSchema implements ModelInterface, ArrayAccess, \Jso
         'returnCode' => true,
         'messageEn' => false,
         'messageVi' => false,
-        'data' => false,
-        'transactionId' => false,
-        'billNumber' => false
+        'usedStore' => false,
+        'billNumber' => false,
+        'data' => false
     ];
 
     /**
@@ -189,9 +189,9 @@ class ResponseMarkUseMultipleSchema implements ModelInterface, ArrayAccess, \Jso
         'returnCode' => 'return_code',
         'messageEn' => 'message_en',
         'messageVi' => 'message_vi',
-        'data' => 'data',
-        'transactionId' => 'transaction_id',
-        'billNumber' => 'bill_number'
+        'usedStore' => 'used_store',
+        'billNumber' => 'bill_number',
+        'data' => 'data'
     ];
 
     /**
@@ -204,9 +204,9 @@ class ResponseMarkUseMultipleSchema implements ModelInterface, ArrayAccess, \Jso
         'returnCode' => 'setReturnCode',
         'messageEn' => 'setMessageEn',
         'messageVi' => 'setMessageVi',
-        'data' => 'setData',
-        'transactionId' => 'setTransactionId',
-        'billNumber' => 'setBillNumber'
+        'usedStore' => 'setUsedStore',
+        'billNumber' => 'setBillNumber',
+        'data' => 'setData'
     ];
 
     /**
@@ -219,9 +219,9 @@ class ResponseMarkUseMultipleSchema implements ModelInterface, ArrayAccess, \Jso
         'returnCode' => 'getReturnCode',
         'messageEn' => 'getMessageEn',
         'messageVi' => 'getMessageVi',
-        'data' => 'getData',
-        'transactionId' => 'getTransactionId',
-        'billNumber' => 'getBillNumber'
+        'usedStore' => 'getUsedStore',
+        'billNumber' => 'getBillNumber',
+        'data' => 'getData'
     ];
 
     /**
@@ -285,9 +285,9 @@ class ResponseMarkUseMultipleSchema implements ModelInterface, ArrayAccess, \Jso
         $this->setIfExists('returnCode', $data ?? [], null);
         $this->setIfExists('messageEn', $data ?? [], null);
         $this->setIfExists('messageVi', $data ?? [], null);
-        $this->setIfExists('data', $data ?? [], null);
-        $this->setIfExists('transactionId', $data ?? [], null);
+        $this->setIfExists('usedStore', $data ?? [], null);
         $this->setIfExists('billNumber', $data ?? [], null);
+        $this->setIfExists('data', $data ?? [], null);
     }
 
     /**
@@ -448,55 +448,28 @@ class ResponseMarkUseMultipleSchema implements ModelInterface, ArrayAccess, \Jso
     }
 
     /**
-     * Gets data
+     * Gets usedStore
      *
-     * @return \OpenAPI\Client\Model\ResponseMarkUseMultipleSchemaDataInner[]|null
+     * @return \Dayonevn\Model\ResponseReservedSchemaUsedStore|null
      */
-    public function getData()
+    public function getUsedStore()
     {
-        return $this->container['data'];
+        return $this->container['usedStore'];
     }
 
     /**
-     * Sets data
+     * Sets usedStore
      *
-     * @param \OpenAPI\Client\Model\ResponseMarkUseMultipleSchemaDataInner[]|null $data Detail items of voucher, if result is failed, response will return the first voucher code which is invalid
+     * @param \Dayonevn\Model\ResponseReservedSchemaUsedStore|null $usedStore usedStore
      *
      * @return self
      */
-    public function setData($data)
+    public function setUsedStore($usedStore)
     {
-        if (is_null($data)) {
-            throw new \InvalidArgumentException('non-nullable data cannot be null');
+        if (is_null($usedStore)) {
+            throw new \InvalidArgumentException('non-nullable usedStore cannot be null');
         }
-        $this->container['data'] = $data;
-
-        return $this;
-    }
-
-    /**
-     * Gets transactionId
-     *
-     * @return string|null
-     */
-    public function getTransactionId()
-    {
-        return $this->container['transactionId'];
-    }
-
-    /**
-     * Sets transactionId
-     *
-     * @param string|null $transactionId Transaction ID (if mark used successfully)
-     *
-     * @return self
-     */
-    public function setTransactionId($transactionId)
-    {
-        if (is_null($transactionId)) {
-            throw new \InvalidArgumentException('non-nullable transactionId cannot be null');
-        }
-        $this->container['transactionId'] = $transactionId;
+        $this->container['usedStore'] = $usedStore;
 
         return $this;
     }
@@ -514,7 +487,7 @@ class ResponseMarkUseMultipleSchema implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets billNumber
      *
-     * @param string|null $billNumber Bill number that vouchers were marked as used for.
+     * @param string|null $billNumber Bill number
      *
      * @return self
      */
@@ -524,6 +497,33 @@ class ResponseMarkUseMultipleSchema implements ModelInterface, ArrayAccess, \Jso
             throw new \InvalidArgumentException('non-nullable billNumber cannot be null');
         }
         $this->container['billNumber'] = $billNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets data
+     *
+     * @return \Dayonevn\Model\ResponseUnReservedSchemaDataInner[]|null
+     */
+    public function getData()
+    {
+        return $this->container['data'];
+    }
+
+    /**
+     * Sets data
+     *
+     * @param \Dayonevn\Model\ResponseUnReservedSchemaDataInner[]|null $data Detail items of voucher, if result is failed, response will return the first voucher code which is invalid
+     *
+     * @return self
+     */
+    public function setData($data)
+    {
+        if (is_null($data)) {
+            throw new \InvalidArgumentException('non-nullable data cannot be null');
+        }
+        $this->container['data'] = $data;
 
         return $this;
     }

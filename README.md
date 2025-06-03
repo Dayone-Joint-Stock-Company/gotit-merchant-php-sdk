@@ -38,11 +38,11 @@ Simple usage looks like:
 
 namespace App\Http\Controllers;
 
-use OpenAPI\Client\Api\GotItMerchantApi;
-use OpenAPI\Client\Model\RequestCheckMultipleBodySchema;
-use OpenAPI\Client\Model\RequestMarkUseMultipleBodySchema;
-use OpenAPI\Client\Model\RequestReservedBodySchema;
-use OpenAPI\Client\Model\RequestUnReservedBodySchema;
+use Dayonevn\Api\GotItMerchantApi;
+use Dayonevn\Model\RequestCheckMultipleBodySchema;
+use Dayonevn\Model\RequestMarkUseMultipleBodySchema;
+use Dayonevn\Model\RequestReservedBodySchema;
+use Dayonevn\Model\RequestUnReservedBodySchema;
 
 class ApiController extends Controller
 {
@@ -65,7 +65,7 @@ class ApiController extends Controller
         $bodySchema->setPin($pin);
         $bodySchema->setCodes($codes);
         $bodySchema->setBillNumber('BILL123456');
-        $skuInfo = new \OpenAPI\Client\Model\RequestCheckMultipleBodySchemaSkusInfoInner();
+        $skuInfo = new \Dayonevn\Model\RequestCheckMultipleBodySchemaSkusInfoInner();
         $skuInfo->setSku($sku);
         $skuInfo->setQuantity(1);
         $skuInfo->setPrice(100000);
@@ -104,7 +104,7 @@ class ApiController extends Controller
             //$response = $api->useMultiple($markUseMultipleBodySchemaV60);
 
             return response()->json($response);
-        } catch (\OpenAPI\Client\ApiException $e) {
+        } catch (\Dayonevn\ApiException $e) {
             return response()->json([
                 'error' => "Error from Merchant API"
             ], 500);

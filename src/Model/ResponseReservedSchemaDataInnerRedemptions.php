@@ -1,11 +1,11 @@
 <?php
 /**
- * RequestReservedBodySchema
+ * ResponseReservedSchemaDataInnerRedemptions
  *
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Dayonevn
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,21 +27,22 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Dayonevn\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Dayonevn\ObjectSerializer;
 
 /**
- * RequestReservedBodySchema Class Doc Comment
+ * ResponseReservedSchemaDataInnerRedemptions Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @description Include information related to the use of the voucher (all types)
+ * @package  Dayonevn
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class RequestReservedBodySchema implements ModelInterface, ArrayAccess, \JsonSerializable
+class ResponseReservedSchemaDataInnerRedemptions implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +51,7 @@ class RequestReservedBodySchema implements ModelInterface, ArrayAccess, \JsonSer
       *
       * @var string
       */
-    protected static $openAPIModelName = 'RequestReservedBodySchema';
+    protected static $openAPIModelName = 'ResponseReservedSchema_data_inner_redemptions';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,12 +59,8 @@ class RequestReservedBodySchema implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pin' => 'string',
-        'codes' => 'string[]',
-        'billNumber' => 'string',
-        'totalBill' => 'int',
-        'billCreatedAt' => 'string',
-        'skusInfo' => '\OpenAPI\Client\Model\RequestCheckMultipleBodySchemaSkusInfoInner[]'
+        'redeemSkuCodes' => '\Dayonevn\Model\ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner[]',
+        'redemptionValue' => 'int'
     ];
 
     /**
@@ -74,12 +71,8 @@ class RequestReservedBodySchema implements ModelInterface, ArrayAccess, \JsonSer
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pin' => null,
-        'codes' => null,
-        'billNumber' => null,
-        'totalBill' => null,
-        'billCreatedAt' => null,
-        'skusInfo' => null
+        'redeemSkuCodes' => null,
+        'redemptionValue' => null
     ];
 
     /**
@@ -88,12 +81,8 @@ class RequestReservedBodySchema implements ModelInterface, ArrayAccess, \JsonSer
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'pin' => false,
-        'codes' => false,
-        'billNumber' => false,
-        'totalBill' => false,
-        'billCreatedAt' => false,
-        'skusInfo' => false
+        'redeemSkuCodes' => false,
+        'redemptionValue' => false
     ];
 
     /**
@@ -182,12 +171,8 @@ class RequestReservedBodySchema implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $attributeMap = [
-        'pin' => 'pin',
-        'codes' => 'codes',
-        'billNumber' => 'bill_number',
-        'totalBill' => 'total_bill',
-        'billCreatedAt' => 'bill_created_at',
-        'skusInfo' => 'skus_info'
+        'redeemSkuCodes' => 'redeem_sku_codes',
+        'redemptionValue' => 'redemption_value'
     ];
 
     /**
@@ -196,12 +181,8 @@ class RequestReservedBodySchema implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-        'pin' => 'setPin',
-        'codes' => 'setCodes',
-        'billNumber' => 'setBillNumber',
-        'totalBill' => 'setTotalBill',
-        'billCreatedAt' => 'setBillCreatedAt',
-        'skusInfo' => 'setSkusInfo'
+        'redeemSkuCodes' => 'setRedeemSkuCodes',
+        'redemptionValue' => 'setRedemptionValue'
     ];
 
     /**
@@ -210,12 +191,8 @@ class RequestReservedBodySchema implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $getters = [
-        'pin' => 'getPin',
-        'codes' => 'getCodes',
-        'billNumber' => 'getBillNumber',
-        'totalBill' => 'getTotalBill',
-        'billCreatedAt' => 'getBillCreatedAt',
-        'skusInfo' => 'getSkusInfo'
+        'redeemSkuCodes' => 'getRedeemSkuCodes',
+        'redemptionValue' => 'getRedemptionValue'
     ];
 
     /**
@@ -275,12 +252,8 @@ class RequestReservedBodySchema implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('pin', $data ?? [], null);
-        $this->setIfExists('codes', $data ?? [], null);
-        $this->setIfExists('billNumber', $data ?? [], null);
-        $this->setIfExists('totalBill', $data ?? [], null);
-        $this->setIfExists('billCreatedAt', $data ?? [], null);
-        $this->setIfExists('skusInfo', $data ?? [], null);
+        $this->setIfExists('redeemSkuCodes', $data ?? [], null);
+        $this->setIfExists('redemptionValue', $data ?? [], null);
     }
 
     /**
@@ -326,163 +299,55 @@ class RequestReservedBodySchema implements ModelInterface, ArrayAccess, \JsonSer
 
 
     /**
-     * Gets pin
+     * Gets redeemSkuCodes
      *
-     * @return string|null
+     * @return \Dayonevn\Model\ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner[]|null
      */
-    public function getPin()
+    public function getRedeemSkuCodes()
     {
-        return $this->container['pin'];
+        return $this->container['redeemSkuCodes'];
     }
 
     /**
-     * Sets pin
+     * Sets redeemSkuCodes
      *
-     * @param string|null $pin Store pin
+     * @param \Dayonevn\Model\ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner[]|null $redeemSkuCodes Contains redeemed SKU information of the voucher (for voucher type is conditional and support sku)
      *
      * @return self
      */
-    public function setPin($pin)
+    public function setRedeemSkuCodes($redeemSkuCodes)
     {
-        if (is_null($pin)) {
-            throw new \InvalidArgumentException('non-nullable pin cannot be null');
+        if (is_null($redeemSkuCodes)) {
+            throw new \InvalidArgumentException('non-nullable redeemSkuCodes cannot be null');
         }
-        $this->container['pin'] = $pin;
+        $this->container['redeemSkuCodes'] = $redeemSkuCodes;
 
         return $this;
     }
 
     /**
-     * Gets codes
-     *
-     * @return string[]|null
-     */
-    public function getCodes()
-    {
-        return $this->container['codes'];
-    }
-
-    /**
-     * Sets codes
-     *
-     * @param string[]|null $codes Array of 10-16 characters Got It voucher codes
-     *
-     * @return self
-     */
-    public function setCodes($codes)
-    {
-        if (is_null($codes)) {
-            throw new \InvalidArgumentException('non-nullable codes cannot be null');
-        }
-        $this->container['codes'] = $codes;
-
-        return $this;
-    }
-
-    /**
-     * Gets billNumber
-     *
-     * @return string|null
-     */
-    public function getBillNumber()
-    {
-        return $this->container['billNumber'];
-    }
-
-    /**
-     * Sets billNumber
-     *
-     * @param string|null $billNumber Bill number will apply vouchers
-     *
-     * @return self
-     */
-    public function setBillNumber($billNumber)
-    {
-        if (is_null($billNumber)) {
-            throw new \InvalidArgumentException('non-nullable billNumber cannot be null');
-        }
-        $this->container['billNumber'] = $billNumber;
-
-        return $this;
-    }
-
-    /**
-     * Gets totalBill
+     * Gets redemptionValue
      *
      * @return int|null
      */
-    public function getTotalBill()
+    public function getRedemptionValue()
     {
-        return $this->container['totalBill'];
+        return $this->container['redemptionValue'];
     }
 
     /**
-     * Sets totalBill
+     * Sets redemptionValue
      *
-     * @param int|null $totalBill Total bill amount
+     * @param int|null $redemptionValue Actual redemption value of voucher type = conditional
      *
      * @return self
      */
-    public function setTotalBill($totalBill)
+    public function setRedemptionValue($redemptionValue)
     {
-        if (is_null($totalBill)) {
-            throw new \InvalidArgumentException('non-nullable totalBill cannot be null');
+        if (is_null($redemptionValue)) {
+            throw new \InvalidArgumentException('non-nullable redemptionValue cannot be null');
         }
-        $this->container['totalBill'] = $totalBill;
-
-        return $this;
-    }
-
-    /**
-     * Gets billCreatedAt
-     *
-     * @return string|null
-     */
-    public function getBillCreatedAt()
-    {
-        return $this->container['billCreatedAt'];
-    }
-
-    /**
-     * Sets billCreatedAt
-     *
-     * @param string|null $billCreatedAt Bill creation time. Format: YYYY-MM-DD HH:MM:SS
-     *
-     * @return self
-     */
-    public function setBillCreatedAt($billCreatedAt)
-    {
-        if (is_null($billCreatedAt)) {
-            throw new \InvalidArgumentException('non-nullable billCreatedAt cannot be null');
-        }
-        $this->container['billCreatedAt'] = $billCreatedAt;
-
-        return $this;
-    }
-
-    /**
-     * Gets skusInfo
-     *
-     * @return \OpenAPI\Client\Model\RequestCheckMultipleBodySchemaSkusInfoInner[]|null
-     */
-    public function getSkusInfo()
-    {
-        return $this->container['skusInfo'];
-    }
-
-    /**
-     * Sets skusInfo
-     *
-     * @param \OpenAPI\Client\Model\RequestCheckMultipleBodySchemaSkusInfoInner[]|null $skusInfo SKU information in bill_number
-     *
-     * @return self
-     */
-    public function setSkusInfo($skusInfo)
-    {
-        if (is_null($skusInfo)) {
-            throw new \InvalidArgumentException('non-nullable skusInfo cannot be null');
-        }
-        $this->container['skusInfo'] = $skusInfo;
+        $this->container['redemptionValue'] = $redemptionValue;
 
         return $this;
     }

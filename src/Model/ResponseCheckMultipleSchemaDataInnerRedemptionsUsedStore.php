@@ -1,11 +1,11 @@
 <?php
 /**
- * ResponseReservedSchemaDataInnerRedemptions
+ * ResponseCheckMultipleSchemaDataInnerRedemptionsUsedStore
  *
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Dayonevn
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,22 +27,21 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Dayonevn\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Dayonevn\ObjectSerializer;
 
 /**
- * ResponseReservedSchemaDataInnerRedemptions Class Doc Comment
+ * ResponseCheckMultipleSchemaDataInnerRedemptionsUsedStore Class Doc Comment
  *
  * @category Class
- * @description Include information related to the use of the voucher (all types)
- * @package  OpenAPI\Client
+ * @package  Dayonevn
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ResponseReservedSchemaDataInnerRedemptions implements ModelInterface, ArrayAccess, \JsonSerializable
+class ResponseCheckMultipleSchemaDataInnerRedemptionsUsedStore implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +50,7 @@ class ResponseReservedSchemaDataInnerRedemptions implements ModelInterface, Arra
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ResponseReservedSchema_data_inner_redemptions';
+    protected static $openAPIModelName = 'ResponseCheckMultipleSchema_data_inner_redemptions_used_store';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,8 +58,8 @@ class ResponseReservedSchemaDataInnerRedemptions implements ModelInterface, Arra
       * @var string[]
       */
     protected static $openAPITypes = [
-        'redeemSkuCodes' => '\OpenAPI\Client\Model\ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner[]',
-        'redemptionValue' => 'int'
+        'nameVi' => 'string',
+        'nameEn' => 'string'
     ];
 
     /**
@@ -71,8 +70,8 @@ class ResponseReservedSchemaDataInnerRedemptions implements ModelInterface, Arra
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'redeemSkuCodes' => null,
-        'redemptionValue' => null
+        'nameVi' => null,
+        'nameEn' => null
     ];
 
     /**
@@ -81,8 +80,8 @@ class ResponseReservedSchemaDataInnerRedemptions implements ModelInterface, Arra
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'redeemSkuCodes' => false,
-        'redemptionValue' => false
+        'nameVi' => false,
+        'nameEn' => false
     ];
 
     /**
@@ -171,8 +170,8 @@ class ResponseReservedSchemaDataInnerRedemptions implements ModelInterface, Arra
      * @var string[]
      */
     protected static $attributeMap = [
-        'redeemSkuCodes' => 'redeem_sku_codes',
-        'redemptionValue' => 'redemption_value'
+        'nameVi' => 'name_vi',
+        'nameEn' => 'name_en'
     ];
 
     /**
@@ -181,8 +180,8 @@ class ResponseReservedSchemaDataInnerRedemptions implements ModelInterface, Arra
      * @var string[]
      */
     protected static $setters = [
-        'redeemSkuCodes' => 'setRedeemSkuCodes',
-        'redemptionValue' => 'setRedemptionValue'
+        'nameVi' => 'setNameVi',
+        'nameEn' => 'setNameEn'
     ];
 
     /**
@@ -191,8 +190,8 @@ class ResponseReservedSchemaDataInnerRedemptions implements ModelInterface, Arra
      * @var string[]
      */
     protected static $getters = [
-        'redeemSkuCodes' => 'getRedeemSkuCodes',
-        'redemptionValue' => 'getRedemptionValue'
+        'nameVi' => 'getNameVi',
+        'nameEn' => 'getNameEn'
     ];
 
     /**
@@ -252,8 +251,8 @@ class ResponseReservedSchemaDataInnerRedemptions implements ModelInterface, Arra
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('redeemSkuCodes', $data ?? [], null);
-        $this->setIfExists('redemptionValue', $data ?? [], null);
+        $this->setIfExists('nameVi', $data ?? [], null);
+        $this->setIfExists('nameEn', $data ?? [], null);
     }
 
     /**
@@ -299,55 +298,55 @@ class ResponseReservedSchemaDataInnerRedemptions implements ModelInterface, Arra
 
 
     /**
-     * Gets redeemSkuCodes
+     * Gets nameVi
      *
-     * @return \OpenAPI\Client\Model\ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner[]|null
+     * @return string|null
      */
-    public function getRedeemSkuCodes()
+    public function getNameVi()
     {
-        return $this->container['redeemSkuCodes'];
+        return $this->container['nameVi'];
     }
 
     /**
-     * Sets redeemSkuCodes
+     * Sets nameVi
      *
-     * @param \OpenAPI\Client\Model\ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner[]|null $redeemSkuCodes Contains redeemed SKU information of the voucher (for voucher type is conditional and support sku)
+     * @param string|null $nameVi Store name in Vietnamese
      *
      * @return self
      */
-    public function setRedeemSkuCodes($redeemSkuCodes)
+    public function setNameVi($nameVi)
     {
-        if (is_null($redeemSkuCodes)) {
-            throw new \InvalidArgumentException('non-nullable redeemSkuCodes cannot be null');
+        if (is_null($nameVi)) {
+            throw new \InvalidArgumentException('non-nullable nameVi cannot be null');
         }
-        $this->container['redeemSkuCodes'] = $redeemSkuCodes;
+        $this->container['nameVi'] = $nameVi;
 
         return $this;
     }
 
     /**
-     * Gets redemptionValue
+     * Gets nameEn
      *
-     * @return int|null
+     * @return string|null
      */
-    public function getRedemptionValue()
+    public function getNameEn()
     {
-        return $this->container['redemptionValue'];
+        return $this->container['nameEn'];
     }
 
     /**
-     * Sets redemptionValue
+     * Sets nameEn
      *
-     * @param int|null $redemptionValue Actual redemption value of voucher type = conditional
+     * @param string|null $nameEn Store name in English
      *
      * @return self
      */
-    public function setRedemptionValue($redemptionValue)
+    public function setNameEn($nameEn)
     {
-        if (is_null($redemptionValue)) {
-            throw new \InvalidArgumentException('non-nullable redemptionValue cannot be null');
+        if (is_null($nameEn)) {
+            throw new \InvalidArgumentException('non-nullable nameEn cannot be null');
         }
-        $this->container['redemptionValue'] = $redemptionValue;
+        $this->container['nameEn'] = $nameEn;
 
         return $this;
     }

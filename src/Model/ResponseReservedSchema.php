@@ -1,11 +1,11 @@
 <?php
 /**
- * ResponseUnReservedSchemaDataInner
+ * ResponseReservedSchema
  *
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Dayonevn
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,21 +27,21 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Dayonevn\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Dayonevn\ObjectSerializer;
 
 /**
- * ResponseUnReservedSchemaDataInner Class Doc Comment
+ * ResponseReservedSchema Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Dayonevn
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ResponseUnReservedSchemaDataInner implements ModelInterface, ArrayAccess, \JsonSerializable
+class ResponseReservedSchema implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class ResponseUnReservedSchemaDataInner implements ModelInterface, ArrayAccess, 
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ResponseUnReservedSchema_data_inner';
+    protected static $openAPIModelName = 'ResponseReservedSchema';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,10 +58,13 @@ class ResponseUnReservedSchemaDataInner implements ModelInterface, ArrayAccess, 
       * @var string[]
       */
     protected static $openAPITypes = [
-        'code' => 'string',
-        'value' => 'int',
-        'productId' => 'int',
-        'voucherType' => 'string'
+        'success' => 'bool',
+        'returnCode' => 'string',
+        'messageEn' => 'string',
+        'messageVi' => 'string',
+        'usedStore' => '\Dayonevn\Model\ResponseReservedSchemaUsedStore',
+        'billNumber' => 'string',
+        'data' => '\Dayonevn\Model\ResponseReservedSchemaDataInner[]'
     ];
 
     /**
@@ -72,10 +75,13 @@ class ResponseUnReservedSchemaDataInner implements ModelInterface, ArrayAccess, 
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'code' => null,
-        'value' => null,
-        'productId' => null,
-        'voucherType' => null
+        'success' => null,
+        'returnCode' => null,
+        'messageEn' => null,
+        'messageVi' => null,
+        'usedStore' => null,
+        'billNumber' => null,
+        'data' => null
     ];
 
     /**
@@ -84,10 +90,13 @@ class ResponseUnReservedSchemaDataInner implements ModelInterface, ArrayAccess, 
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'code' => false,
-        'value' => true,
-        'productId' => true,
-        'voucherType' => false
+        'success' => false,
+        'returnCode' => true,
+        'messageEn' => false,
+        'messageVi' => false,
+        'usedStore' => false,
+        'billNumber' => false,
+        'data' => false
     ];
 
     /**
@@ -176,10 +185,13 @@ class ResponseUnReservedSchemaDataInner implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $attributeMap = [
-        'code' => 'code',
-        'value' => 'value',
-        'productId' => 'product_id',
-        'voucherType' => 'voucher_type'
+        'success' => 'success',
+        'returnCode' => 'return_code',
+        'messageEn' => 'message_en',
+        'messageVi' => 'message_vi',
+        'usedStore' => 'used_store',
+        'billNumber' => 'bill_number',
+        'data' => 'data'
     ];
 
     /**
@@ -188,10 +200,13 @@ class ResponseUnReservedSchemaDataInner implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
-        'code' => 'setCode',
-        'value' => 'setValue',
-        'productId' => 'setProductId',
-        'voucherType' => 'setVoucherType'
+        'success' => 'setSuccess',
+        'returnCode' => 'setReturnCode',
+        'messageEn' => 'setMessageEn',
+        'messageVi' => 'setMessageVi',
+        'usedStore' => 'setUsedStore',
+        'billNumber' => 'setBillNumber',
+        'data' => 'setData'
     ];
 
     /**
@@ -200,10 +215,13 @@ class ResponseUnReservedSchemaDataInner implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $getters = [
-        'code' => 'getCode',
-        'value' => 'getValue',
-        'productId' => 'getProductId',
-        'voucherType' => 'getVoucherType'
+        'success' => 'getSuccess',
+        'returnCode' => 'getReturnCode',
+        'messageEn' => 'getMessageEn',
+        'messageVi' => 'getMessageVi',
+        'usedStore' => 'getUsedStore',
+        'billNumber' => 'getBillNumber',
+        'data' => 'getData'
     ];
 
     /**
@@ -263,10 +281,13 @@ class ResponseUnReservedSchemaDataInner implements ModelInterface, ArrayAccess, 
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('code', $data ?? [], null);
-        $this->setIfExists('value', $data ?? [], null);
-        $this->setIfExists('productId', $data ?? [], null);
-        $this->setIfExists('voucherType', $data ?? [], null);
+        $this->setIfExists('success', $data ?? [], null);
+        $this->setIfExists('returnCode', $data ?? [], null);
+        $this->setIfExists('messageEn', $data ?? [], null);
+        $this->setIfExists('messageVi', $data ?? [], null);
+        $this->setIfExists('usedStore', $data ?? [], null);
+        $this->setIfExists('billNumber', $data ?? [], null);
+        $this->setIfExists('data', $data ?? [], null);
     }
 
     /**
@@ -312,123 +333,197 @@ class ResponseUnReservedSchemaDataInner implements ModelInterface, ArrayAccess, 
 
 
     /**
-     * Gets code
+     * Gets success
      *
-     * @return string|null
+     * @return bool|null
      */
-    public function getCode()
+    public function getSuccess()
     {
-        return $this->container['code'];
+        return $this->container['success'];
     }
 
     /**
-     * Sets code
+     * Sets success
      *
-     * @param string|null $code Voucher code
+     * @param bool|null $success success
      *
      * @return self
      */
-    public function setCode($code)
+    public function setSuccess($success)
     {
-        if (is_null($code)) {
-            throw new \InvalidArgumentException('non-nullable code cannot be null');
+        if (is_null($success)) {
+            throw new \InvalidArgumentException('non-nullable success cannot be null');
         }
-        $this->container['code'] = $code;
+        $this->container['success'] = $success;
 
         return $this;
     }
 
     /**
-     * Gets value
+     * Gets returnCode
      *
-     * @return int|null
+     * @return string|null
      */
-    public function getValue()
+    public function getReturnCode()
     {
-        return $this->container['value'];
+        return $this->container['returnCode'];
     }
 
     /**
-     * Sets value
+     * Sets returnCode
      *
-     * @param int|null $value Value of voucher
+     * @param string|null $returnCode Result code if failed. In case of successful request: value is null
      *
      * @return self
      */
-    public function setValue($value)
+    public function setReturnCode($returnCode)
     {
-        if (is_null($value)) {
-            array_push($this->openAPINullablesSetToNull, 'value');
+        if (is_null($returnCode)) {
+            array_push($this->openAPINullablesSetToNull, 'returnCode');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('value', $nullablesSetToNull);
+            $index = array_search('returnCode', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['value'] = $value;
+        $this->container['returnCode'] = $returnCode;
 
         return $this;
     }
 
     /**
-     * Gets productId
-     *
-     * @return int|null
-     */
-    public function getProductId()
-    {
-        return $this->container['productId'];
-    }
-
-    /**
-     * Sets productId
-     *
-     * @param int|null $productId Product ID
-     *
-     * @return self
-     */
-    public function setProductId($productId)
-    {
-        if (is_null($productId)) {
-            array_push($this->openAPINullablesSetToNull, 'productId');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('productId', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['productId'] = $productId;
-
-        return $this;
-    }
-
-    /**
-     * Gets voucherType
+     * Gets messageEn
      *
      * @return string|null
      */
-    public function getVoucherType()
+    public function getMessageEn()
     {
-        return $this->container['voucherType'];
+        return $this->container['messageEn'];
     }
 
     /**
-     * Sets voucherType
+     * Sets messageEn
      *
-     * @param string|null $voucherType Voucher type, standard or conditional
+     * @param string|null $messageEn Message notification in English
      *
      * @return self
      */
-    public function setVoucherType($voucherType)
+    public function setMessageEn($messageEn)
     {
-        if (is_null($voucherType)) {
-            throw new \InvalidArgumentException('non-nullable voucherType cannot be null');
+        if (is_null($messageEn)) {
+            throw new \InvalidArgumentException('non-nullable messageEn cannot be null');
         }
-        $this->container['voucherType'] = $voucherType;
+        $this->container['messageEn'] = $messageEn;
+
+        return $this;
+    }
+
+    /**
+     * Gets messageVi
+     *
+     * @return string|null
+     */
+    public function getMessageVi()
+    {
+        return $this->container['messageVi'];
+    }
+
+    /**
+     * Sets messageVi
+     *
+     * @param string|null $messageVi Message notification in Vietnamese
+     *
+     * @return self
+     */
+    public function setMessageVi($messageVi)
+    {
+        if (is_null($messageVi)) {
+            throw new \InvalidArgumentException('non-nullable messageVi cannot be null');
+        }
+        $this->container['messageVi'] = $messageVi;
+
+        return $this;
+    }
+
+    /**
+     * Gets usedStore
+     *
+     * @return \Dayonevn\Model\ResponseReservedSchemaUsedStore|null
+     */
+    public function getUsedStore()
+    {
+        return $this->container['usedStore'];
+    }
+
+    /**
+     * Sets usedStore
+     *
+     * @param \Dayonevn\Model\ResponseReservedSchemaUsedStore|null $usedStore usedStore
+     *
+     * @return self
+     */
+    public function setUsedStore($usedStore)
+    {
+        if (is_null($usedStore)) {
+            throw new \InvalidArgumentException('non-nullable usedStore cannot be null');
+        }
+        $this->container['usedStore'] = $usedStore;
+
+        return $this;
+    }
+
+    /**
+     * Gets billNumber
+     *
+     * @return string|null
+     */
+    public function getBillNumber()
+    {
+        return $this->container['billNumber'];
+    }
+
+    /**
+     * Sets billNumber
+     *
+     * @param string|null $billNumber Bill number
+     *
+     * @return self
+     */
+    public function setBillNumber($billNumber)
+    {
+        if (is_null($billNumber)) {
+            throw new \InvalidArgumentException('non-nullable billNumber cannot be null');
+        }
+        $this->container['billNumber'] = $billNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets data
+     *
+     * @return \Dayonevn\Model\ResponseReservedSchemaDataInner[]|null
+     */
+    public function getData()
+    {
+        return $this->container['data'];
+    }
+
+    /**
+     * Sets data
+     *
+     * @param \Dayonevn\Model\ResponseReservedSchemaDataInner[]|null $data Detail items of voucher, if result is failed, response will return the first voucher code which is invalid
+     *
+     * @return self
+     */
+    public function setData($data)
+    {
+        if (is_null($data)) {
+            throw new \InvalidArgumentException('non-nullable data cannot be null');
+        }
+        $this->container['data'] = $data;
 
         return $this;
     }
