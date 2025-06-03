@@ -28,10 +28,14 @@
 
 namespace OpenAPI\Client\Test\Api;
 
-use OpenAPI\Client\Api\GotItMerchantApi;
-use \OpenAPI\Client\Configuration;
-use \OpenAPI\Client\ApiException;
-use \OpenAPI\Client\ObjectSerializer;
+use Dayonevn\MerchantSDK\Api\GotItMerchantApi;
+use Dayonevn\MerchantSDK\Configuration;
+use Dayonevn\MerchantSDK\ApiException;
+use Dayonevn\MerchantSDK\Model\RequestCheckMultipleBodySchema;
+use Dayonevn\MerchantSDK\Model\RequestCheckMultipleBodySchemaSkusInfoInner;
+use Dayonevn\MerchantSDK\Model\RequestMarkUseMultipleBodySchema;
+use Dayonevn\MerchantSDK\Model\RequestReservedBodySchema;
+use Dayonevn\MerchantSDK\Model\RequestUnReservedBodySchema;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -68,7 +72,7 @@ class GotItMerchantApiTest extends TestCase
      */
     public function tearDown(): void
     {
-    }
+    }rebuild-with-new-config
 
     /**
      * Clean up after running all test cases
@@ -87,7 +91,7 @@ class GotItMerchantApiTest extends TestCase
      */
     public function testCheckMultiple($pin, $codes, $billNumber, $skusInfo, $expected)
     {
-        $body = new \OpenAPI\Client\Model\RequestCheckMultipleBodySchema();
+        $body = new RequestCheckMultipleBodySchema();
         $body->setPin($pin);
         $body->setCodes($codes);
         $body->setBillNumber($billNumber);
@@ -131,7 +135,7 @@ class GotItMerchantApiTest extends TestCase
      */
     public function testReserved($pin, $codes, $billNumber, $skusInfo, $expected)
     {
-        $body = new \OpenAPI\Client\Model\RequestReservedBodySchema();
+        $body = new RequestReservedBodySchema();
         $body->setPin($pin);
         $body->setCodes($codes);
         $body->setBillNumber($billNumber);
@@ -174,7 +178,7 @@ class GotItMerchantApiTest extends TestCase
      */
     public function testUnreserved($pin, $codes, $billNumber, $skusInfo, $expected)
     {
-        $body = new \OpenAPI\Client\Model\RequestUnReservedBodySchema();
+        $body = new RequestUnReservedBodySchema();
         $body->setPin($pin);
         $body->setCodes($codes);
         $body->setBillNumber($billNumber);
@@ -211,7 +215,7 @@ class GotItMerchantApiTest extends TestCase
      */
     public function testUseMultiple($pin, $codes, $billNumber, $skusInfo, $expected)
     {
-        $body = new \OpenAPI\Client\Model\RequestMarkUseMultipleBodySchema();
+        $body = new RequestMarkUseMultipleBodySchema();
         $body->setPin($pin);
         $body->setCodes($codes);
         $body->setBillNumber($billNumber);
@@ -247,7 +251,7 @@ class GotItMerchantApiTest extends TestCase
 
     protected function prepareSkusInfo(array $skuInfoRaw)
     {
-        $skuInfo = new \OpenAPI\Client\Model\RequestCheckMultipleBodySchemaSkusInfoInner();
+        $skuInfo = new RequestCheckMultipleBodySchemaSkusInfoInner();
         $skuInfo->setSku($skuInfoRaw['sku']);
         $skuInfo->setQuantity($skuInfoRaw['quantity']);
         $skuInfo->setPrice($skuInfoRaw['price']);
