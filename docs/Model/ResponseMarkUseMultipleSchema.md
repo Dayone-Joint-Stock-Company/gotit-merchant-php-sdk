@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **returnCode** | **string** | Result code if failed. In case of successful request: value is null | [optional]
 **messageEn** | **string** | Message notification in English | [optional]
 **messageVi** | **string** | Message notification in Vietnamese | [optional]
-**data** | [**\Dayonevn\Model\ResponseMarkUseMultipleSchemaDataInner[]**](ResponseMarkUseMultipleSchemaDataInner.md) | Detail items of voucher, if result is failed, response will return the first voucher code which is invalid | [optional]
+**data** | [**\Dayonevn\MerchantSDK\Model\ResponseMarkUseMultipleSchemaDataInner[]**](ResponseMarkUseMultipleSchemaDataInner.md) | Detail items of voucher, if result is failed, response will return the first voucher code which is invalid | [optional]
 **transactionId** | **string** | Transaction ID (if mark used successfully) | [optional]
 **billNumber** | **string** | Bill number that vouchers were marked as used for. | [optional]
 

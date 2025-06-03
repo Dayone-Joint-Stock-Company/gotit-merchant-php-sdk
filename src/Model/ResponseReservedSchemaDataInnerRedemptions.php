@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Dayonevn
+ * @package  Dayonevn\MerchantSDK
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace Dayonevn\Model;
+namespace Dayonevn\MerchantSDK\Model;
 
 use \ArrayAccess;
-use \Dayonevn\ObjectSerializer;
+use \Dayonevn\MerchantSDK\ObjectSerializer;
 
 /**
  * ResponseReservedSchemaDataInnerRedemptions Class Doc Comment
  *
  * @category Class
  * @description Include information related to the use of the voucher (all types)
- * @package  Dayonevn
+ * @package  Dayonevn\MerchantSDK
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,7 +59,7 @@ class ResponseReservedSchemaDataInnerRedemptions implements ModelInterface, Arra
       * @var string[]
       */
     protected static $openAPITypes = [
-        'redeemSkuCodes' => '\Dayonevn\Model\ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner[]',
+        'redeemSkuCodes' => '\Dayonevn\MerchantSDK\Model\ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner[]',
         'redemptionValue' => 'int'
     ];
 
@@ -301,7 +301,7 @@ class ResponseReservedSchemaDataInnerRedemptions implements ModelInterface, Arra
     /**
      * Gets redeemSkuCodes
      *
-     * @return \Dayonevn\Model\ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner[]|null
+     * @return \Dayonevn\MerchantSDK\Model\ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner[]|null
      */
     public function getRedeemSkuCodes()
     {
@@ -311,7 +311,7 @@ class ResponseReservedSchemaDataInnerRedemptions implements ModelInterface, Arra
     /**
      * Sets redeemSkuCodes
      *
-     * @param \Dayonevn\Model\ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner[]|null $redeemSkuCodes Contains redeemed SKU information of the voucher (for voucher type is conditional and support sku)
+     * @param \Dayonevn\MerchantSDK\Model\ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner[]|null $redeemSkuCodes Contains redeemed SKU information of the voucher (for voucher type is conditional and support sku)
      *
      * @return self
      */

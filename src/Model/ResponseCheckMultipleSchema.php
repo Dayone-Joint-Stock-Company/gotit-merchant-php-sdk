@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Dayonevn
+ * @package  Dayonevn\MerchantSDK
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace Dayonevn\Model;
+namespace Dayonevn\MerchantSDK\Model;
 
 use \ArrayAccess;
-use \Dayonevn\ObjectSerializer;
+use \Dayonevn\MerchantSDK\ObjectSerializer;
 
 /**
  * ResponseCheckMultipleSchema Class Doc Comment
  *
  * @category Class
- * @package  Dayonevn
+ * @package  Dayonevn\MerchantSDK
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -62,7 +62,7 @@ class ResponseCheckMultipleSchema implements ModelInterface, ArrayAccess, \JsonS
         'returnCode' => 'string',
         'messageEn' => 'string',
         'messageVi' => 'string',
-        'data' => '\Dayonevn\Model\ResponseCheckMultipleSchemaDataInner[]'
+        'data' => '\Dayonevn\MerchantSDK\Model\ResponseCheckMultipleSchemaDataInner[]'
     ];
 
     /**
@@ -436,7 +436,7 @@ class ResponseCheckMultipleSchema implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets data
      *
-     * @return \Dayonevn\Model\ResponseCheckMultipleSchemaDataInner[]|null
+     * @return \Dayonevn\MerchantSDK\Model\ResponseCheckMultipleSchemaDataInner[]|null
      */
     public function getData()
     {
@@ -446,7 +446,7 @@ class ResponseCheckMultipleSchema implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets data
      *
-     * @param \Dayonevn\Model\ResponseCheckMultipleSchemaDataInner[]|null $data Detail items of voucher, if result is failed, response will return the first voucher code which is invalid
+     * @param \Dayonevn\MerchantSDK\Model\ResponseCheckMultipleSchemaDataInner[]|null $data Detail items of voucher, if result is failed, response will return the first voucher code which is invalid
      *
      * @return self
      */

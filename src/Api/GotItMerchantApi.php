@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Dayonevn
+ * @package  Dayonevn\MerchantSDK
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace Dayonevn\Api;
+namespace Dayonevn\MerchantSDK\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -35,16 +35,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Dayonevn\ApiException;
-use Dayonevn\Configuration;
-use Dayonevn\HeaderSelector;
-use Dayonevn\ObjectSerializer;
+use Dayonevn\MerchantSDK\ApiException;
+use Dayonevn\MerchantSDK\Configuration;
+use Dayonevn\MerchantSDK\HeaderSelector;
+use Dayonevn\MerchantSDK\ObjectSerializer;
 
 /**
  * GotItMerchantApi Class Doc Comment
  *
  * @category Class
- * @package  Dayonevn
+ * @package  Dayonevn\MerchantSDK
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -137,12 +137,12 @@ class GotItMerchantApi
      *
      * Check multiple vouchers are valid or not
      *
-     * @param  \Dayonevn\Model\RequestCheckMultipleBodySchema|null $requestCheckMultipleBodySchema requestCheckMultipleBodySchema (optional)
+     * @param  \Dayonevn\MerchantSDK\Model\RequestCheckMultipleBodySchema|null $requestCheckMultipleBodySchema requestCheckMultipleBodySchema (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['checkMultiple'] to see the possible values for this operation
      *
-     * @throws \Dayonevn\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Dayonevn\MerchantSDK\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Dayonevn\Model\ResponseCheckMultipleSchema
+     * @return \Dayonevn\MerchantSDK\Model\ResponseCheckMultipleSchema
      */
     public function checkMultiple($requestCheckMultipleBodySchema = null, string $contentType = self::contentTypes['checkMultiple'][0])
     {
@@ -155,12 +155,12 @@ class GotItMerchantApi
      *
      * Check multiple vouchers are valid or not
      *
-     * @param  \Dayonevn\Model\RequestCheckMultipleBodySchema|null $requestCheckMultipleBodySchema (optional)
+     * @param  \Dayonevn\MerchantSDK\Model\RequestCheckMultipleBodySchema|null $requestCheckMultipleBodySchema (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['checkMultiple'] to see the possible values for this operation
      *
-     * @throws \Dayonevn\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Dayonevn\MerchantSDK\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Dayonevn\Model\ResponseCheckMultipleSchema, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Dayonevn\MerchantSDK\Model\ResponseCheckMultipleSchema, HTTP status code, HTTP response headers (array of strings)
      */
     public function checkMultipleWithHttpInfo($requestCheckMultipleBodySchema = null, string $contentType = self::contentTypes['checkMultiple'][0])
     {
@@ -191,11 +191,11 @@ class GotItMerchantApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Dayonevn\Model\ResponseCheckMultipleSchema' === '\SplFileObject') {
+                    if ('\Dayonevn\MerchantSDK\Model\ResponseCheckMultipleSchema' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Dayonevn\Model\ResponseCheckMultipleSchema' !== 'string') {
+                        if ('\Dayonevn\MerchantSDK\Model\ResponseCheckMultipleSchema' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -213,7 +213,7 @@ class GotItMerchantApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Dayonevn\Model\ResponseCheckMultipleSchema', []),
+                        ObjectSerializer::deserialize($content, '\Dayonevn\MerchantSDK\Model\ResponseCheckMultipleSchema', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -232,7 +232,7 @@ class GotItMerchantApi
                 );
             }
 
-            $returnType = '\Dayonevn\Model\ResponseCheckMultipleSchema';
+            $returnType = '\Dayonevn\MerchantSDK\Model\ResponseCheckMultipleSchema';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -265,7 +265,7 @@ class GotItMerchantApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Dayonevn\Model\ResponseCheckMultipleSchema',
+                        '\Dayonevn\MerchantSDK\Model\ResponseCheckMultipleSchema',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -280,7 +280,7 @@ class GotItMerchantApi
      *
      * Check multiple vouchers are valid or not
      *
-     * @param  \Dayonevn\Model\RequestCheckMultipleBodySchema|null $requestCheckMultipleBodySchema (optional)
+     * @param  \Dayonevn\MerchantSDK\Model\RequestCheckMultipleBodySchema|null $requestCheckMultipleBodySchema (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['checkMultiple'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -301,7 +301,7 @@ class GotItMerchantApi
      *
      * Check multiple vouchers are valid or not
      *
-     * @param  \Dayonevn\Model\RequestCheckMultipleBodySchema|null $requestCheckMultipleBodySchema (optional)
+     * @param  \Dayonevn\MerchantSDK\Model\RequestCheckMultipleBodySchema|null $requestCheckMultipleBodySchema (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['checkMultiple'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -309,7 +309,7 @@ class GotItMerchantApi
      */
     public function checkMultipleAsyncWithHttpInfo($requestCheckMultipleBodySchema = null, string $contentType = self::contentTypes['checkMultiple'][0])
     {
-        $returnType = '\Dayonevn\Model\ResponseCheckMultipleSchema';
+        $returnType = '\Dayonevn\MerchantSDK\Model\ResponseCheckMultipleSchema';
         $request = $this->checkMultipleRequest($requestCheckMultipleBodySchema, $contentType);
 
         return $this->client
@@ -351,7 +351,7 @@ class GotItMerchantApi
     /**
      * Create request for operation 'checkMultiple'
      *
-     * @param  \Dayonevn\Model\RequestCheckMultipleBodySchema|null $requestCheckMultipleBodySchema (optional)
+     * @param  \Dayonevn\MerchantSDK\Model\RequestCheckMultipleBodySchema|null $requestCheckMultipleBodySchema (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['checkMultiple'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -438,12 +438,12 @@ class GotItMerchantApi
      *
      * Reserved multiple vouchers for a fixed bill number.
      *
-     * @param  \Dayonevn\Model\RequestReservedBodySchema|null $requestReservedBodySchema requestReservedBodySchema (optional)
+     * @param  \Dayonevn\MerchantSDK\Model\RequestReservedBodySchema|null $requestReservedBodySchema requestReservedBodySchema (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['reserved'] to see the possible values for this operation
      *
-     * @throws \Dayonevn\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Dayonevn\MerchantSDK\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Dayonevn\Model\ResponseReservedSchema
+     * @return \Dayonevn\MerchantSDK\Model\ResponseReservedSchema
      */
     public function reserved($requestReservedBodySchema = null, string $contentType = self::contentTypes['reserved'][0])
     {
@@ -456,12 +456,12 @@ class GotItMerchantApi
      *
      * Reserved multiple vouchers for a fixed bill number.
      *
-     * @param  \Dayonevn\Model\RequestReservedBodySchema|null $requestReservedBodySchema (optional)
+     * @param  \Dayonevn\MerchantSDK\Model\RequestReservedBodySchema|null $requestReservedBodySchema (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['reserved'] to see the possible values for this operation
      *
-     * @throws \Dayonevn\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Dayonevn\MerchantSDK\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Dayonevn\Model\ResponseReservedSchema, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Dayonevn\MerchantSDK\Model\ResponseReservedSchema, HTTP status code, HTTP response headers (array of strings)
      */
     public function reservedWithHttpInfo($requestReservedBodySchema = null, string $contentType = self::contentTypes['reserved'][0])
     {
@@ -492,11 +492,11 @@ class GotItMerchantApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Dayonevn\Model\ResponseReservedSchema' === '\SplFileObject') {
+                    if ('\Dayonevn\MerchantSDK\Model\ResponseReservedSchema' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Dayonevn\Model\ResponseReservedSchema' !== 'string') {
+                        if ('\Dayonevn\MerchantSDK\Model\ResponseReservedSchema' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -514,7 +514,7 @@ class GotItMerchantApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Dayonevn\Model\ResponseReservedSchema', []),
+                        ObjectSerializer::deserialize($content, '\Dayonevn\MerchantSDK\Model\ResponseReservedSchema', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -533,7 +533,7 @@ class GotItMerchantApi
                 );
             }
 
-            $returnType = '\Dayonevn\Model\ResponseReservedSchema';
+            $returnType = '\Dayonevn\MerchantSDK\Model\ResponseReservedSchema';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -566,7 +566,7 @@ class GotItMerchantApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Dayonevn\Model\ResponseReservedSchema',
+                        '\Dayonevn\MerchantSDK\Model\ResponseReservedSchema',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -581,7 +581,7 @@ class GotItMerchantApi
      *
      * Reserved multiple vouchers for a fixed bill number.
      *
-     * @param  \Dayonevn\Model\RequestReservedBodySchema|null $requestReservedBodySchema (optional)
+     * @param  \Dayonevn\MerchantSDK\Model\RequestReservedBodySchema|null $requestReservedBodySchema (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['reserved'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -602,7 +602,7 @@ class GotItMerchantApi
      *
      * Reserved multiple vouchers for a fixed bill number.
      *
-     * @param  \Dayonevn\Model\RequestReservedBodySchema|null $requestReservedBodySchema (optional)
+     * @param  \Dayonevn\MerchantSDK\Model\RequestReservedBodySchema|null $requestReservedBodySchema (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['reserved'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -610,7 +610,7 @@ class GotItMerchantApi
      */
     public function reservedAsyncWithHttpInfo($requestReservedBodySchema = null, string $contentType = self::contentTypes['reserved'][0])
     {
-        $returnType = '\Dayonevn\Model\ResponseReservedSchema';
+        $returnType = '\Dayonevn\MerchantSDK\Model\ResponseReservedSchema';
         $request = $this->reservedRequest($requestReservedBodySchema, $contentType);
 
         return $this->client
@@ -652,7 +652,7 @@ class GotItMerchantApi
     /**
      * Create request for operation 'reserved'
      *
-     * @param  \Dayonevn\Model\RequestReservedBodySchema|null $requestReservedBodySchema (optional)
+     * @param  \Dayonevn\MerchantSDK\Model\RequestReservedBodySchema|null $requestReservedBodySchema (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['reserved'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -739,12 +739,12 @@ class GotItMerchantApi
      *
      * Reserved multiple vouchers for a fixed bill number.
      *
-     * @param  \Dayonevn\Model\RequestUnReservedBodySchema|null $requestUnReservedBodySchema requestUnReservedBodySchema (optional)
+     * @param  \Dayonevn\MerchantSDK\Model\RequestUnReservedBodySchema|null $requestUnReservedBodySchema requestUnReservedBodySchema (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['unreserved'] to see the possible values for this operation
      *
-     * @throws \Dayonevn\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Dayonevn\MerchantSDK\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Dayonevn\Model\ResponseUnReservedSchema
+     * @return \Dayonevn\MerchantSDK\Model\ResponseUnReservedSchema
      */
     public function unreserved($requestUnReservedBodySchema = null, string $contentType = self::contentTypes['unreserved'][0])
     {
@@ -757,12 +757,12 @@ class GotItMerchantApi
      *
      * Reserved multiple vouchers for a fixed bill number.
      *
-     * @param  \Dayonevn\Model\RequestUnReservedBodySchema|null $requestUnReservedBodySchema (optional)
+     * @param  \Dayonevn\MerchantSDK\Model\RequestUnReservedBodySchema|null $requestUnReservedBodySchema (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['unreserved'] to see the possible values for this operation
      *
-     * @throws \Dayonevn\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Dayonevn\MerchantSDK\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Dayonevn\Model\ResponseUnReservedSchema, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Dayonevn\MerchantSDK\Model\ResponseUnReservedSchema, HTTP status code, HTTP response headers (array of strings)
      */
     public function unreservedWithHttpInfo($requestUnReservedBodySchema = null, string $contentType = self::contentTypes['unreserved'][0])
     {
@@ -793,11 +793,11 @@ class GotItMerchantApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Dayonevn\Model\ResponseUnReservedSchema' === '\SplFileObject') {
+                    if ('\Dayonevn\MerchantSDK\Model\ResponseUnReservedSchema' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Dayonevn\Model\ResponseUnReservedSchema' !== 'string') {
+                        if ('\Dayonevn\MerchantSDK\Model\ResponseUnReservedSchema' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -815,7 +815,7 @@ class GotItMerchantApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Dayonevn\Model\ResponseUnReservedSchema', []),
+                        ObjectSerializer::deserialize($content, '\Dayonevn\MerchantSDK\Model\ResponseUnReservedSchema', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -834,7 +834,7 @@ class GotItMerchantApi
                 );
             }
 
-            $returnType = '\Dayonevn\Model\ResponseUnReservedSchema';
+            $returnType = '\Dayonevn\MerchantSDK\Model\ResponseUnReservedSchema';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -867,7 +867,7 @@ class GotItMerchantApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Dayonevn\Model\ResponseUnReservedSchema',
+                        '\Dayonevn\MerchantSDK\Model\ResponseUnReservedSchema',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -882,7 +882,7 @@ class GotItMerchantApi
      *
      * Reserved multiple vouchers for a fixed bill number.
      *
-     * @param  \Dayonevn\Model\RequestUnReservedBodySchema|null $requestUnReservedBodySchema (optional)
+     * @param  \Dayonevn\MerchantSDK\Model\RequestUnReservedBodySchema|null $requestUnReservedBodySchema (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['unreserved'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -903,7 +903,7 @@ class GotItMerchantApi
      *
      * Reserved multiple vouchers for a fixed bill number.
      *
-     * @param  \Dayonevn\Model\RequestUnReservedBodySchema|null $requestUnReservedBodySchema (optional)
+     * @param  \Dayonevn\MerchantSDK\Model\RequestUnReservedBodySchema|null $requestUnReservedBodySchema (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['unreserved'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -911,7 +911,7 @@ class GotItMerchantApi
      */
     public function unreservedAsyncWithHttpInfo($requestUnReservedBodySchema = null, string $contentType = self::contentTypes['unreserved'][0])
     {
-        $returnType = '\Dayonevn\Model\ResponseUnReservedSchema';
+        $returnType = '\Dayonevn\MerchantSDK\Model\ResponseUnReservedSchema';
         $request = $this->unreservedRequest($requestUnReservedBodySchema, $contentType);
 
         return $this->client
@@ -953,7 +953,7 @@ class GotItMerchantApi
     /**
      * Create request for operation 'unreserved'
      *
-     * @param  \Dayonevn\Model\RequestUnReservedBodySchema|null $requestUnReservedBodySchema (optional)
+     * @param  \Dayonevn\MerchantSDK\Model\RequestUnReservedBodySchema|null $requestUnReservedBodySchema (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['unreserved'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1040,12 +1040,12 @@ class GotItMerchantApi
      *
      * Reserved multiple vouchers for a fixed bill number.
      *
-     * @param  \Dayonevn\Model\RequestMarkUseMultipleBodySchema|null $requestMarkUseMultipleBodySchema requestMarkUseMultipleBodySchema (optional)
+     * @param  \Dayonevn\MerchantSDK\Model\RequestMarkUseMultipleBodySchema|null $requestMarkUseMultipleBodySchema requestMarkUseMultipleBodySchema (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['useMultiple'] to see the possible values for this operation
      *
-     * @throws \Dayonevn\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Dayonevn\MerchantSDK\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Dayonevn\Model\ResponseMarkUseMultipleSchema
+     * @return \Dayonevn\MerchantSDK\Model\ResponseMarkUseMultipleSchema
      */
     public function useMultiple($requestMarkUseMultipleBodySchema = null, string $contentType = self::contentTypes['useMultiple'][0])
     {
@@ -1058,12 +1058,12 @@ class GotItMerchantApi
      *
      * Reserved multiple vouchers for a fixed bill number.
      *
-     * @param  \Dayonevn\Model\RequestMarkUseMultipleBodySchema|null $requestMarkUseMultipleBodySchema (optional)
+     * @param  \Dayonevn\MerchantSDK\Model\RequestMarkUseMultipleBodySchema|null $requestMarkUseMultipleBodySchema (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['useMultiple'] to see the possible values for this operation
      *
-     * @throws \Dayonevn\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Dayonevn\MerchantSDK\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Dayonevn\Model\ResponseMarkUseMultipleSchema, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Dayonevn\MerchantSDK\Model\ResponseMarkUseMultipleSchema, HTTP status code, HTTP response headers (array of strings)
      */
     public function useMultipleWithHttpInfo($requestMarkUseMultipleBodySchema = null, string $contentType = self::contentTypes['useMultiple'][0])
     {
@@ -1094,11 +1094,11 @@ class GotItMerchantApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Dayonevn\Model\ResponseMarkUseMultipleSchema' === '\SplFileObject') {
+                    if ('\Dayonevn\MerchantSDK\Model\ResponseMarkUseMultipleSchema' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Dayonevn\Model\ResponseMarkUseMultipleSchema' !== 'string') {
+                        if ('\Dayonevn\MerchantSDK\Model\ResponseMarkUseMultipleSchema' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1116,7 +1116,7 @@ class GotItMerchantApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Dayonevn\Model\ResponseMarkUseMultipleSchema', []),
+                        ObjectSerializer::deserialize($content, '\Dayonevn\MerchantSDK\Model\ResponseMarkUseMultipleSchema', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1135,7 +1135,7 @@ class GotItMerchantApi
                 );
             }
 
-            $returnType = '\Dayonevn\Model\ResponseMarkUseMultipleSchema';
+            $returnType = '\Dayonevn\MerchantSDK\Model\ResponseMarkUseMultipleSchema';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1168,7 +1168,7 @@ class GotItMerchantApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Dayonevn\Model\ResponseMarkUseMultipleSchema',
+                        '\Dayonevn\MerchantSDK\Model\ResponseMarkUseMultipleSchema',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1183,7 +1183,7 @@ class GotItMerchantApi
      *
      * Reserved multiple vouchers for a fixed bill number.
      *
-     * @param  \Dayonevn\Model\RequestMarkUseMultipleBodySchema|null $requestMarkUseMultipleBodySchema (optional)
+     * @param  \Dayonevn\MerchantSDK\Model\RequestMarkUseMultipleBodySchema|null $requestMarkUseMultipleBodySchema (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['useMultiple'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1204,7 +1204,7 @@ class GotItMerchantApi
      *
      * Reserved multiple vouchers for a fixed bill number.
      *
-     * @param  \Dayonevn\Model\RequestMarkUseMultipleBodySchema|null $requestMarkUseMultipleBodySchema (optional)
+     * @param  \Dayonevn\MerchantSDK\Model\RequestMarkUseMultipleBodySchema|null $requestMarkUseMultipleBodySchema (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['useMultiple'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1212,7 +1212,7 @@ class GotItMerchantApi
      */
     public function useMultipleAsyncWithHttpInfo($requestMarkUseMultipleBodySchema = null, string $contentType = self::contentTypes['useMultiple'][0])
     {
-        $returnType = '\Dayonevn\Model\ResponseMarkUseMultipleSchema';
+        $returnType = '\Dayonevn\MerchantSDK\Model\ResponseMarkUseMultipleSchema';
         $request = $this->useMultipleRequest($requestMarkUseMultipleBodySchema, $contentType);
 
         return $this->client
@@ -1254,7 +1254,7 @@ class GotItMerchantApi
     /**
      * Create request for operation 'useMultiple'
      *
-     * @param  \Dayonevn\Model\RequestMarkUseMultipleBodySchema|null $requestMarkUseMultipleBodySchema (optional)
+     * @param  \Dayonevn\MerchantSDK\Model\RequestMarkUseMultipleBodySchema|null $requestMarkUseMultipleBodySchema (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['useMultiple'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

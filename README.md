@@ -31,18 +31,18 @@ Then run `composer install`
 
 ## Getting Started
 
-Simple usage looks like:
+Please follow the [installation procedure](#installation--usage) and then run the following:
 
 ```php
 <?php
 
 namespace App\Http\Controllers;
 
-use Dayonevn\Api\GotItMerchantApi;
-use Dayonevn\Model\RequestCheckMultipleBodySchema;
-use Dayonevn\Model\RequestMarkUseMultipleBodySchema;
-use Dayonevn\Model\RequestReservedBodySchema;
-use Dayonevn\Model\RequestUnReservedBodySchema;
+use Dayonevn\MerchantSDK\Api\GotItMerchantApi;
+use Dayonevn\MerchantSDK\Model\RequestCheckMultipleBodySchema;
+use Dayonevn\MerchantSDK\Model\RequestMarkUseMultipleBodySchema;
+use Dayonevn\MerchantSDK\Model\RequestReservedBodySchema;
+use Dayonevn\MerchantSDK\Model\RequestUnReservedBodySchema;
 
 class ApiController extends Controller
 {
@@ -65,7 +65,7 @@ class ApiController extends Controller
         $bodySchema->setPin($pin);
         $bodySchema->setCodes($codes);
         $bodySchema->setBillNumber('BILL123456');
-        $skuInfo = new \Dayonevn\Model\RequestCheckMultipleBodySchemaSkusInfoInner();
+        $skuInfo = new \Dayonevn\MerchantSDK\Model\RequestCheckMultipleBodySchemaSkusInfoInner();
         $skuInfo->setSku($sku);
         $skuInfo->setQuantity(1);
         $skuInfo->setPrice(100000);
@@ -103,7 +103,7 @@ class ApiController extends Controller
             //$response = $api->useMultiple($markUseMultipleBodySchema);
 
             return response()->json($response);
-        } catch (\Dayonevn\ApiException $e) {
+        } catch (\Dayonevn\MerchantSDK\ApiException $e) {
             return response()->json([
                 'error' => "Error from Merchant API"
             ], 500);

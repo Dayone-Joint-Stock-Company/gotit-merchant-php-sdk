@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Dayonevn\Model
+ * @package  Dayonevn\MerchantSDK\Model
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,12 +27,12 @@
  * Do not edit the class manually.
  */
 
-namespace Dayonevn\Model;
+namespace Dayonevn\MerchantSDK\Model;
 
 /**
  * Interface abstracting model access.
  *
- * @package Dayonevn\Model
+ * @package Dayonevn\MerchantSDK\Model
  * @author  OpenAPI Generator team
  */
 interface ModelInterface

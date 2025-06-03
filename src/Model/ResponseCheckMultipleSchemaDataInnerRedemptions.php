@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Dayonevn
+ * @package  Dayonevn\MerchantSDK
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace Dayonevn\Model;
+namespace Dayonevn\MerchantSDK\Model;
 
 use \ArrayAccess;
-use \Dayonevn\ObjectSerializer;
+use \Dayonevn\MerchantSDK\ObjectSerializer;
 
 /**
  * ResponseCheckMultipleSchemaDataInnerRedemptions Class Doc Comment
  *
  * @category Class
  * @description Include information related to the use of the voucher (all types)
- * @package  Dayonevn
+ * @package  Dayonevn\MerchantSDK
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,9 +59,9 @@ class ResponseCheckMultipleSchemaDataInnerRedemptions implements ModelInterface,
       * @var string[]
       */
     protected static $openAPITypes = [
-        'redeemSkuCodes' => '\Dayonevn\Model\ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner[]',
+        'redeemSkuCodes' => '\Dayonevn\MerchantSDK\Model\ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner[]',
         'redemptionValue' => 'int',
-        'usedStore' => '\Dayonevn\Model\ResponseCheckMultipleSchemaDataInnerRedemptionsUsedStore',
+        'usedStore' => '\Dayonevn\MerchantSDK\Model\ResponseCheckMultipleSchemaDataInnerRedemptionsUsedStore',
         'usedDate' => 'string',
         'billNumber' => 'string'
     ];
@@ -322,7 +322,7 @@ class ResponseCheckMultipleSchemaDataInnerRedemptions implements ModelInterface,
     /**
      * Gets redeemSkuCodes
      *
-     * @return \Dayonevn\Model\ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner[]|null
+     * @return \Dayonevn\MerchantSDK\Model\ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner[]|null
      */
     public function getRedeemSkuCodes()
     {
@@ -332,7 +332,7 @@ class ResponseCheckMultipleSchemaDataInnerRedemptions implements ModelInterface,
     /**
      * Sets redeemSkuCodes
      *
-     * @param \Dayonevn\Model\ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner[]|null $redeemSkuCodes Contains redeemed SKU information of the voucher (for voucher type is conditional and support sku)
+     * @param \Dayonevn\MerchantSDK\Model\ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner[]|null $redeemSkuCodes Contains redeemed SKU information of the voucher (for voucher type is conditional and support sku)
      *
      * @return self
      */
@@ -376,7 +376,7 @@ class ResponseCheckMultipleSchemaDataInnerRedemptions implements ModelInterface,
     /**
      * Gets usedStore
      *
-     * @return \Dayonevn\Model\ResponseCheckMultipleSchemaDataInnerRedemptionsUsedStore|null
+     * @return \Dayonevn\MerchantSDK\Model\ResponseCheckMultipleSchemaDataInnerRedemptionsUsedStore|null
      */
     public function getUsedStore()
     {
@@ -386,7 +386,7 @@ class ResponseCheckMultipleSchemaDataInnerRedemptions implements ModelInterface,
     /**
      * Sets usedStore
      *
-     * @param \Dayonevn\Model\ResponseCheckMultipleSchemaDataInnerRedemptionsUsedStore|null $usedStore usedStore
+     * @param \Dayonevn\MerchantSDK\Model\ResponseCheckMultipleSchemaDataInnerRedemptionsUsedStore|null $usedStore usedStore
      *
      * @return self
      */

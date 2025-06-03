@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Dayonevn
+ * @package  Dayonevn\MerchantSDK
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace Dayonevn\Model;
+namespace Dayonevn\MerchantSDK\Model;
 
 use \ArrayAccess;
-use \Dayonevn\ObjectSerializer;
+use \Dayonevn\MerchantSDK\ObjectSerializer;
 
 /**
  * ResponseMarkUseMultipleSchema Class Doc Comment
  *
  * @category Class
- * @package  Dayonevn
+ * @package  Dayonevn\MerchantSDK
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -62,7 +62,7 @@ class ResponseMarkUseMultipleSchema implements ModelInterface, ArrayAccess, \Jso
         'returnCode' => 'string',
         'messageEn' => 'string',
         'messageVi' => 'string',
-        'data' => '\Dayonevn\Model\ResponseMarkUseMultipleSchemaDataInner[]',
+        'data' => '\Dayonevn\MerchantSDK\Model\ResponseMarkUseMultipleSchemaDataInner[]',
         'transactionId' => 'string',
         'billNumber' => 'string'
     ];
@@ -450,7 +450,7 @@ class ResponseMarkUseMultipleSchema implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets data
      *
-     * @return \Dayonevn\Model\ResponseMarkUseMultipleSchemaDataInner[]|null
+     * @return \Dayonevn\MerchantSDK\Model\ResponseMarkUseMultipleSchemaDataInner[]|null
      */
     public function getData()
     {
@@ -460,7 +460,7 @@ class ResponseMarkUseMultipleSchema implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets data
      *
-     * @param \Dayonevn\Model\ResponseMarkUseMultipleSchemaDataInner[]|null $data Detail items of voucher, if result is failed, response will return the first voucher code which is invalid
+     * @param \Dayonevn\MerchantSDK\Model\ResponseMarkUseMultipleSchemaDataInner[]|null $data Detail items of voucher, if result is failed, response will return the first voucher code which is invalid
      *
      * @return self
      */

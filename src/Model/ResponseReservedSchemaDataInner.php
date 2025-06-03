@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Dayonevn
+ * @package  Dayonevn\MerchantSDK
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace Dayonevn\Model;
+namespace Dayonevn\MerchantSDK\Model;
 
 use \ArrayAccess;
-use \Dayonevn\ObjectSerializer;
+use \Dayonevn\MerchantSDK\ObjectSerializer;
 
 /**
  * ResponseReservedSchemaDataInner Class Doc Comment
  *
  * @category Class
- * @package  Dayonevn
+ * @package  Dayonevn\MerchantSDK
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -63,8 +63,8 @@ class ResponseReservedSchemaDataInner implements ModelInterface, ArrayAccess, \J
         'state' => 'int',
         'productId' => 'int',
         'voucherType' => 'string',
-        'conditions' => '\Dayonevn\Model\ResponseCheckMultipleSchemaDataInnerConditions',
-        'redemptions' => '\Dayonevn\Model\ResponseReservedSchemaDataInnerRedemptions'
+        'conditions' => '\Dayonevn\MerchantSDK\Model\ResponseCheckMultipleSchemaDataInnerConditions',
+        'redemptions' => '\Dayonevn\MerchantSDK\Model\ResponseReservedSchemaDataInnerRedemptions'
     ];
 
     /**
@@ -491,7 +491,7 @@ class ResponseReservedSchemaDataInner implements ModelInterface, ArrayAccess, \J
     /**
      * Gets conditions
      *
-     * @return \Dayonevn\Model\ResponseCheckMultipleSchemaDataInnerConditions|null
+     * @return \Dayonevn\MerchantSDK\Model\ResponseCheckMultipleSchemaDataInnerConditions|null
      */
     public function getConditions()
     {
@@ -501,7 +501,7 @@ class ResponseReservedSchemaDataInner implements ModelInterface, ArrayAccess, \J
     /**
      * Sets conditions
      *
-     * @param \Dayonevn\Model\ResponseCheckMultipleSchemaDataInnerConditions|null $conditions conditions
+     * @param \Dayonevn\MerchantSDK\Model\ResponseCheckMultipleSchemaDataInnerConditions|null $conditions conditions
      *
      * @return self
      */
@@ -518,7 +518,7 @@ class ResponseReservedSchemaDataInner implements ModelInterface, ArrayAccess, \J
     /**
      * Gets redemptions
      *
-     * @return \Dayonevn\Model\ResponseReservedSchemaDataInnerRedemptions|null
+     * @return \Dayonevn\MerchantSDK\Model\ResponseReservedSchemaDataInnerRedemptions|null
      */
     public function getRedemptions()
     {
@@ -528,7 +528,7 @@ class ResponseReservedSchemaDataInner implements ModelInterface, ArrayAccess, \J
     /**
      * Sets redemptions
      *
-     * @param \Dayonevn\Model\ResponseReservedSchemaDataInnerRedemptions|null $redemptions redemptions
+     * @param \Dayonevn\MerchantSDK\Model\ResponseReservedSchemaDataInnerRedemptions|null $redemptions redemptions
      *
      * @return self
      */

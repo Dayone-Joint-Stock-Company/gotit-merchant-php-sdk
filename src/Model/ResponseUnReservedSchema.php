@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Dayonevn
+ * @package  Dayonevn\MerchantSDK
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace Dayonevn\Model;
+namespace Dayonevn\MerchantSDK\Model;
 
 use \ArrayAccess;
-use \Dayonevn\ObjectSerializer;
+use \Dayonevn\MerchantSDK\ObjectSerializer;
 
 /**
  * ResponseUnReservedSchema Class Doc Comment
  *
  * @category Class
- * @package  Dayonevn
+ * @package  Dayonevn\MerchantSDK
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -62,9 +62,9 @@ class ResponseUnReservedSchema implements ModelInterface, ArrayAccess, \JsonSeri
         'returnCode' => 'string',
         'messageEn' => 'string',
         'messageVi' => 'string',
-        'usedStore' => '\Dayonevn\Model\ResponseReservedSchemaUsedStore',
+        'usedStore' => '\Dayonevn\MerchantSDK\Model\ResponseReservedSchemaUsedStore',
         'billNumber' => 'string',
-        'data' => '\Dayonevn\Model\ResponseUnReservedSchemaDataInner[]'
+        'data' => '\Dayonevn\MerchantSDK\Model\ResponseUnReservedSchemaDataInner[]'
     ];
 
     /**
@@ -450,7 +450,7 @@ class ResponseUnReservedSchema implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets usedStore
      *
-     * @return \Dayonevn\Model\ResponseReservedSchemaUsedStore|null
+     * @return \Dayonevn\MerchantSDK\Model\ResponseReservedSchemaUsedStore|null
      */
     public function getUsedStore()
     {
@@ -460,7 +460,7 @@ class ResponseUnReservedSchema implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets usedStore
      *
-     * @param \Dayonevn\Model\ResponseReservedSchemaUsedStore|null $usedStore usedStore
+     * @param \Dayonevn\MerchantSDK\Model\ResponseReservedSchemaUsedStore|null $usedStore usedStore
      *
      * @return self
      */
@@ -504,7 +504,7 @@ class ResponseUnReservedSchema implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets data
      *
-     * @return \Dayonevn\Model\ResponseUnReservedSchemaDataInner[]|null
+     * @return \Dayonevn\MerchantSDK\Model\ResponseUnReservedSchemaDataInner[]|null
      */
     public function getData()
     {
@@ -514,7 +514,7 @@ class ResponseUnReservedSchema implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets data
      *
-     * @param \Dayonevn\Model\ResponseUnReservedSchemaDataInner[]|null $data Detail items of voucher, if result is failed, response will return the first voucher code which is invalid
+     * @param \Dayonevn\MerchantSDK\Model\ResponseUnReservedSchemaDataInner[]|null $data Detail items of voucher, if result is failed, response will return the first voucher code which is invalid
      *
      * @return self
      */

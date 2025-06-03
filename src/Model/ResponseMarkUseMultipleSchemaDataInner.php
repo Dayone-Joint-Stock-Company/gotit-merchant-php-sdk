@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Dayonevn
+ * @package  Dayonevn\MerchantSDK
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace Dayonevn\Model;
+namespace Dayonevn\MerchantSDK\Model;
 
 use \ArrayAccess;
-use \Dayonevn\ObjectSerializer;
+use \Dayonevn\MerchantSDK\ObjectSerializer;
 
 /**
  * ResponseMarkUseMultipleSchemaDataInner Class Doc Comment
  *
  * @category Class
- * @package  Dayonevn
+ * @package  Dayonevn\MerchantSDK
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -63,8 +63,8 @@ class ResponseMarkUseMultipleSchemaDataInner implements ModelInterface, ArrayAcc
         'productId' => 'int',
         'state' => 'int',
         'voucherType' => 'string',
-        'conditions' => '\Dayonevn\Model\ResponseCheckMultipleSchemaDataInnerConditions',
-        'redemptions' => '\Dayonevn\Model\ResponseMarkUseMultipleSchemaDataInnerRedemptions'
+        'conditions' => '\Dayonevn\MerchantSDK\Model\ResponseCheckMultipleSchemaDataInnerConditions',
+        'redemptions' => '\Dayonevn\MerchantSDK\Model\ResponseMarkUseMultipleSchemaDataInnerRedemptions'
     ];
 
     /**
@@ -491,7 +491,7 @@ class ResponseMarkUseMultipleSchemaDataInner implements ModelInterface, ArrayAcc
     /**
      * Gets conditions
      *
-     * @return \Dayonevn\Model\ResponseCheckMultipleSchemaDataInnerConditions|null
+     * @return \Dayonevn\MerchantSDK\Model\ResponseCheckMultipleSchemaDataInnerConditions|null
      */
     public function getConditions()
     {
@@ -501,7 +501,7 @@ class ResponseMarkUseMultipleSchemaDataInner implements ModelInterface, ArrayAcc
     /**
      * Sets conditions
      *
-     * @param \Dayonevn\Model\ResponseCheckMultipleSchemaDataInnerConditions|null $conditions conditions
+     * @param \Dayonevn\MerchantSDK\Model\ResponseCheckMultipleSchemaDataInnerConditions|null $conditions conditions
      *
      * @return self
      */
@@ -518,7 +518,7 @@ class ResponseMarkUseMultipleSchemaDataInner implements ModelInterface, ArrayAcc
     /**
      * Gets redemptions
      *
-     * @return \Dayonevn\Model\ResponseMarkUseMultipleSchemaDataInnerRedemptions|null
+     * @return \Dayonevn\MerchantSDK\Model\ResponseMarkUseMultipleSchemaDataInnerRedemptions|null
      */
     public function getRedemptions()
     {
@@ -528,7 +528,7 @@ class ResponseMarkUseMultipleSchemaDataInner implements ModelInterface, ArrayAcc
     /**
      * Sets redemptions
      *
-     * @param \Dayonevn\Model\ResponseMarkUseMultipleSchemaDataInnerRedemptions|null $redemptions redemptions
+     * @param \Dayonevn\MerchantSDK\Model\ResponseMarkUseMultipleSchemaDataInnerRedemptions|null $redemptions redemptions
      *
      * @return self
      */

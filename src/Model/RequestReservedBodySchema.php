@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Dayonevn
+ * @package  Dayonevn\MerchantSDK
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace Dayonevn\Model;
+namespace Dayonevn\MerchantSDK\Model;
 
 use \ArrayAccess;
-use \Dayonevn\ObjectSerializer;
+use \Dayonevn\MerchantSDK\ObjectSerializer;
 
 /**
  * RequestReservedBodySchema Class Doc Comment
  *
  * @category Class
- * @package  Dayonevn
+ * @package  Dayonevn\MerchantSDK
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -63,7 +63,7 @@ class RequestReservedBodySchema implements ModelInterface, ArrayAccess, \JsonSer
         'billNumber' => 'string',
         'totalBill' => 'int',
         'billCreatedAt' => 'string',
-        'skusInfo' => '\Dayonevn\Model\RequestCheckMultipleBodySchemaSkusInfoInner[]'
+        'skusInfo' => '\Dayonevn\MerchantSDK\Model\RequestCheckMultipleBodySchemaSkusInfoInner[]'
     ];
 
     /**
@@ -463,7 +463,7 @@ class RequestReservedBodySchema implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets skusInfo
      *
-     * @return \Dayonevn\Model\RequestCheckMultipleBodySchemaSkusInfoInner[]|null
+     * @return \Dayonevn\MerchantSDK\Model\RequestCheckMultipleBodySchemaSkusInfoInner[]|null
      */
     public function getSkusInfo()
     {
@@ -473,7 +473,7 @@ class RequestReservedBodySchema implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets skusInfo
      *
-     * @param \Dayonevn\Model\RequestCheckMultipleBodySchemaSkusInfoInner[]|null $skusInfo SKU information in bill_number
+     * @param \Dayonevn\MerchantSDK\Model\RequestCheckMultipleBodySchemaSkusInfoInner[]|null $skusInfo SKU information in bill_number
      *
      * @return self
      */
