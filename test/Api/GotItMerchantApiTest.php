@@ -72,7 +72,7 @@ class GotItMerchantApiTest extends TestCase
      */
     public function tearDown(): void
     {
-    }rebuild-with-new-config
+    }
 
     /**
      * Clean up after running all test cases
