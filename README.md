@@ -81,7 +81,6 @@ class ApiController extends Controller
         $unReservedBodySchema->setPin($pin);
         $unReservedBodySchema->setCodes($codes);
         $unReservedBodySchema->setBillNumber('BILL123456');
-        $unReservedBodySchema->setSkusInfo([$skuInfo]);
 
         // Mark used body
         $markUseMultipleBodySchema->setPin($pin);
@@ -92,16 +91,16 @@ class ApiController extends Controller
         // Step 2: Call the API
         try {
             // Check codes
-            //$response = $api->checkMultiple($bodySchemaV60);
+            $response = $api->checkMultiple($bodySchema);
 
             // Reserved codes
-            //$response = $api->reserved($reservedBodySchemaV60);
+            //$response = $api->reserved($reservedBodySchema);
 
             // UnReserved codes
-            //$response = $api->unreserved($unReservedBodySchemaV60);
+            //$response = $api->unreserved($unReservedBodySchema);
 
             // Mark use multiple
-            //$response = $api->useMultiple($markUseMultipleBodySchemaV60);
+            //$response = $api->useMultiple($markUseMultipleBodySchema);
 
             return response()->json($response);
         } catch (\Dayonevn\ApiException $e) {
