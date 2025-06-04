@@ -1,11 +1,11 @@
 <?php
 /**
- * RequestReservedBodySchema
+ * ResponseReservedSchemaDataInner
  *
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Dayonevn\MerchantSDK
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,21 +27,21 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Dayonevn\MerchantSDK\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Dayonevn\MerchantSDK\ObjectSerializer;
 
 /**
- * RequestReservedBodySchema Class Doc Comment
+ * ResponseReservedSchemaDataInner Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Dayonevn\MerchantSDK
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class RequestReservedBodySchema implements ModelInterface, ArrayAccess, \JsonSerializable
+class ResponseReservedSchemaDataInner implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class RequestReservedBodySchema implements ModelInterface, ArrayAccess, \JsonSer
       *
       * @var string
       */
-    protected static $openAPIModelName = 'RequestReservedBodySchema';
+    protected static $openAPIModelName = 'ResponseReservedSchema_data_inner';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,12 +58,13 @@ class RequestReservedBodySchema implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pin' => 'string',
-        'codes' => 'string[]',
-        'billNumber' => 'string',
-        'totalBill' => 'int',
-        'billCreatedAt' => 'string',
-        'skusInfo' => '\OpenAPI\Client\Model\RequestCheckMultipleBodySchemaSkusInfoInner[]'
+        'code' => 'string',
+        'value' => 'int',
+        'state' => 'int',
+        'productId' => 'int',
+        'voucherType' => 'string',
+        'conditions' => '\Dayonevn\MerchantSDK\Model\ResponseCheckMultipleSchemaDataInnerConditions',
+        'redemptions' => '\Dayonevn\MerchantSDK\Model\ResponseReservedSchemaDataInnerRedemptions'
     ];
 
     /**
@@ -74,12 +75,13 @@ class RequestReservedBodySchema implements ModelInterface, ArrayAccess, \JsonSer
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pin' => null,
-        'codes' => null,
-        'billNumber' => null,
-        'totalBill' => null,
-        'billCreatedAt' => null,
-        'skusInfo' => null
+        'code' => null,
+        'value' => null,
+        'state' => null,
+        'productId' => null,
+        'voucherType' => null,
+        'conditions' => null,
+        'redemptions' => null
     ];
 
     /**
@@ -88,12 +90,13 @@ class RequestReservedBodySchema implements ModelInterface, ArrayAccess, \JsonSer
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'pin' => false,
-        'codes' => false,
-        'billNumber' => false,
-        'totalBill' => false,
-        'billCreatedAt' => false,
-        'skusInfo' => false
+        'code' => false,
+        'value' => true,
+        'state' => true,
+        'productId' => true,
+        'voucherType' => false,
+        'conditions' => false,
+        'redemptions' => false
     ];
 
     /**
@@ -182,12 +185,13 @@ class RequestReservedBodySchema implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $attributeMap = [
-        'pin' => 'pin',
-        'codes' => 'codes',
-        'billNumber' => 'bill_number',
-        'totalBill' => 'total_bill',
-        'billCreatedAt' => 'bill_created_at',
-        'skusInfo' => 'skus_info'
+        'code' => 'code',
+        'value' => 'value',
+        'state' => 'state',
+        'productId' => 'product_id',
+        'voucherType' => 'voucher_type',
+        'conditions' => 'conditions',
+        'redemptions' => 'redemptions'
     ];
 
     /**
@@ -196,12 +200,13 @@ class RequestReservedBodySchema implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-        'pin' => 'setPin',
-        'codes' => 'setCodes',
-        'billNumber' => 'setBillNumber',
-        'totalBill' => 'setTotalBill',
-        'billCreatedAt' => 'setBillCreatedAt',
-        'skusInfo' => 'setSkusInfo'
+        'code' => 'setCode',
+        'value' => 'setValue',
+        'state' => 'setState',
+        'productId' => 'setProductId',
+        'voucherType' => 'setVoucherType',
+        'conditions' => 'setConditions',
+        'redemptions' => 'setRedemptions'
     ];
 
     /**
@@ -210,12 +215,13 @@ class RequestReservedBodySchema implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $getters = [
-        'pin' => 'getPin',
-        'codes' => 'getCodes',
-        'billNumber' => 'getBillNumber',
-        'totalBill' => 'getTotalBill',
-        'billCreatedAt' => 'getBillCreatedAt',
-        'skusInfo' => 'getSkusInfo'
+        'code' => 'getCode',
+        'value' => 'getValue',
+        'state' => 'getState',
+        'productId' => 'getProductId',
+        'voucherType' => 'getVoucherType',
+        'conditions' => 'getConditions',
+        'redemptions' => 'getRedemptions'
     ];
 
     /**
@@ -275,12 +281,13 @@ class RequestReservedBodySchema implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('pin', $data ?? [], null);
-        $this->setIfExists('codes', $data ?? [], null);
-        $this->setIfExists('billNumber', $data ?? [], null);
-        $this->setIfExists('totalBill', $data ?? [], null);
-        $this->setIfExists('billCreatedAt', $data ?? [], null);
-        $this->setIfExists('skusInfo', $data ?? [], null);
+        $this->setIfExists('code', $data ?? [], null);
+        $this->setIfExists('value', $data ?? [], null);
+        $this->setIfExists('state', $data ?? [], null);
+        $this->setIfExists('productId', $data ?? [], null);
+        $this->setIfExists('voucherType', $data ?? [], null);
+        $this->setIfExists('conditions', $data ?? [], null);
+        $this->setIfExists('redemptions', $data ?? [], null);
     }
 
     /**
@@ -326,163 +333,211 @@ class RequestReservedBodySchema implements ModelInterface, ArrayAccess, \JsonSer
 
 
     /**
-     * Gets pin
+     * Gets code
      *
      * @return string|null
      */
-    public function getPin()
+    public function getCode()
     {
-        return $this->container['pin'];
+        return $this->container['code'];
     }
 
     /**
-     * Sets pin
+     * Sets code
      *
-     * @param string|null $pin Store pin
+     * @param string|null $code Voucher code
      *
      * @return self
      */
-    public function setPin($pin)
+    public function setCode($code)
     {
-        if (is_null($pin)) {
-            throw new \InvalidArgumentException('non-nullable pin cannot be null');
+        if (is_null($code)) {
+            throw new \InvalidArgumentException('non-nullable code cannot be null');
         }
-        $this->container['pin'] = $pin;
+        $this->container['code'] = $code;
 
         return $this;
     }
 
     /**
-     * Gets codes
-     *
-     * @return string[]|null
-     */
-    public function getCodes()
-    {
-        return $this->container['codes'];
-    }
-
-    /**
-     * Sets codes
-     *
-     * @param string[]|null $codes Array of 10-16 characters Got It voucher codes
-     *
-     * @return self
-     */
-    public function setCodes($codes)
-    {
-        if (is_null($codes)) {
-            throw new \InvalidArgumentException('non-nullable codes cannot be null');
-        }
-        $this->container['codes'] = $codes;
-
-        return $this;
-    }
-
-    /**
-     * Gets billNumber
-     *
-     * @return string|null
-     */
-    public function getBillNumber()
-    {
-        return $this->container['billNumber'];
-    }
-
-    /**
-     * Sets billNumber
-     *
-     * @param string|null $billNumber Bill number will apply vouchers
-     *
-     * @return self
-     */
-    public function setBillNumber($billNumber)
-    {
-        if (is_null($billNumber)) {
-            throw new \InvalidArgumentException('non-nullable billNumber cannot be null');
-        }
-        $this->container['billNumber'] = $billNumber;
-
-        return $this;
-    }
-
-    /**
-     * Gets totalBill
+     * Gets value
      *
      * @return int|null
      */
-    public function getTotalBill()
+    public function getValue()
     {
-        return $this->container['totalBill'];
+        return $this->container['value'];
     }
 
     /**
-     * Sets totalBill
+     * Sets value
      *
-     * @param int|null $totalBill Total bill amount
+     * @param int|null $value Value of voucher
      *
      * @return self
      */
-    public function setTotalBill($totalBill)
+    public function setValue($value)
     {
-        if (is_null($totalBill)) {
-            throw new \InvalidArgumentException('non-nullable totalBill cannot be null');
+        if (is_null($value)) {
+            array_push($this->openAPINullablesSetToNull, 'value');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('value', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        $this->container['totalBill'] = $totalBill;
+        $this->container['value'] = $value;
 
         return $this;
     }
 
     /**
-     * Gets billCreatedAt
+     * Gets state
+     *
+     * @return int|null
+     */
+    public function getState()
+    {
+        return $this->container['state'];
+    }
+
+    /**
+     * Sets state
+     *
+     * @param int|null $state State of voucher
+     *
+     * @return self
+     */
+    public function setState($state)
+    {
+        if (is_null($state)) {
+            array_push($this->openAPINullablesSetToNull, 'state');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('state', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['state'] = $state;
+
+        return $this;
+    }
+
+    /**
+     * Gets productId
+     *
+     * @return int|null
+     */
+    public function getProductId()
+    {
+        return $this->container['productId'];
+    }
+
+    /**
+     * Sets productId
+     *
+     * @param int|null $productId Product ID
+     *
+     * @return self
+     */
+    public function setProductId($productId)
+    {
+        if (is_null($productId)) {
+            array_push($this->openAPINullablesSetToNull, 'productId');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('productId', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['productId'] = $productId;
+
+        return $this;
+    }
+
+    /**
+     * Gets voucherType
      *
      * @return string|null
      */
-    public function getBillCreatedAt()
+    public function getVoucherType()
     {
-        return $this->container['billCreatedAt'];
+        return $this->container['voucherType'];
     }
 
     /**
-     * Sets billCreatedAt
+     * Sets voucherType
      *
-     * @param string|null $billCreatedAt Bill creation time. Format: YYYY-MM-DD HH:MM:SS
+     * @param string|null $voucherType Voucher type, standard or conditional
      *
      * @return self
      */
-    public function setBillCreatedAt($billCreatedAt)
+    public function setVoucherType($voucherType)
     {
-        if (is_null($billCreatedAt)) {
-            throw new \InvalidArgumentException('non-nullable billCreatedAt cannot be null');
+        if (is_null($voucherType)) {
+            throw new \InvalidArgumentException('non-nullable voucherType cannot be null');
         }
-        $this->container['billCreatedAt'] = $billCreatedAt;
+        $this->container['voucherType'] = $voucherType;
 
         return $this;
     }
 
     /**
-     * Gets skusInfo
+     * Gets conditions
      *
-     * @return \OpenAPI\Client\Model\RequestCheckMultipleBodySchemaSkusInfoInner[]|null
+     * @return \Dayonevn\MerchantSDK\Model\ResponseCheckMultipleSchemaDataInnerConditions|null
      */
-    public function getSkusInfo()
+    public function getConditions()
     {
-        return $this->container['skusInfo'];
+        return $this->container['conditions'];
     }
 
     /**
-     * Sets skusInfo
+     * Sets conditions
      *
-     * @param \OpenAPI\Client\Model\RequestCheckMultipleBodySchemaSkusInfoInner[]|null $skusInfo SKU information in bill_number
+     * @param \Dayonevn\MerchantSDK\Model\ResponseCheckMultipleSchemaDataInnerConditions|null $conditions conditions
      *
      * @return self
      */
-    public function setSkusInfo($skusInfo)
+    public function setConditions($conditions)
     {
-        if (is_null($skusInfo)) {
-            throw new \InvalidArgumentException('non-nullable skusInfo cannot be null');
+        if (is_null($conditions)) {
+            throw new \InvalidArgumentException('non-nullable conditions cannot be null');
         }
-        $this->container['skusInfo'] = $skusInfo;
+        $this->container['conditions'] = $conditions;
+
+        return $this;
+    }
+
+    /**
+     * Gets redemptions
+     *
+     * @return \Dayonevn\MerchantSDK\Model\ResponseReservedSchemaDataInnerRedemptions|null
+     */
+    public function getRedemptions()
+    {
+        return $this->container['redemptions'];
+    }
+
+    /**
+     * Sets redemptions
+     *
+     * @param \Dayonevn\MerchantSDK\Model\ResponseReservedSchemaDataInnerRedemptions|null $redemptions redemptions
+     *
+     * @return self
+     */
+    public function setRedemptions($redemptions)
+    {
+        if (is_null($redemptions)) {
+            throw new \InvalidArgumentException('non-nullable redemptions cannot be null');
+        }
+        $this->container['redemptions'] = $redemptions;
 
         return $this;
     }

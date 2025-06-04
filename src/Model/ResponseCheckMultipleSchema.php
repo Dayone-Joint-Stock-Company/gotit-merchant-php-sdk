@@ -1,11 +1,11 @@
 <?php
 /**
- * ResponseUnReservedSchema
+ * ResponseCheckMultipleSchema
  *
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Dayonevn\MerchantSDK
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,21 +27,21 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Dayonevn\MerchantSDK\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Dayonevn\MerchantSDK\ObjectSerializer;
 
 /**
- * ResponseUnReservedSchema Class Doc Comment
+ * ResponseCheckMultipleSchema Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Dayonevn\MerchantSDK
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ResponseUnReservedSchema implements ModelInterface, ArrayAccess, \JsonSerializable
+class ResponseCheckMultipleSchema implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class ResponseUnReservedSchema implements ModelInterface, ArrayAccess, \JsonSeri
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ResponseUnReservedSchema';
+    protected static $openAPIModelName = 'ResponseCheckMultipleSchema';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -62,9 +62,7 @@ class ResponseUnReservedSchema implements ModelInterface, ArrayAccess, \JsonSeri
         'returnCode' => 'string',
         'messageEn' => 'string',
         'messageVi' => 'string',
-        'usedStore' => '\OpenAPI\Client\Model\ResponseReservedSchemaUsedStore',
-        'billNumber' => 'string',
-        'data' => '\OpenAPI\Client\Model\ResponseUnReservedSchemaDataInner[]'
+        'data' => '\Dayonevn\MerchantSDK\Model\ResponseCheckMultipleSchemaDataInner[]'
     ];
 
     /**
@@ -79,8 +77,6 @@ class ResponseUnReservedSchema implements ModelInterface, ArrayAccess, \JsonSeri
         'returnCode' => null,
         'messageEn' => null,
         'messageVi' => null,
-        'usedStore' => null,
-        'billNumber' => null,
         'data' => null
     ];
 
@@ -94,8 +90,6 @@ class ResponseUnReservedSchema implements ModelInterface, ArrayAccess, \JsonSeri
         'returnCode' => true,
         'messageEn' => false,
         'messageVi' => false,
-        'usedStore' => false,
-        'billNumber' => false,
         'data' => false
     ];
 
@@ -189,8 +183,6 @@ class ResponseUnReservedSchema implements ModelInterface, ArrayAccess, \JsonSeri
         'returnCode' => 'return_code',
         'messageEn' => 'message_en',
         'messageVi' => 'message_vi',
-        'usedStore' => 'used_store',
-        'billNumber' => 'bill_number',
         'data' => 'data'
     ];
 
@@ -204,8 +196,6 @@ class ResponseUnReservedSchema implements ModelInterface, ArrayAccess, \JsonSeri
         'returnCode' => 'setReturnCode',
         'messageEn' => 'setMessageEn',
         'messageVi' => 'setMessageVi',
-        'usedStore' => 'setUsedStore',
-        'billNumber' => 'setBillNumber',
         'data' => 'setData'
     ];
 
@@ -219,8 +209,6 @@ class ResponseUnReservedSchema implements ModelInterface, ArrayAccess, \JsonSeri
         'returnCode' => 'getReturnCode',
         'messageEn' => 'getMessageEn',
         'messageVi' => 'getMessageVi',
-        'usedStore' => 'getUsedStore',
-        'billNumber' => 'getBillNumber',
         'data' => 'getData'
     ];
 
@@ -285,8 +273,6 @@ class ResponseUnReservedSchema implements ModelInterface, ArrayAccess, \JsonSeri
         $this->setIfExists('returnCode', $data ?? [], null);
         $this->setIfExists('messageEn', $data ?? [], null);
         $this->setIfExists('messageVi', $data ?? [], null);
-        $this->setIfExists('usedStore', $data ?? [], null);
-        $this->setIfExists('billNumber', $data ?? [], null);
         $this->setIfExists('data', $data ?? [], null);
     }
 
@@ -448,63 +434,9 @@ class ResponseUnReservedSchema implements ModelInterface, ArrayAccess, \JsonSeri
     }
 
     /**
-     * Gets usedStore
-     *
-     * @return \OpenAPI\Client\Model\ResponseReservedSchemaUsedStore|null
-     */
-    public function getUsedStore()
-    {
-        return $this->container['usedStore'];
-    }
-
-    /**
-     * Sets usedStore
-     *
-     * @param \OpenAPI\Client\Model\ResponseReservedSchemaUsedStore|null $usedStore usedStore
-     *
-     * @return self
-     */
-    public function setUsedStore($usedStore)
-    {
-        if (is_null($usedStore)) {
-            throw new \InvalidArgumentException('non-nullable usedStore cannot be null');
-        }
-        $this->container['usedStore'] = $usedStore;
-
-        return $this;
-    }
-
-    /**
-     * Gets billNumber
-     *
-     * @return string|null
-     */
-    public function getBillNumber()
-    {
-        return $this->container['billNumber'];
-    }
-
-    /**
-     * Sets billNumber
-     *
-     * @param string|null $billNumber Bill number
-     *
-     * @return self
-     */
-    public function setBillNumber($billNumber)
-    {
-        if (is_null($billNumber)) {
-            throw new \InvalidArgumentException('non-nullable billNumber cannot be null');
-        }
-        $this->container['billNumber'] = $billNumber;
-
-        return $this;
-    }
-
-    /**
      * Gets data
      *
-     * @return \OpenAPI\Client\Model\ResponseUnReservedSchemaDataInner[]|null
+     * @return \Dayonevn\MerchantSDK\Model\ResponseCheckMultipleSchemaDataInner[]|null
      */
     public function getData()
     {
@@ -514,7 +446,7 @@ class ResponseUnReservedSchema implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets data
      *
-     * @param \OpenAPI\Client\Model\ResponseUnReservedSchemaDataInner[]|null $data Detail items of voucher, if result is failed, response will return the first voucher code which is invalid
+     * @param \Dayonevn\MerchantSDK\Model\ResponseCheckMultipleSchemaDataInner[]|null $data Detail items of voucher, if result is failed, response will return the first voucher code which is invalid
      *
      * @return self
      */

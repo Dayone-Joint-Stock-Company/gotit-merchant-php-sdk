@@ -1,11 +1,11 @@
 <?php
 /**
- * ResponseMarkUseMultipleSchemaDataInner
+ * ResponseReservedSchemaDataInnerRedemptions
  *
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Dayonevn\MerchantSDK
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,21 +27,22 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Dayonevn\MerchantSDK\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Dayonevn\MerchantSDK\ObjectSerializer;
 
 /**
- * ResponseMarkUseMultipleSchemaDataInner Class Doc Comment
+ * ResponseReservedSchemaDataInnerRedemptions Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @description Include information related to the use of the voucher (all types)
+ * @package  Dayonevn\MerchantSDK
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ResponseMarkUseMultipleSchemaDataInner implements ModelInterface, ArrayAccess, \JsonSerializable
+class ResponseReservedSchemaDataInnerRedemptions implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +51,7 @@ class ResponseMarkUseMultipleSchemaDataInner implements ModelInterface, ArrayAcc
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ResponseMarkUseMultipleSchema_data_inner';
+    protected static $openAPIModelName = 'ResponseReservedSchema_data_inner_redemptions';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,13 +59,8 @@ class ResponseMarkUseMultipleSchemaDataInner implements ModelInterface, ArrayAcc
       * @var string[]
       */
     protected static $openAPITypes = [
-        'code' => 'string',
-        'value' => 'int',
-        'productId' => 'int',
-        'state' => 'int',
-        'voucherType' => 'string',
-        'conditions' => '\OpenAPI\Client\Model\ResponseCheckMultipleSchemaDataInnerConditions',
-        'redemptions' => '\OpenAPI\Client\Model\ResponseMarkUseMultipleSchemaDataInnerRedemptions'
+        'redeemSkuCodes' => '\Dayonevn\MerchantSDK\Model\ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner[]',
+        'redemptionValue' => 'int'
     ];
 
     /**
@@ -75,13 +71,8 @@ class ResponseMarkUseMultipleSchemaDataInner implements ModelInterface, ArrayAcc
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'code' => null,
-        'value' => null,
-        'productId' => null,
-        'state' => null,
-        'voucherType' => null,
-        'conditions' => null,
-        'redemptions' => null
+        'redeemSkuCodes' => null,
+        'redemptionValue' => null
     ];
 
     /**
@@ -90,13 +81,8 @@ class ResponseMarkUseMultipleSchemaDataInner implements ModelInterface, ArrayAcc
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'code' => false,
-        'value' => true,
-        'productId' => true,
-        'state' => true,
-        'voucherType' => false,
-        'conditions' => false,
-        'redemptions' => false
+        'redeemSkuCodes' => false,
+        'redemptionValue' => false
     ];
 
     /**
@@ -185,13 +171,8 @@ class ResponseMarkUseMultipleSchemaDataInner implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $attributeMap = [
-        'code' => 'code',
-        'value' => 'value',
-        'productId' => 'product_id',
-        'state' => 'state',
-        'voucherType' => 'voucher_type',
-        'conditions' => 'conditions',
-        'redemptions' => 'redemptions'
+        'redeemSkuCodes' => 'redeem_sku_codes',
+        'redemptionValue' => 'redemption_value'
     ];
 
     /**
@@ -200,13 +181,8 @@ class ResponseMarkUseMultipleSchemaDataInner implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $setters = [
-        'code' => 'setCode',
-        'value' => 'setValue',
-        'productId' => 'setProductId',
-        'state' => 'setState',
-        'voucherType' => 'setVoucherType',
-        'conditions' => 'setConditions',
-        'redemptions' => 'setRedemptions'
+        'redeemSkuCodes' => 'setRedeemSkuCodes',
+        'redemptionValue' => 'setRedemptionValue'
     ];
 
     /**
@@ -215,13 +191,8 @@ class ResponseMarkUseMultipleSchemaDataInner implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $getters = [
-        'code' => 'getCode',
-        'value' => 'getValue',
-        'productId' => 'getProductId',
-        'state' => 'getState',
-        'voucherType' => 'getVoucherType',
-        'conditions' => 'getConditions',
-        'redemptions' => 'getRedemptions'
+        'redeemSkuCodes' => 'getRedeemSkuCodes',
+        'redemptionValue' => 'getRedemptionValue'
     ];
 
     /**
@@ -281,13 +252,8 @@ class ResponseMarkUseMultipleSchemaDataInner implements ModelInterface, ArrayAcc
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('code', $data ?? [], null);
-        $this->setIfExists('value', $data ?? [], null);
-        $this->setIfExists('productId', $data ?? [], null);
-        $this->setIfExists('state', $data ?? [], null);
-        $this->setIfExists('voucherType', $data ?? [], null);
-        $this->setIfExists('conditions', $data ?? [], null);
-        $this->setIfExists('redemptions', $data ?? [], null);
+        $this->setIfExists('redeemSkuCodes', $data ?? [], null);
+        $this->setIfExists('redemptionValue', $data ?? [], null);
     }
 
     /**
@@ -333,211 +299,55 @@ class ResponseMarkUseMultipleSchemaDataInner implements ModelInterface, ArrayAcc
 
 
     /**
-     * Gets code
+     * Gets redeemSkuCodes
      *
-     * @return string|null
+     * @return \Dayonevn\MerchantSDK\Model\ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner[]|null
      */
-    public function getCode()
+    public function getRedeemSkuCodes()
     {
-        return $this->container['code'];
+        return $this->container['redeemSkuCodes'];
     }
 
     /**
-     * Sets code
+     * Sets redeemSkuCodes
      *
-     * @param string|null $code Voucher code
+     * @param \Dayonevn\MerchantSDK\Model\ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner[]|null $redeemSkuCodes Contains redeemed SKU information of the voucher (for voucher type is conditional and support sku)
      *
      * @return self
      */
-    public function setCode($code)
+    public function setRedeemSkuCodes($redeemSkuCodes)
     {
-        if (is_null($code)) {
-            throw new \InvalidArgumentException('non-nullable code cannot be null');
+        if (is_null($redeemSkuCodes)) {
+            throw new \InvalidArgumentException('non-nullable redeemSkuCodes cannot be null');
         }
-        $this->container['code'] = $code;
+        $this->container['redeemSkuCodes'] = $redeemSkuCodes;
 
         return $this;
     }
 
     /**
-     * Gets value
+     * Gets redemptionValue
      *
      * @return int|null
      */
-    public function getValue()
+    public function getRedemptionValue()
     {
-        return $this->container['value'];
+        return $this->container['redemptionValue'];
     }
 
     /**
-     * Sets value
+     * Sets redemptionValue
      *
-     * @param int|null $value Value of voucher
+     * @param int|null $redemptionValue Actual redemption value of voucher type = conditional
      *
      * @return self
      */
-    public function setValue($value)
+    public function setRedemptionValue($redemptionValue)
     {
-        if (is_null($value)) {
-            array_push($this->openAPINullablesSetToNull, 'value');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('value', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($redemptionValue)) {
+            throw new \InvalidArgumentException('non-nullable redemptionValue cannot be null');
         }
-        $this->container['value'] = $value;
-
-        return $this;
-    }
-
-    /**
-     * Gets productId
-     *
-     * @return int|null
-     */
-    public function getProductId()
-    {
-        return $this->container['productId'];
-    }
-
-    /**
-     * Sets productId
-     *
-     * @param int|null $productId Product ID
-     *
-     * @return self
-     */
-    public function setProductId($productId)
-    {
-        if (is_null($productId)) {
-            array_push($this->openAPINullablesSetToNull, 'productId');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('productId', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['productId'] = $productId;
-
-        return $this;
-    }
-
-    /**
-     * Gets state
-     *
-     * @return int|null
-     */
-    public function getState()
-    {
-        return $this->container['state'];
-    }
-
-    /**
-     * Sets state
-     *
-     * @param int|null $state State of voucher
-     *
-     * @return self
-     */
-    public function setState($state)
-    {
-        if (is_null($state)) {
-            array_push($this->openAPINullablesSetToNull, 'state');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('state', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['state'] = $state;
-
-        return $this;
-    }
-
-    /**
-     * Gets voucherType
-     *
-     * @return string|null
-     */
-    public function getVoucherType()
-    {
-        return $this->container['voucherType'];
-    }
-
-    /**
-     * Sets voucherType
-     *
-     * @param string|null $voucherType Voucher type, standard or conditional
-     *
-     * @return self
-     */
-    public function setVoucherType($voucherType)
-    {
-        if (is_null($voucherType)) {
-            throw new \InvalidArgumentException('non-nullable voucherType cannot be null');
-        }
-        $this->container['voucherType'] = $voucherType;
-
-        return $this;
-    }
-
-    /**
-     * Gets conditions
-     *
-     * @return \OpenAPI\Client\Model\ResponseCheckMultipleSchemaDataInnerConditions|null
-     */
-    public function getConditions()
-    {
-        return $this->container['conditions'];
-    }
-
-    /**
-     * Sets conditions
-     *
-     * @param \OpenAPI\Client\Model\ResponseCheckMultipleSchemaDataInnerConditions|null $conditions conditions
-     *
-     * @return self
-     */
-    public function setConditions($conditions)
-    {
-        if (is_null($conditions)) {
-            throw new \InvalidArgumentException('non-nullable conditions cannot be null');
-        }
-        $this->container['conditions'] = $conditions;
-
-        return $this;
-    }
-
-    /**
-     * Gets redemptions
-     *
-     * @return \OpenAPI\Client\Model\ResponseMarkUseMultipleSchemaDataInnerRedemptions|null
-     */
-    public function getRedemptions()
-    {
-        return $this->container['redemptions'];
-    }
-
-    /**
-     * Sets redemptions
-     *
-     * @param \OpenAPI\Client\Model\ResponseMarkUseMultipleSchemaDataInnerRedemptions|null $redemptions redemptions
-     *
-     * @return self
-     */
-    public function setRedemptions($redemptions)
-    {
-        if (is_null($redemptions)) {
-            throw new \InvalidArgumentException('non-nullable redemptions cannot be null');
-        }
-        $this->container['redemptions'] = $redemptions;
+        $this->container['redemptionValue'] = $redemptionValue;
 
         return $this;
     }

@@ -1,11 +1,11 @@
 <?php
 /**
- * ResponseCheckMultipleSchema
+ * ResponseCheckMultipleSchemaDataInner
  *
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Dayonevn\MerchantSDK
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,21 +27,21 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Dayonevn\MerchantSDK\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Dayonevn\MerchantSDK\ObjectSerializer;
 
 /**
- * ResponseCheckMultipleSchema Class Doc Comment
+ * ResponseCheckMultipleSchemaDataInner Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Dayonevn\MerchantSDK
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ResponseCheckMultipleSchema implements ModelInterface, ArrayAccess, \JsonSerializable
+class ResponseCheckMultipleSchemaDataInner implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class ResponseCheckMultipleSchema implements ModelInterface, ArrayAccess, \JsonS
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ResponseCheckMultipleSchema';
+    protected static $openAPIModelName = 'ResponseCheckMultipleSchema_data_inner';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,11 +58,15 @@ class ResponseCheckMultipleSchema implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'success' => 'bool',
-        'returnCode' => 'string',
-        'messageEn' => 'string',
-        'messageVi' => 'string',
-        'data' => '\OpenAPI\Client\Model\ResponseCheckMultipleSchemaDataInner[]'
+        'code' => 'string',
+        'value' => 'int',
+        'productId' => 'int',
+        'state' => 'int',
+        'voucherType' => 'string',
+        'expiryDate' => 'string',
+        'cancelDate' => 'string',
+        'conditions' => '\Dayonevn\MerchantSDK\Model\ResponseCheckMultipleSchemaDataInnerConditions',
+        'redemptions' => '\Dayonevn\MerchantSDK\Model\ResponseCheckMultipleSchemaDataInnerRedemptions'
     ];
 
     /**
@@ -73,11 +77,15 @@ class ResponseCheckMultipleSchema implements ModelInterface, ArrayAccess, \JsonS
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'success' => null,
-        'returnCode' => null,
-        'messageEn' => null,
-        'messageVi' => null,
-        'data' => null
+        'code' => null,
+        'value' => null,
+        'productId' => null,
+        'state' => null,
+        'voucherType' => null,
+        'expiryDate' => null,
+        'cancelDate' => null,
+        'conditions' => null,
+        'redemptions' => null
     ];
 
     /**
@@ -86,11 +94,15 @@ class ResponseCheckMultipleSchema implements ModelInterface, ArrayAccess, \JsonS
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'success' => false,
-        'returnCode' => true,
-        'messageEn' => false,
-        'messageVi' => false,
-        'data' => false
+        'code' => false,
+        'value' => true,
+        'productId' => true,
+        'state' => true,
+        'voucherType' => false,
+        'expiryDate' => false,
+        'cancelDate' => false,
+        'conditions' => false,
+        'redemptions' => false
     ];
 
     /**
@@ -179,11 +191,15 @@ class ResponseCheckMultipleSchema implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $attributeMap = [
-        'success' => 'success',
-        'returnCode' => 'return_code',
-        'messageEn' => 'message_en',
-        'messageVi' => 'message_vi',
-        'data' => 'data'
+        'code' => 'code',
+        'value' => 'value',
+        'productId' => 'product_id',
+        'state' => 'state',
+        'voucherType' => 'voucher_type',
+        'expiryDate' => 'expiry_date',
+        'cancelDate' => 'cancel_date',
+        'conditions' => 'conditions',
+        'redemptions' => 'redemptions'
     ];
 
     /**
@@ -192,11 +208,15 @@ class ResponseCheckMultipleSchema implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $setters = [
-        'success' => 'setSuccess',
-        'returnCode' => 'setReturnCode',
-        'messageEn' => 'setMessageEn',
-        'messageVi' => 'setMessageVi',
-        'data' => 'setData'
+        'code' => 'setCode',
+        'value' => 'setValue',
+        'productId' => 'setProductId',
+        'state' => 'setState',
+        'voucherType' => 'setVoucherType',
+        'expiryDate' => 'setExpiryDate',
+        'cancelDate' => 'setCancelDate',
+        'conditions' => 'setConditions',
+        'redemptions' => 'setRedemptions'
     ];
 
     /**
@@ -205,11 +225,15 @@ class ResponseCheckMultipleSchema implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $getters = [
-        'success' => 'getSuccess',
-        'returnCode' => 'getReturnCode',
-        'messageEn' => 'getMessageEn',
-        'messageVi' => 'getMessageVi',
-        'data' => 'getData'
+        'code' => 'getCode',
+        'value' => 'getValue',
+        'productId' => 'getProductId',
+        'state' => 'getState',
+        'voucherType' => 'getVoucherType',
+        'expiryDate' => 'getExpiryDate',
+        'cancelDate' => 'getCancelDate',
+        'conditions' => 'getConditions',
+        'redemptions' => 'getRedemptions'
     ];
 
     /**
@@ -269,11 +293,15 @@ class ResponseCheckMultipleSchema implements ModelInterface, ArrayAccess, \JsonS
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('success', $data ?? [], null);
-        $this->setIfExists('returnCode', $data ?? [], null);
-        $this->setIfExists('messageEn', $data ?? [], null);
-        $this->setIfExists('messageVi', $data ?? [], null);
-        $this->setIfExists('data', $data ?? [], null);
+        $this->setIfExists('code', $data ?? [], null);
+        $this->setIfExists('value', $data ?? [], null);
+        $this->setIfExists('productId', $data ?? [], null);
+        $this->setIfExists('state', $data ?? [], null);
+        $this->setIfExists('voucherType', $data ?? [], null);
+        $this->setIfExists('expiryDate', $data ?? [], null);
+        $this->setIfExists('cancelDate', $data ?? [], null);
+        $this->setIfExists('conditions', $data ?? [], null);
+        $this->setIfExists('redemptions', $data ?? [], null);
     }
 
     /**
@@ -319,143 +347,265 @@ class ResponseCheckMultipleSchema implements ModelInterface, ArrayAccess, \JsonS
 
 
     /**
-     * Gets success
+     * Gets code
      *
-     * @return bool|null
+     * @return string|null
      */
-    public function getSuccess()
+    public function getCode()
     {
-        return $this->container['success'];
+        return $this->container['code'];
     }
 
     /**
-     * Sets success
+     * Sets code
      *
-     * @param bool|null $success success
+     * @param string|null $code Voucher code
      *
      * @return self
      */
-    public function setSuccess($success)
+    public function setCode($code)
     {
-        if (is_null($success)) {
-            throw new \InvalidArgumentException('non-nullable success cannot be null');
+        if (is_null($code)) {
+            throw new \InvalidArgumentException('non-nullable code cannot be null');
         }
-        $this->container['success'] = $success;
+        $this->container['code'] = $code;
 
         return $this;
     }
 
     /**
-     * Gets returnCode
+     * Gets value
      *
-     * @return string|null
+     * @return int|null
      */
-    public function getReturnCode()
+    public function getValue()
     {
-        return $this->container['returnCode'];
+        return $this->container['value'];
     }
 
     /**
-     * Sets returnCode
+     * Sets value
      *
-     * @param string|null $returnCode Result code if failed. In case of successful request: value is null
+     * @param int|null $value Value of voucher
      *
      * @return self
      */
-    public function setReturnCode($returnCode)
+    public function setValue($value)
     {
-        if (is_null($returnCode)) {
-            array_push($this->openAPINullablesSetToNull, 'returnCode');
+        if (is_null($value)) {
+            array_push($this->openAPINullablesSetToNull, 'value');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('returnCode', $nullablesSetToNull);
+            $index = array_search('value', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['returnCode'] = $returnCode;
+        $this->container['value'] = $value;
 
         return $this;
     }
 
     /**
-     * Gets messageEn
+     * Gets productId
+     *
+     * @return int|null
+     */
+    public function getProductId()
+    {
+        return $this->container['productId'];
+    }
+
+    /**
+     * Sets productId
+     *
+     * @param int|null $productId Product ID
+     *
+     * @return self
+     */
+    public function setProductId($productId)
+    {
+        if (is_null($productId)) {
+            array_push($this->openAPINullablesSetToNull, 'productId');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('productId', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['productId'] = $productId;
+
+        return $this;
+    }
+
+    /**
+     * Gets state
+     *
+     * @return int|null
+     */
+    public function getState()
+    {
+        return $this->container['state'];
+    }
+
+    /**
+     * Sets state
+     *
+     * @param int|null $state State of voucher
+     *
+     * @return self
+     */
+    public function setState($state)
+    {
+        if (is_null($state)) {
+            array_push($this->openAPINullablesSetToNull, 'state');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('state', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['state'] = $state;
+
+        return $this;
+    }
+
+    /**
+     * Gets voucherType
      *
      * @return string|null
      */
-    public function getMessageEn()
+    public function getVoucherType()
     {
-        return $this->container['messageEn'];
+        return $this->container['voucherType'];
     }
 
     /**
-     * Sets messageEn
+     * Sets voucherType
      *
-     * @param string|null $messageEn Message notification in English
+     * @param string|null $voucherType Voucher type, standard or conditional
      *
      * @return self
      */
-    public function setMessageEn($messageEn)
+    public function setVoucherType($voucherType)
     {
-        if (is_null($messageEn)) {
-            throw new \InvalidArgumentException('non-nullable messageEn cannot be null');
+        if (is_null($voucherType)) {
+            throw new \InvalidArgumentException('non-nullable voucherType cannot be null');
         }
-        $this->container['messageEn'] = $messageEn;
+        $this->container['voucherType'] = $voucherType;
 
         return $this;
     }
 
     /**
-     * Gets messageVi
+     * Gets expiryDate
      *
      * @return string|null
      */
-    public function getMessageVi()
+    public function getExpiryDate()
     {
-        return $this->container['messageVi'];
+        return $this->container['expiryDate'];
     }
 
     /**
-     * Sets messageVi
+     * Sets expiryDate
      *
-     * @param string|null $messageVi Message notification in Vietnamese
+     * @param string|null $expiryDate Expiry date of voucher (YYYY-MM-DD)
      *
      * @return self
      */
-    public function setMessageVi($messageVi)
+    public function setExpiryDate($expiryDate)
     {
-        if (is_null($messageVi)) {
-            throw new \InvalidArgumentException('non-nullable messageVi cannot be null');
+        if (is_null($expiryDate)) {
+            throw new \InvalidArgumentException('non-nullable expiryDate cannot be null');
         }
-        $this->container['messageVi'] = $messageVi;
+        $this->container['expiryDate'] = $expiryDate;
 
         return $this;
     }
 
     /**
-     * Gets data
+     * Gets cancelDate
      *
-     * @return \OpenAPI\Client\Model\ResponseCheckMultipleSchemaDataInner[]|null
+     * @return string|null
      */
-    public function getData()
+    public function getCancelDate()
     {
-        return $this->container['data'];
+        return $this->container['cancelDate'];
     }
 
     /**
-     * Sets data
+     * Sets cancelDate
      *
-     * @param \OpenAPI\Client\Model\ResponseCheckMultipleSchemaDataInner[]|null $data Detail items of voucher, if result is failed, response will return the first voucher code which is invalid
+     * @param string|null $cancelDate Date cancel voucher (YYYY-MM-DD)
      *
      * @return self
      */
-    public function setData($data)
+    public function setCancelDate($cancelDate)
     {
-        if (is_null($data)) {
-            throw new \InvalidArgumentException('non-nullable data cannot be null');
+        if (is_null($cancelDate)) {
+            throw new \InvalidArgumentException('non-nullable cancelDate cannot be null');
         }
-        $this->container['data'] = $data;
+        $this->container['cancelDate'] = $cancelDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets conditions
+     *
+     * @return \Dayonevn\MerchantSDK\Model\ResponseCheckMultipleSchemaDataInnerConditions|null
+     */
+    public function getConditions()
+    {
+        return $this->container['conditions'];
+    }
+
+    /**
+     * Sets conditions
+     *
+     * @param \Dayonevn\MerchantSDK\Model\ResponseCheckMultipleSchemaDataInnerConditions|null $conditions conditions
+     *
+     * @return self
+     */
+    public function setConditions($conditions)
+    {
+        if (is_null($conditions)) {
+            throw new \InvalidArgumentException('non-nullable conditions cannot be null');
+        }
+        $this->container['conditions'] = $conditions;
+
+        return $this;
+    }
+
+    /**
+     * Gets redemptions
+     *
+     * @return \Dayonevn\MerchantSDK\Model\ResponseCheckMultipleSchemaDataInnerRedemptions|null
+     */
+    public function getRedemptions()
+    {
+        return $this->container['redemptions'];
+    }
+
+    /**
+     * Sets redemptions
+     *
+     * @param \Dayonevn\MerchantSDK\Model\ResponseCheckMultipleSchemaDataInnerRedemptions|null $redemptions redemptions
+     *
+     * @return self
+     */
+    public function setRedemptions($redemptions)
+    {
+        if (is_null($redemptions)) {
+            throw new \InvalidArgumentException('non-nullable redemptions cannot be null');
+        }
+        $this->container['redemptions'] = $redemptions;
 
         return $this;
     }

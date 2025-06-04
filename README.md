@@ -31,18 +31,18 @@ Then run `composer install`
 
 ## Getting Started
 
-Simple usage looks like:
+Please follow the [installation procedure](#installation--usage) and then run the following:
 
 ```php
 <?php
 
 namespace App\Http\Controllers;
 
-use OpenAPI\Client\Api\GotItMerchantApi;
-use OpenAPI\Client\Model\RequestCheckMultipleBodySchema;
-use OpenAPI\Client\Model\RequestMarkUseMultipleBodySchema;
-use OpenAPI\Client\Model\RequestReservedBodySchema;
-use OpenAPI\Client\Model\RequestUnReservedBodySchema;
+use Dayonevn\MerchantSDK\Api\GotItMerchantApi;
+use Dayonevn\MerchantSDK\Model\RequestCheckMultipleBodySchema;
+use Dayonevn\MerchantSDK\Model\RequestMarkUseMultipleBodySchema;
+use Dayonevn\MerchantSDK\Model\RequestReservedBodySchema;
+use Dayonevn\MerchantSDK\Model\RequestUnReservedBodySchema;
 
 class ApiController extends Controller
 {
@@ -65,7 +65,7 @@ class ApiController extends Controller
         $bodySchema->setPin($pin);
         $bodySchema->setCodes($codes);
         $bodySchema->setBillNumber('BILL123456');
-        $skuInfo = new \OpenAPI\Client\Model\RequestCheckMultipleBodySchemaSkusInfoInner();
+        $skuInfo = new \Dayonevn\MerchantSDK\Model\RequestCheckMultipleBodySchemaSkusInfoInner();
         $skuInfo->setSku($sku);
         $skuInfo->setQuantity(1);
         $skuInfo->setPrice(100000);
@@ -81,7 +81,6 @@ class ApiController extends Controller
         $unReservedBodySchema->setPin($pin);
         $unReservedBodySchema->setCodes($codes);
         $unReservedBodySchema->setBillNumber('BILL123456');
-        $unReservedBodySchema->setSkusInfo([$skuInfo]);
 
         // Mark used body
         $markUseMultipleBodySchema->setPin($pin);
@@ -92,19 +91,19 @@ class ApiController extends Controller
         // Step 2: Call the API
         try {
             // Check codes
-            //$response = $api->checkMultiple($bodySchemaV60);
+            $response = $api->checkMultiple($bodySchema);
 
             // Reserved codes
-            //$response = $api->reserved($reservedBodySchemaV60);
+            //$response = $api->reserved($reservedBodySchema);
 
             // UnReserved codes
-            //$response = $api->unreserved($unReservedBodySchemaV60);
+            //$response = $api->unreserved($unReservedBodySchema);
 
             // Mark use multiple
-            //$response = $api->useMultiple($markUseMultipleBodySchemaV60);
+            //$response = $api->useMultiple($markUseMultipleBodySchema);
 
             return response()->json($response);
-        } catch (\OpenAPI\Client\ApiException $e) {
+        } catch (\Dayonevn\MerchantSDK\ApiException $e) {
             return response()->json([
                 'error' => "Error from Merchant API"
             ], 500);

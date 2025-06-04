@@ -1,11 +1,11 @@
 <?php
 /**
- * RequestMarkUseMultipleBodySchema
+ * ResponseMarkUseMultipleSchema
  *
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Dayonevn\MerchantSDK
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,21 +27,21 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Dayonevn\MerchantSDK\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Dayonevn\MerchantSDK\ObjectSerializer;
 
 /**
- * RequestMarkUseMultipleBodySchema Class Doc Comment
+ * ResponseMarkUseMultipleSchema Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Dayonevn\MerchantSDK
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class RequestMarkUseMultipleBodySchema implements ModelInterface, ArrayAccess, \JsonSerializable
+class ResponseMarkUseMultipleSchema implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class RequestMarkUseMultipleBodySchema implements ModelInterface, ArrayAccess, \
       *
       * @var string
       */
-    protected static $openAPIModelName = 'RequestMarkUseMultipleBodySchema';
+    protected static $openAPIModelName = 'ResponseMarkUseMultipleSchema';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,12 +58,13 @@ class RequestMarkUseMultipleBodySchema implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static $openAPITypes = [
-        'pin' => 'string',
-        'codes' => 'string[]',
-        'billNumber' => 'string',
-        'totalBill' => 'int',
-        'skipReservedWhenMarkUsed' => 'bool',
-        'skusInfo' => '\OpenAPI\Client\Model\RequestCheckMultipleBodySchemaSkusInfoInner[]'
+        'success' => 'bool',
+        'returnCode' => 'string',
+        'messageEn' => 'string',
+        'messageVi' => 'string',
+        'data' => '\Dayonevn\MerchantSDK\Model\ResponseMarkUseMultipleSchemaDataInner[]',
+        'transactionId' => 'string',
+        'billNumber' => 'string'
     ];
 
     /**
@@ -74,12 +75,13 @@ class RequestMarkUseMultipleBodySchema implements ModelInterface, ArrayAccess, \
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'pin' => null,
-        'codes' => null,
-        'billNumber' => null,
-        'totalBill' => null,
-        'skipReservedWhenMarkUsed' => null,
-        'skusInfo' => null
+        'success' => null,
+        'returnCode' => null,
+        'messageEn' => null,
+        'messageVi' => null,
+        'data' => null,
+        'transactionId' => null,
+        'billNumber' => null
     ];
 
     /**
@@ -88,12 +90,13 @@ class RequestMarkUseMultipleBodySchema implements ModelInterface, ArrayAccess, \
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'pin' => false,
-        'codes' => false,
-        'billNumber' => false,
-        'totalBill' => false,
-        'skipReservedWhenMarkUsed' => false,
-        'skusInfo' => false
+        'success' => false,
+        'returnCode' => true,
+        'messageEn' => false,
+        'messageVi' => false,
+        'data' => false,
+        'transactionId' => false,
+        'billNumber' => false
     ];
 
     /**
@@ -182,12 +185,13 @@ class RequestMarkUseMultipleBodySchema implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $attributeMap = [
-        'pin' => 'pin',
-        'codes' => 'codes',
-        'billNumber' => 'bill_number',
-        'totalBill' => 'total_bill',
-        'skipReservedWhenMarkUsed' => 'skip_reserved_when_mark_used',
-        'skusInfo' => 'skus_info'
+        'success' => 'success',
+        'returnCode' => 'return_code',
+        'messageEn' => 'message_en',
+        'messageVi' => 'message_vi',
+        'data' => 'data',
+        'transactionId' => 'transaction_id',
+        'billNumber' => 'bill_number'
     ];
 
     /**
@@ -196,12 +200,13 @@ class RequestMarkUseMultipleBodySchema implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $setters = [
-        'pin' => 'setPin',
-        'codes' => 'setCodes',
-        'billNumber' => 'setBillNumber',
-        'totalBill' => 'setTotalBill',
-        'skipReservedWhenMarkUsed' => 'setSkipReservedWhenMarkUsed',
-        'skusInfo' => 'setSkusInfo'
+        'success' => 'setSuccess',
+        'returnCode' => 'setReturnCode',
+        'messageEn' => 'setMessageEn',
+        'messageVi' => 'setMessageVi',
+        'data' => 'setData',
+        'transactionId' => 'setTransactionId',
+        'billNumber' => 'setBillNumber'
     ];
 
     /**
@@ -210,12 +215,13 @@ class RequestMarkUseMultipleBodySchema implements ModelInterface, ArrayAccess, \
      * @var string[]
      */
     protected static $getters = [
-        'pin' => 'getPin',
-        'codes' => 'getCodes',
-        'billNumber' => 'getBillNumber',
-        'totalBill' => 'getTotalBill',
-        'skipReservedWhenMarkUsed' => 'getSkipReservedWhenMarkUsed',
-        'skusInfo' => 'getSkusInfo'
+        'success' => 'getSuccess',
+        'returnCode' => 'getReturnCode',
+        'messageEn' => 'getMessageEn',
+        'messageVi' => 'getMessageVi',
+        'data' => 'getData',
+        'transactionId' => 'getTransactionId',
+        'billNumber' => 'getBillNumber'
     ];
 
     /**
@@ -275,12 +281,13 @@ class RequestMarkUseMultipleBodySchema implements ModelInterface, ArrayAccess, \
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('pin', $data ?? [], null);
-        $this->setIfExists('codes', $data ?? [], null);
+        $this->setIfExists('success', $data ?? [], null);
+        $this->setIfExists('returnCode', $data ?? [], null);
+        $this->setIfExists('messageEn', $data ?? [], null);
+        $this->setIfExists('messageVi', $data ?? [], null);
+        $this->setIfExists('data', $data ?? [], null);
+        $this->setIfExists('transactionId', $data ?? [], null);
         $this->setIfExists('billNumber', $data ?? [], null);
-        $this->setIfExists('totalBill', $data ?? [], null);
-        $this->setIfExists('skipReservedWhenMarkUsed', $data ?? [], null);
-        $this->setIfExists('skusInfo', $data ?? [], null);
     }
 
     /**
@@ -326,55 +333,170 @@ class RequestMarkUseMultipleBodySchema implements ModelInterface, ArrayAccess, \
 
 
     /**
-     * Gets pin
+     * Gets success
      *
-     * @return string|null
+     * @return bool|null
      */
-    public function getPin()
+    public function getSuccess()
     {
-        return $this->container['pin'];
+        return $this->container['success'];
     }
 
     /**
-     * Sets pin
+     * Sets success
      *
-     * @param string|null $pin Store pin
+     * @param bool|null $success success
      *
      * @return self
      */
-    public function setPin($pin)
+    public function setSuccess($success)
     {
-        if (is_null($pin)) {
-            throw new \InvalidArgumentException('non-nullable pin cannot be null');
+        if (is_null($success)) {
+            throw new \InvalidArgumentException('non-nullable success cannot be null');
         }
-        $this->container['pin'] = $pin;
+        $this->container['success'] = $success;
 
         return $this;
     }
 
     /**
-     * Gets codes
+     * Gets returnCode
      *
-     * @return string[]|null
+     * @return string|null
      */
-    public function getCodes()
+    public function getReturnCode()
     {
-        return $this->container['codes'];
+        return $this->container['returnCode'];
     }
 
     /**
-     * Sets codes
+     * Sets returnCode
      *
-     * @param string[]|null $codes Array of 10-16 characters Got It voucher codes
+     * @param string|null $returnCode Result code if failed. In case of successful request: value is null
      *
      * @return self
      */
-    public function setCodes($codes)
+    public function setReturnCode($returnCode)
     {
-        if (is_null($codes)) {
-            throw new \InvalidArgumentException('non-nullable codes cannot be null');
+        if (is_null($returnCode)) {
+            array_push($this->openAPINullablesSetToNull, 'returnCode');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('returnCode', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        $this->container['codes'] = $codes;
+        $this->container['returnCode'] = $returnCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets messageEn
+     *
+     * @return string|null
+     */
+    public function getMessageEn()
+    {
+        return $this->container['messageEn'];
+    }
+
+    /**
+     * Sets messageEn
+     *
+     * @param string|null $messageEn Message notification in English
+     *
+     * @return self
+     */
+    public function setMessageEn($messageEn)
+    {
+        if (is_null($messageEn)) {
+            throw new \InvalidArgumentException('non-nullable messageEn cannot be null');
+        }
+        $this->container['messageEn'] = $messageEn;
+
+        return $this;
+    }
+
+    /**
+     * Gets messageVi
+     *
+     * @return string|null
+     */
+    public function getMessageVi()
+    {
+        return $this->container['messageVi'];
+    }
+
+    /**
+     * Sets messageVi
+     *
+     * @param string|null $messageVi Message notification in Vietnamese
+     *
+     * @return self
+     */
+    public function setMessageVi($messageVi)
+    {
+        if (is_null($messageVi)) {
+            throw new \InvalidArgumentException('non-nullable messageVi cannot be null');
+        }
+        $this->container['messageVi'] = $messageVi;
+
+        return $this;
+    }
+
+    /**
+     * Gets data
+     *
+     * @return \Dayonevn\MerchantSDK\Model\ResponseMarkUseMultipleSchemaDataInner[]|null
+     */
+    public function getData()
+    {
+        return $this->container['data'];
+    }
+
+    /**
+     * Sets data
+     *
+     * @param \Dayonevn\MerchantSDK\Model\ResponseMarkUseMultipleSchemaDataInner[]|null $data Detail items of voucher, if result is failed, response will return the first voucher code which is invalid
+     *
+     * @return self
+     */
+    public function setData($data)
+    {
+        if (is_null($data)) {
+            throw new \InvalidArgumentException('non-nullable data cannot be null');
+        }
+        $this->container['data'] = $data;
+
+        return $this;
+    }
+
+    /**
+     * Gets transactionId
+     *
+     * @return string|null
+     */
+    public function getTransactionId()
+    {
+        return $this->container['transactionId'];
+    }
+
+    /**
+     * Sets transactionId
+     *
+     * @param string|null $transactionId Transaction ID (if mark used successfully)
+     *
+     * @return self
+     */
+    public function setTransactionId($transactionId)
+    {
+        if (is_null($transactionId)) {
+            throw new \InvalidArgumentException('non-nullable transactionId cannot be null');
+        }
+        $this->container['transactionId'] = $transactionId;
 
         return $this;
     }
@@ -392,7 +514,7 @@ class RequestMarkUseMultipleBodySchema implements ModelInterface, ArrayAccess, \
     /**
      * Sets billNumber
      *
-     * @param string|null $billNumber Bill number will apply vouchers
+     * @param string|null $billNumber Bill number that vouchers were marked as used for.
      *
      * @return self
      */
@@ -402,87 +524,6 @@ class RequestMarkUseMultipleBodySchema implements ModelInterface, ArrayAccess, \
             throw new \InvalidArgumentException('non-nullable billNumber cannot be null');
         }
         $this->container['billNumber'] = $billNumber;
-
-        return $this;
-    }
-
-    /**
-     * Gets totalBill
-     *
-     * @return int|null
-     */
-    public function getTotalBill()
-    {
-        return $this->container['totalBill'];
-    }
-
-    /**
-     * Sets totalBill
-     *
-     * @param int|null $totalBill Total bill amount
-     *
-     * @return self
-     */
-    public function setTotalBill($totalBill)
-    {
-        if (is_null($totalBill)) {
-            throw new \InvalidArgumentException('non-nullable totalBill cannot be null');
-        }
-        $this->container['totalBill'] = $totalBill;
-
-        return $this;
-    }
-
-    /**
-     * Gets skipReservedWhenMarkUsed
-     *
-     * @return bool|null
-     */
-    public function getSkipReservedWhenMarkUsed()
-    {
-        return $this->container['skipReservedWhenMarkUsed'];
-    }
-
-    /**
-     * Sets skipReservedWhenMarkUsed
-     *
-     * @param bool|null $skipReservedWhenMarkUsed When true the system will execute the flow without reserve
-     *
-     * @return self
-     */
-    public function setSkipReservedWhenMarkUsed($skipReservedWhenMarkUsed)
-    {
-        if (is_null($skipReservedWhenMarkUsed)) {
-            throw new \InvalidArgumentException('non-nullable skipReservedWhenMarkUsed cannot be null');
-        }
-        $this->container['skipReservedWhenMarkUsed'] = $skipReservedWhenMarkUsed;
-
-        return $this;
-    }
-
-    /**
-     * Gets skusInfo
-     *
-     * @return \OpenAPI\Client\Model\RequestCheckMultipleBodySchemaSkusInfoInner[]|null
-     */
-    public function getSkusInfo()
-    {
-        return $this->container['skusInfo'];
-    }
-
-    /**
-     * Sets skusInfo
-     *
-     * @param \OpenAPI\Client\Model\RequestCheckMultipleBodySchemaSkusInfoInner[]|null $skusInfo SKU information in bill_number
-     *
-     * @return self
-     */
-    public function setSkusInfo($skusInfo)
-    {
-        if (is_null($skusInfo)) {
-            throw new \InvalidArgumentException('non-nullable skusInfo cannot be null');
-        }
-        $this->container['skusInfo'] = $skusInfo;
 
         return $this;
     }

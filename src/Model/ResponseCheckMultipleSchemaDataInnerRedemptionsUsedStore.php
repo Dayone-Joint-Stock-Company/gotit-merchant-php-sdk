@@ -1,11 +1,11 @@
 <?php
 /**
- * ResponseReservedSchemaUsedStore
+ * ResponseCheckMultipleSchemaDataInnerRedemptionsUsedStore
  *
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Dayonevn\MerchantSDK
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,22 +27,21 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Dayonevn\MerchantSDK\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Dayonevn\MerchantSDK\ObjectSerializer;
 
 /**
- * ResponseReservedSchemaUsedStore Class Doc Comment
+ * ResponseCheckMultipleSchemaDataInnerRedemptionsUsedStore Class Doc Comment
  *
  * @category Class
- * @description Store marked voucher used/reserved
- * @package  OpenAPI\Client
+ * @package  Dayonevn\MerchantSDK
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ResponseReservedSchemaUsedStore implements ModelInterface, ArrayAccess, \JsonSerializable
+class ResponseCheckMultipleSchemaDataInnerRedemptionsUsedStore implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +50,7 @@ class ResponseReservedSchemaUsedStore implements ModelInterface, ArrayAccess, \J
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ResponseReservedSchema_used_store';
+    protected static $openAPIModelName = 'ResponseCheckMultipleSchema_data_inner_redemptions_used_store';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

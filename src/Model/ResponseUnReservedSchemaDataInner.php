@@ -1,11 +1,11 @@
 <?php
 /**
- * ResponseMarkUseMultipleSchema
+ * ResponseUnReservedSchemaDataInner
  *
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Dayonevn\MerchantSDK
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,21 +27,21 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Dayonevn\MerchantSDK\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Dayonevn\MerchantSDK\ObjectSerializer;
 
 /**
- * ResponseMarkUseMultipleSchema Class Doc Comment
+ * ResponseUnReservedSchemaDataInner Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Dayonevn\MerchantSDK
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ResponseMarkUseMultipleSchema implements ModelInterface, ArrayAccess, \JsonSerializable
+class ResponseUnReservedSchemaDataInner implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class ResponseMarkUseMultipleSchema implements ModelInterface, ArrayAccess, \Jso
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ResponseMarkUseMultipleSchema';
+    protected static $openAPIModelName = 'ResponseUnReservedSchema_data_inner';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,13 +58,10 @@ class ResponseMarkUseMultipleSchema implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static $openAPITypes = [
-        'success' => 'bool',
-        'returnCode' => 'string',
-        'messageEn' => 'string',
-        'messageVi' => 'string',
-        'data' => '\OpenAPI\Client\Model\ResponseMarkUseMultipleSchemaDataInner[]',
-        'transactionId' => 'string',
-        'billNumber' => 'string'
+        'code' => 'string',
+        'value' => 'int',
+        'productId' => 'int',
+        'voucherType' => 'string'
     ];
 
     /**
@@ -75,13 +72,10 @@ class ResponseMarkUseMultipleSchema implements ModelInterface, ArrayAccess, \Jso
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'success' => null,
-        'returnCode' => null,
-        'messageEn' => null,
-        'messageVi' => null,
-        'data' => null,
-        'transactionId' => null,
-        'billNumber' => null
+        'code' => null,
+        'value' => null,
+        'productId' => null,
+        'voucherType' => null
     ];
 
     /**
@@ -90,13 +84,10 @@ class ResponseMarkUseMultipleSchema implements ModelInterface, ArrayAccess, \Jso
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'success' => false,
-        'returnCode' => true,
-        'messageEn' => false,
-        'messageVi' => false,
-        'data' => false,
-        'transactionId' => false,
-        'billNumber' => false
+        'code' => false,
+        'value' => true,
+        'productId' => true,
+        'voucherType' => false
     ];
 
     /**
@@ -185,13 +176,10 @@ class ResponseMarkUseMultipleSchema implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $attributeMap = [
-        'success' => 'success',
-        'returnCode' => 'return_code',
-        'messageEn' => 'message_en',
-        'messageVi' => 'message_vi',
-        'data' => 'data',
-        'transactionId' => 'transaction_id',
-        'billNumber' => 'bill_number'
+        'code' => 'code',
+        'value' => 'value',
+        'productId' => 'product_id',
+        'voucherType' => 'voucher_type'
     ];
 
     /**
@@ -200,13 +188,10 @@ class ResponseMarkUseMultipleSchema implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-        'success' => 'setSuccess',
-        'returnCode' => 'setReturnCode',
-        'messageEn' => 'setMessageEn',
-        'messageVi' => 'setMessageVi',
-        'data' => 'setData',
-        'transactionId' => 'setTransactionId',
-        'billNumber' => 'setBillNumber'
+        'code' => 'setCode',
+        'value' => 'setValue',
+        'productId' => 'setProductId',
+        'voucherType' => 'setVoucherType'
     ];
 
     /**
@@ -215,13 +200,10 @@ class ResponseMarkUseMultipleSchema implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $getters = [
-        'success' => 'getSuccess',
-        'returnCode' => 'getReturnCode',
-        'messageEn' => 'getMessageEn',
-        'messageVi' => 'getMessageVi',
-        'data' => 'getData',
-        'transactionId' => 'getTransactionId',
-        'billNumber' => 'getBillNumber'
+        'code' => 'getCode',
+        'value' => 'getValue',
+        'productId' => 'getProductId',
+        'voucherType' => 'getVoucherType'
     ];
 
     /**
@@ -281,13 +263,10 @@ class ResponseMarkUseMultipleSchema implements ModelInterface, ArrayAccess, \Jso
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('success', $data ?? [], null);
-        $this->setIfExists('returnCode', $data ?? [], null);
-        $this->setIfExists('messageEn', $data ?? [], null);
-        $this->setIfExists('messageVi', $data ?? [], null);
-        $this->setIfExists('data', $data ?? [], null);
-        $this->setIfExists('transactionId', $data ?? [], null);
-        $this->setIfExists('billNumber', $data ?? [], null);
+        $this->setIfExists('code', $data ?? [], null);
+        $this->setIfExists('value', $data ?? [], null);
+        $this->setIfExists('productId', $data ?? [], null);
+        $this->setIfExists('voucherType', $data ?? [], null);
     }
 
     /**
@@ -333,197 +312,123 @@ class ResponseMarkUseMultipleSchema implements ModelInterface, ArrayAccess, \Jso
 
 
     /**
-     * Gets success
+     * Gets code
      *
-     * @return bool|null
+     * @return string|null
      */
-    public function getSuccess()
+    public function getCode()
     {
-        return $this->container['success'];
+        return $this->container['code'];
     }
 
     /**
-     * Sets success
+     * Sets code
      *
-     * @param bool|null $success success
+     * @param string|null $code Voucher code
      *
      * @return self
      */
-    public function setSuccess($success)
+    public function setCode($code)
     {
-        if (is_null($success)) {
-            throw new \InvalidArgumentException('non-nullable success cannot be null');
+        if (is_null($code)) {
+            throw new \InvalidArgumentException('non-nullable code cannot be null');
         }
-        $this->container['success'] = $success;
+        $this->container['code'] = $code;
 
         return $this;
     }
 
     /**
-     * Gets returnCode
+     * Gets value
      *
-     * @return string|null
+     * @return int|null
      */
-    public function getReturnCode()
+    public function getValue()
     {
-        return $this->container['returnCode'];
+        return $this->container['value'];
     }
 
     /**
-     * Sets returnCode
+     * Sets value
      *
-     * @param string|null $returnCode Result code if failed. In case of successful request: value is null
+     * @param int|null $value Value of voucher
      *
      * @return self
      */
-    public function setReturnCode($returnCode)
+    public function setValue($value)
     {
-        if (is_null($returnCode)) {
-            array_push($this->openAPINullablesSetToNull, 'returnCode');
+        if (is_null($value)) {
+            array_push($this->openAPINullablesSetToNull, 'value');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('returnCode', $nullablesSetToNull);
+            $index = array_search('value', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['returnCode'] = $returnCode;
+        $this->container['value'] = $value;
 
         return $this;
     }
 
     /**
-     * Gets messageEn
+     * Gets productId
+     *
+     * @return int|null
+     */
+    public function getProductId()
+    {
+        return $this->container['productId'];
+    }
+
+    /**
+     * Sets productId
+     *
+     * @param int|null $productId Product ID
+     *
+     * @return self
+     */
+    public function setProductId($productId)
+    {
+        if (is_null($productId)) {
+            array_push($this->openAPINullablesSetToNull, 'productId');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('productId', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['productId'] = $productId;
+
+        return $this;
+    }
+
+    /**
+     * Gets voucherType
      *
      * @return string|null
      */
-    public function getMessageEn()
+    public function getVoucherType()
     {
-        return $this->container['messageEn'];
+        return $this->container['voucherType'];
     }
 
     /**
-     * Sets messageEn
+     * Sets voucherType
      *
-     * @param string|null $messageEn Message notification in English
+     * @param string|null $voucherType Voucher type, standard or conditional
      *
      * @return self
      */
-    public function setMessageEn($messageEn)
+    public function setVoucherType($voucherType)
     {
-        if (is_null($messageEn)) {
-            throw new \InvalidArgumentException('non-nullable messageEn cannot be null');
+        if (is_null($voucherType)) {
+            throw new \InvalidArgumentException('non-nullable voucherType cannot be null');
         }
-        $this->container['messageEn'] = $messageEn;
-
-        return $this;
-    }
-
-    /**
-     * Gets messageVi
-     *
-     * @return string|null
-     */
-    public function getMessageVi()
-    {
-        return $this->container['messageVi'];
-    }
-
-    /**
-     * Sets messageVi
-     *
-     * @param string|null $messageVi Message notification in Vietnamese
-     *
-     * @return self
-     */
-    public function setMessageVi($messageVi)
-    {
-        if (is_null($messageVi)) {
-            throw new \InvalidArgumentException('non-nullable messageVi cannot be null');
-        }
-        $this->container['messageVi'] = $messageVi;
-
-        return $this;
-    }
-
-    /**
-     * Gets data
-     *
-     * @return \OpenAPI\Client\Model\ResponseMarkUseMultipleSchemaDataInner[]|null
-     */
-    public function getData()
-    {
-        return $this->container['data'];
-    }
-
-    /**
-     * Sets data
-     *
-     * @param \OpenAPI\Client\Model\ResponseMarkUseMultipleSchemaDataInner[]|null $data Detail items of voucher, if result is failed, response will return the first voucher code which is invalid
-     *
-     * @return self
-     */
-    public function setData($data)
-    {
-        if (is_null($data)) {
-            throw new \InvalidArgumentException('non-nullable data cannot be null');
-        }
-        $this->container['data'] = $data;
-
-        return $this;
-    }
-
-    /**
-     * Gets transactionId
-     *
-     * @return string|null
-     */
-    public function getTransactionId()
-    {
-        return $this->container['transactionId'];
-    }
-
-    /**
-     * Sets transactionId
-     *
-     * @param string|null $transactionId Transaction ID (if mark used successfully)
-     *
-     * @return self
-     */
-    public function setTransactionId($transactionId)
-    {
-        if (is_null($transactionId)) {
-            throw new \InvalidArgumentException('non-nullable transactionId cannot be null');
-        }
-        $this->container['transactionId'] = $transactionId;
-
-        return $this;
-    }
-
-    /**
-     * Gets billNumber
-     *
-     * @return string|null
-     */
-    public function getBillNumber()
-    {
-        return $this->container['billNumber'];
-    }
-
-    /**
-     * Sets billNumber
-     *
-     * @param string|null $billNumber Bill number that vouchers were marked as used for.
-     *
-     * @return self
-     */
-    public function setBillNumber($billNumber)
-    {
-        if (is_null($billNumber)) {
-            throw new \InvalidArgumentException('non-nullable billNumber cannot be null');
-        }
-        $this->container['billNumber'] = $billNumber;
+        $this->container['voucherType'] = $voucherType;
 
         return $this;
     }

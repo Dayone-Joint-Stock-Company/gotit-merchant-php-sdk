@@ -1,11 +1,11 @@
 <?php
 /**
- * ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner
+ * RequestUnReservedBodySchema
  *
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Dayonevn\MerchantSDK
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,21 +27,21 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Dayonevn\MerchantSDK\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Dayonevn\MerchantSDK\ObjectSerializer;
 
 /**
- * ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner Class Doc Comment
+ * RequestUnReservedBodySchema Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Dayonevn\MerchantSDK
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner implements ModelInterface, ArrayAccess, \JsonSerializable
+class RequestUnReservedBodySchema implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner impleme
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ResponseCheckMultipleSchema_data_inner_redemptions_redeem_sku_codes_inner';
+    protected static $openAPIModelName = 'RequestUnReservedBodySchema';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,9 +58,10 @@ class ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner impleme
       * @var string[]
       */
     protected static $openAPITypes = [
-        'sku' => 'string',
-        'quantity' => 'int',
-        'price' => 'int'
+        'pin' => 'string',
+        'codes' => 'string[]',
+        'billNumber' => 'string',
+        'billCreatedAt' => 'string'
     ];
 
     /**
@@ -71,9 +72,10 @@ class ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner impleme
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'sku' => null,
-        'quantity' => null,
-        'price' => null
+        'pin' => null,
+        'codes' => null,
+        'billNumber' => null,
+        'billCreatedAt' => null
     ];
 
     /**
@@ -82,9 +84,10 @@ class ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner impleme
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'sku' => false,
-        'quantity' => false,
-        'price' => false
+        'pin' => false,
+        'codes' => false,
+        'billNumber' => false,
+        'billCreatedAt' => false
     ];
 
     /**
@@ -173,9 +176,10 @@ class ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner impleme
      * @var string[]
      */
     protected static $attributeMap = [
-        'sku' => 'sku',
-        'quantity' => 'quantity',
-        'price' => 'price'
+        'pin' => 'pin',
+        'codes' => 'codes',
+        'billNumber' => 'bill_number',
+        'billCreatedAt' => 'bill_created_at'
     ];
 
     /**
@@ -184,9 +188,10 @@ class ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner impleme
      * @var string[]
      */
     protected static $setters = [
-        'sku' => 'setSku',
-        'quantity' => 'setQuantity',
-        'price' => 'setPrice'
+        'pin' => 'setPin',
+        'codes' => 'setCodes',
+        'billNumber' => 'setBillNumber',
+        'billCreatedAt' => 'setBillCreatedAt'
     ];
 
     /**
@@ -195,9 +200,10 @@ class ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner impleme
      * @var string[]
      */
     protected static $getters = [
-        'sku' => 'getSku',
-        'quantity' => 'getQuantity',
-        'price' => 'getPrice'
+        'pin' => 'getPin',
+        'codes' => 'getCodes',
+        'billNumber' => 'getBillNumber',
+        'billCreatedAt' => 'getBillCreatedAt'
     ];
 
     /**
@@ -257,9 +263,10 @@ class ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner impleme
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('sku', $data ?? [], null);
-        $this->setIfExists('quantity', $data ?? [], null);
-        $this->setIfExists('price', $data ?? [], null);
+        $this->setIfExists('pin', $data ?? [], null);
+        $this->setIfExists('codes', $data ?? [], null);
+        $this->setIfExists('billNumber', $data ?? [], null);
+        $this->setIfExists('billCreatedAt', $data ?? [], null);
     }
 
     /**
@@ -305,82 +312,109 @@ class ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner impleme
 
 
     /**
-     * Gets sku
+     * Gets pin
      *
      * @return string|null
      */
-    public function getSku()
+    public function getPin()
     {
-        return $this->container['sku'];
+        return $this->container['pin'];
     }
 
     /**
-     * Sets sku
+     * Sets pin
      *
-     * @param string|null $sku SKU code is redeemed for voucher
+     * @param string|null $pin Store pin
      *
      * @return self
      */
-    public function setSku($sku)
+    public function setPin($pin)
     {
-        if (is_null($sku)) {
-            throw new \InvalidArgumentException('non-nullable sku cannot be null');
+        if (is_null($pin)) {
+            throw new \InvalidArgumentException('non-nullable pin cannot be null');
         }
-        $this->container['sku'] = $sku;
+        $this->container['pin'] = $pin;
 
         return $this;
     }
 
     /**
-     * Gets quantity
+     * Gets codes
      *
-     * @return int|null
+     * @return string[]|null
      */
-    public function getQuantity()
+    public function getCodes()
     {
-        return $this->container['quantity'];
+        return $this->container['codes'];
     }
 
     /**
-     * Sets quantity
+     * Sets codes
      *
-     * @param int|null $quantity SKU quantity is redeemed for voucher
+     * @param string[]|null $codes Array of 10-16 characters Got It voucher codes
      *
      * @return self
      */
-    public function setQuantity($quantity)
+    public function setCodes($codes)
     {
-        if (is_null($quantity)) {
-            throw new \InvalidArgumentException('non-nullable quantity cannot be null');
+        if (is_null($codes)) {
+            throw new \InvalidArgumentException('non-nullable codes cannot be null');
         }
-        $this->container['quantity'] = $quantity;
+        $this->container['codes'] = $codes;
 
         return $this;
     }
 
     /**
-     * Gets price
+     * Gets billNumber
      *
-     * @return int|null
+     * @return string|null
      */
-    public function getPrice()
+    public function getBillNumber()
     {
-        return $this->container['price'];
+        return $this->container['billNumber'];
     }
 
     /**
-     * Sets price
+     * Sets billNumber
      *
-     * @param int|null $price Selling price of SKU in bill.
+     * @param string|null $billNumber Bill number will apply vouchers
      *
      * @return self
      */
-    public function setPrice($price)
+    public function setBillNumber($billNumber)
     {
-        if (is_null($price)) {
-            throw new \InvalidArgumentException('non-nullable price cannot be null');
+        if (is_null($billNumber)) {
+            throw new \InvalidArgumentException('non-nullable billNumber cannot be null');
         }
-        $this->container['price'] = $price;
+        $this->container['billNumber'] = $billNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets billCreatedAt
+     *
+     * @return string|null
+     */
+    public function getBillCreatedAt()
+    {
+        return $this->container['billCreatedAt'];
+    }
+
+    /**
+     * Sets billCreatedAt
+     *
+     * @param string|null $billCreatedAt Bill creation time. Format: YYYY-MM-DD HH:MM:SS
+     *
+     * @return self
+     */
+    public function setBillCreatedAt($billCreatedAt)
+    {
+        if (is_null($billCreatedAt)) {
+            throw new \InvalidArgumentException('non-nullable billCreatedAt cannot be null');
+        }
+        $this->container['billCreatedAt'] = $billCreatedAt;
 
         return $this;
     }

@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **productId** | **int** | Product ID | [optional]
 **state** | **int** | State of voucher | [optional]
 **voucherType** | **string** | Voucher type, standard or conditional | [optional]
-**conditions** | [**\OpenAPI\Client\Model\ResponseCheckMultipleSchemaDataInnerConditions**](ResponseCheckMultipleSchemaDataInnerConditions.md) |  | [optional]
-**redemptions** | [**\OpenAPI\Client\Model\ResponseMarkUseMultipleSchemaDataInnerRedemptions**](ResponseMarkUseMultipleSchemaDataInnerRedemptions.md) |  | [optional]
+**conditions** | [**\Dayonevn\MerchantSDK\Model\ResponseCheckMultipleSchemaDataInnerConditions**](ResponseCheckMultipleSchemaDataInnerConditions.md) |  | [optional]
+**redemptions** | [**\Dayonevn\MerchantSDK\Model\ResponseMarkUseMultipleSchemaDataInnerRedemptions**](ResponseMarkUseMultipleSchemaDataInnerRedemptions.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

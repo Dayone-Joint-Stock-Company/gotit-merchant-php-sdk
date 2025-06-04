@@ -1,11 +1,11 @@
 <?php
 /**
- * ResponseUnReservedSchemaDataInner
+ * ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner
  *
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Dayonevn\MerchantSDK
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,21 +27,21 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Dayonevn\MerchantSDK\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Dayonevn\MerchantSDK\ObjectSerializer;
 
 /**
- * ResponseUnReservedSchemaDataInner Class Doc Comment
+ * ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Dayonevn\MerchantSDK
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ResponseUnReservedSchemaDataInner implements ModelInterface, ArrayAccess, \JsonSerializable
+class ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class ResponseUnReservedSchemaDataInner implements ModelInterface, ArrayAccess, 
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ResponseUnReservedSchema_data_inner';
+    protected static $openAPIModelName = 'ResponseCheckMultipleSchema_data_inner_redemptions_redeem_sku_codes_inner';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,10 +58,9 @@ class ResponseUnReservedSchemaDataInner implements ModelInterface, ArrayAccess, 
       * @var string[]
       */
     protected static $openAPITypes = [
-        'code' => 'string',
-        'value' => 'int',
-        'productId' => 'int',
-        'voucherType' => 'string'
+        'sku' => 'string',
+        'quantity' => 'int',
+        'price' => 'int'
     ];
 
     /**
@@ -72,10 +71,9 @@ class ResponseUnReservedSchemaDataInner implements ModelInterface, ArrayAccess, 
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'code' => null,
-        'value' => null,
-        'productId' => null,
-        'voucherType' => null
+        'sku' => null,
+        'quantity' => null,
+        'price' => null
     ];
 
     /**
@@ -84,10 +82,9 @@ class ResponseUnReservedSchemaDataInner implements ModelInterface, ArrayAccess, 
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'code' => false,
-        'value' => true,
-        'productId' => true,
-        'voucherType' => false
+        'sku' => false,
+        'quantity' => false,
+        'price' => false
     ];
 
     /**
@@ -176,10 +173,9 @@ class ResponseUnReservedSchemaDataInner implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $attributeMap = [
-        'code' => 'code',
-        'value' => 'value',
-        'productId' => 'product_id',
-        'voucherType' => 'voucher_type'
+        'sku' => 'sku',
+        'quantity' => 'quantity',
+        'price' => 'price'
     ];
 
     /**
@@ -188,10 +184,9 @@ class ResponseUnReservedSchemaDataInner implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $setters = [
-        'code' => 'setCode',
-        'value' => 'setValue',
-        'productId' => 'setProductId',
-        'voucherType' => 'setVoucherType'
+        'sku' => 'setSku',
+        'quantity' => 'setQuantity',
+        'price' => 'setPrice'
     ];
 
     /**
@@ -200,10 +195,9 @@ class ResponseUnReservedSchemaDataInner implements ModelInterface, ArrayAccess, 
      * @var string[]
      */
     protected static $getters = [
-        'code' => 'getCode',
-        'value' => 'getValue',
-        'productId' => 'getProductId',
-        'voucherType' => 'getVoucherType'
+        'sku' => 'getSku',
+        'quantity' => 'getQuantity',
+        'price' => 'getPrice'
     ];
 
     /**
@@ -263,10 +257,9 @@ class ResponseUnReservedSchemaDataInner implements ModelInterface, ArrayAccess, 
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('code', $data ?? [], null);
-        $this->setIfExists('value', $data ?? [], null);
-        $this->setIfExists('productId', $data ?? [], null);
-        $this->setIfExists('voucherType', $data ?? [], null);
+        $this->setIfExists('sku', $data ?? [], null);
+        $this->setIfExists('quantity', $data ?? [], null);
+        $this->setIfExists('price', $data ?? [], null);
     }
 
     /**
@@ -312,123 +305,82 @@ class ResponseUnReservedSchemaDataInner implements ModelInterface, ArrayAccess, 
 
 
     /**
-     * Gets code
+     * Gets sku
      *
      * @return string|null
      */
-    public function getCode()
+    public function getSku()
     {
-        return $this->container['code'];
+        return $this->container['sku'];
     }
 
     /**
-     * Sets code
+     * Sets sku
      *
-     * @param string|null $code Voucher code
+     * @param string|null $sku SKU code is redeemed for voucher
      *
      * @return self
      */
-    public function setCode($code)
+    public function setSku($sku)
     {
-        if (is_null($code)) {
-            throw new \InvalidArgumentException('non-nullable code cannot be null');
+        if (is_null($sku)) {
+            throw new \InvalidArgumentException('non-nullable sku cannot be null');
         }
-        $this->container['code'] = $code;
+        $this->container['sku'] = $sku;
 
         return $this;
     }
 
     /**
-     * Gets value
+     * Gets quantity
      *
      * @return int|null
      */
-    public function getValue()
+    public function getQuantity()
     {
-        return $this->container['value'];
+        return $this->container['quantity'];
     }
 
     /**
-     * Sets value
+     * Sets quantity
      *
-     * @param int|null $value Value of voucher
+     * @param int|null $quantity SKU quantity is redeemed for voucher
      *
      * @return self
      */
-    public function setValue($value)
+    public function setQuantity($quantity)
     {
-        if (is_null($value)) {
-            array_push($this->openAPINullablesSetToNull, 'value');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('value', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($quantity)) {
+            throw new \InvalidArgumentException('non-nullable quantity cannot be null');
         }
-        $this->container['value'] = $value;
+        $this->container['quantity'] = $quantity;
 
         return $this;
     }
 
     /**
-     * Gets productId
+     * Gets price
      *
      * @return int|null
      */
-    public function getProductId()
+    public function getPrice()
     {
-        return $this->container['productId'];
+        return $this->container['price'];
     }
 
     /**
-     * Sets productId
+     * Sets price
      *
-     * @param int|null $productId Product ID
+     * @param int|null $price Selling price of SKU in bill.
      *
      * @return self
      */
-    public function setProductId($productId)
+    public function setPrice($price)
     {
-        if (is_null($productId)) {
-            array_push($this->openAPINullablesSetToNull, 'productId');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('productId', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($price)) {
+            throw new \InvalidArgumentException('non-nullable price cannot be null');
         }
-        $this->container['productId'] = $productId;
-
-        return $this;
-    }
-
-    /**
-     * Gets voucherType
-     *
-     * @return string|null
-     */
-    public function getVoucherType()
-    {
-        return $this->container['voucherType'];
-    }
-
-    /**
-     * Sets voucherType
-     *
-     * @param string|null $voucherType Voucher type, standard or conditional
-     *
-     * @return self
-     */
-    public function setVoucherType($voucherType)
-    {
-        if (is_null($voucherType)) {
-            throw new \InvalidArgumentException('non-nullable voucherType cannot be null');
-        }
-        $this->container['voucherType'] = $voucherType;
+        $this->container['price'] = $price;
 
         return $this;
     }

@@ -1,11 +1,11 @@
 <?php
 /**
- * ResponseMarkUseMultipleSchemaDataInnerRedemptions
+ * ResponseCheckMultipleSchemaDataInnerConditions
  *
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Dayonevn\MerchantSDK
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,22 +27,22 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Dayonevn\MerchantSDK\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Dayonevn\MerchantSDK\ObjectSerializer;
 
 /**
- * ResponseMarkUseMultipleSchemaDataInnerRedemptions Class Doc Comment
+ * ResponseCheckMultipleSchemaDataInnerConditions Class Doc Comment
  *
  * @category Class
- * @description Include information related to the use of the voucher (all types)
- * @package  OpenAPI\Client
+ * @description Include information involve with voucher type is conditional
+ * @package  Dayonevn\MerchantSDK
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ResponseMarkUseMultipleSchemaDataInnerRedemptions implements ModelInterface, ArrayAccess, \JsonSerializable
+class ResponseCheckMultipleSchemaDataInnerConditions implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class ResponseMarkUseMultipleSchemaDataInnerRedemptions implements ModelInterfac
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ResponseMarkUseMultipleSchema_data_inner_redemptions';
+    protected static $openAPIModelName = 'ResponseCheckMultipleSchema_data_inner_conditions';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,10 +59,11 @@ class ResponseMarkUseMultipleSchemaDataInnerRedemptions implements ModelInterfac
       * @var string[]
       */
     protected static $openAPITypes = [
-        'redeemSkuCodes' => '\OpenAPI\Client\Model\ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner[]',
-        'redemptionValue' => 'int',
-        'usedStore' => '\OpenAPI\Client\Model\ResponseCheckMultipleSchemaDataInnerRedemptionsUsedStore',
-        'usedDate' => 'string'
+        'startDate' => 'string',
+        'excludeSpecificDate' => 'string[]',
+        'excludeRecurringDay' => 'string[]',
+        'orderValue' => 'int',
+        'redeemableSkus' => 'string[]'
     ];
 
     /**
@@ -73,10 +74,11 @@ class ResponseMarkUseMultipleSchemaDataInnerRedemptions implements ModelInterfac
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'redeemSkuCodes' => null,
-        'redemptionValue' => null,
-        'usedStore' => null,
-        'usedDate' => null
+        'startDate' => null,
+        'excludeSpecificDate' => null,
+        'excludeRecurringDay' => null,
+        'orderValue' => null,
+        'redeemableSkus' => null
     ];
 
     /**
@@ -85,10 +87,11 @@ class ResponseMarkUseMultipleSchemaDataInnerRedemptions implements ModelInterfac
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'redeemSkuCodes' => false,
-        'redemptionValue' => false,
-        'usedStore' => false,
-        'usedDate' => false
+        'startDate' => false,
+        'excludeSpecificDate' => false,
+        'excludeRecurringDay' => false,
+        'orderValue' => true,
+        'redeemableSkus' => false
     ];
 
     /**
@@ -177,10 +180,11 @@ class ResponseMarkUseMultipleSchemaDataInnerRedemptions implements ModelInterfac
      * @var string[]
      */
     protected static $attributeMap = [
-        'redeemSkuCodes' => 'redeem_sku_codes',
-        'redemptionValue' => 'redemption_value',
-        'usedStore' => 'used_store',
-        'usedDate' => 'used_date'
+        'startDate' => 'start_date',
+        'excludeSpecificDate' => 'exclude_specific_date',
+        'excludeRecurringDay' => 'exclude_recurring_day',
+        'orderValue' => 'order_value',
+        'redeemableSkus' => 'redeemable_skus'
     ];
 
     /**
@@ -189,10 +193,11 @@ class ResponseMarkUseMultipleSchemaDataInnerRedemptions implements ModelInterfac
      * @var string[]
      */
     protected static $setters = [
-        'redeemSkuCodes' => 'setRedeemSkuCodes',
-        'redemptionValue' => 'setRedemptionValue',
-        'usedStore' => 'setUsedStore',
-        'usedDate' => 'setUsedDate'
+        'startDate' => 'setStartDate',
+        'excludeSpecificDate' => 'setExcludeSpecificDate',
+        'excludeRecurringDay' => 'setExcludeRecurringDay',
+        'orderValue' => 'setOrderValue',
+        'redeemableSkus' => 'setRedeemableSkus'
     ];
 
     /**
@@ -201,10 +206,11 @@ class ResponseMarkUseMultipleSchemaDataInnerRedemptions implements ModelInterfac
      * @var string[]
      */
     protected static $getters = [
-        'redeemSkuCodes' => 'getRedeemSkuCodes',
-        'redemptionValue' => 'getRedemptionValue',
-        'usedStore' => 'getUsedStore',
-        'usedDate' => 'getUsedDate'
+        'startDate' => 'getStartDate',
+        'excludeSpecificDate' => 'getExcludeSpecificDate',
+        'excludeRecurringDay' => 'getExcludeRecurringDay',
+        'orderValue' => 'getOrderValue',
+        'redeemableSkus' => 'getRedeemableSkus'
     ];
 
     /**
@@ -264,10 +270,11 @@ class ResponseMarkUseMultipleSchemaDataInnerRedemptions implements ModelInterfac
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('redeemSkuCodes', $data ?? [], null);
-        $this->setIfExists('redemptionValue', $data ?? [], null);
-        $this->setIfExists('usedStore', $data ?? [], null);
-        $this->setIfExists('usedDate', $data ?? [], null);
+        $this->setIfExists('startDate', $data ?? [], null);
+        $this->setIfExists('excludeSpecificDate', $data ?? [], null);
+        $this->setIfExists('excludeRecurringDay', $data ?? [], null);
+        $this->setIfExists('orderValue', $data ?? [], null);
+        $this->setIfExists('redeemableSkus', $data ?? [], null);
     }
 
     /**
@@ -313,109 +320,143 @@ class ResponseMarkUseMultipleSchemaDataInnerRedemptions implements ModelInterfac
 
 
     /**
-     * Gets redeemSkuCodes
-     *
-     * @return \OpenAPI\Client\Model\ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner[]|null
-     */
-    public function getRedeemSkuCodes()
-    {
-        return $this->container['redeemSkuCodes'];
-    }
-
-    /**
-     * Sets redeemSkuCodes
-     *
-     * @param \OpenAPI\Client\Model\ResponseCheckMultipleSchemaDataInnerRedemptionsRedeemSkuCodesInner[]|null $redeemSkuCodes Contains redeemed SKU information of the voucher (for voucher type is conditional and support sku)
-     *
-     * @return self
-     */
-    public function setRedeemSkuCodes($redeemSkuCodes)
-    {
-        if (is_null($redeemSkuCodes)) {
-            throw new \InvalidArgumentException('non-nullable redeemSkuCodes cannot be null');
-        }
-        $this->container['redeemSkuCodes'] = $redeemSkuCodes;
-
-        return $this;
-    }
-
-    /**
-     * Gets redemptionValue
-     *
-     * @return int|null
-     */
-    public function getRedemptionValue()
-    {
-        return $this->container['redemptionValue'];
-    }
-
-    /**
-     * Sets redemptionValue
-     *
-     * @param int|null $redemptionValue Actual redemption value of voucher type = conditional
-     *
-     * @return self
-     */
-    public function setRedemptionValue($redemptionValue)
-    {
-        if (is_null($redemptionValue)) {
-            throw new \InvalidArgumentException('non-nullable redemptionValue cannot be null');
-        }
-        $this->container['redemptionValue'] = $redemptionValue;
-
-        return $this;
-    }
-
-    /**
-     * Gets usedStore
-     *
-     * @return \OpenAPI\Client\Model\ResponseCheckMultipleSchemaDataInnerRedemptionsUsedStore|null
-     */
-    public function getUsedStore()
-    {
-        return $this->container['usedStore'];
-    }
-
-    /**
-     * Sets usedStore
-     *
-     * @param \OpenAPI\Client\Model\ResponseCheckMultipleSchemaDataInnerRedemptionsUsedStore|null $usedStore usedStore
-     *
-     * @return self
-     */
-    public function setUsedStore($usedStore)
-    {
-        if (is_null($usedStore)) {
-            throw new \InvalidArgumentException('non-nullable usedStore cannot be null');
-        }
-        $this->container['usedStore'] = $usedStore;
-
-        return $this;
-    }
-
-    /**
-     * Gets usedDate
+     * Gets startDate
      *
      * @return string|null
      */
-    public function getUsedDate()
+    public function getStartDate()
     {
-        return $this->container['usedDate'];
+        return $this->container['startDate'];
     }
 
     /**
-     * Sets usedDate
+     * Sets startDate
      *
-     * @param string|null $usedDate Date voucher marked as used in case the voucher has been redeemed. Format (YYYY-MM-DD HH:MM:SS)
+     * @param string|null $startDate Promo start date (YYYY-MM-DD)
      *
      * @return self
      */
-    public function setUsedDate($usedDate)
+    public function setStartDate($startDate)
     {
-        if (is_null($usedDate)) {
-            throw new \InvalidArgumentException('non-nullable usedDate cannot be null');
+        if (is_null($startDate)) {
+            throw new \InvalidArgumentException('non-nullable startDate cannot be null');
         }
-        $this->container['usedDate'] = $usedDate;
+        $this->container['startDate'] = $startDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets excludeSpecificDate
+     *
+     * @return string[]|null
+     */
+    public function getExcludeSpecificDate()
+    {
+        return $this->container['excludeSpecificDate'];
+    }
+
+    /**
+     * Sets excludeSpecificDate
+     *
+     * @param string[]|null $excludeSpecificDate Promo non-effective dates (YYYY-MM-DD)
+     *
+     * @return self
+     */
+    public function setExcludeSpecificDate($excludeSpecificDate)
+    {
+        if (is_null($excludeSpecificDate)) {
+            throw new \InvalidArgumentException('non-nullable excludeSpecificDate cannot be null');
+        }
+        $this->container['excludeSpecificDate'] = $excludeSpecificDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets excludeRecurringDay
+     *
+     * @return string[]|null
+     */
+    public function getExcludeRecurringDay()
+    {
+        return $this->container['excludeRecurringDay'];
+    }
+
+    /**
+     * Sets excludeRecurringDay
+     *
+     * @param string[]|null $excludeRecurringDay Promo non-effective day of week
+     *
+     * @return self
+     */
+    public function setExcludeRecurringDay($excludeRecurringDay)
+    {
+        if (is_null($excludeRecurringDay)) {
+            throw new \InvalidArgumentException('non-nullable excludeRecurringDay cannot be null');
+        }
+        $this->container['excludeRecurringDay'] = $excludeRecurringDay;
+
+        return $this;
+    }
+
+    /**
+     * Gets orderValue
+     *
+     * @return int|null
+     */
+    public function getOrderValue()
+    {
+        return $this->container['orderValue'];
+    }
+
+    /**
+     * Sets orderValue
+     *
+     * @param int|null $orderValue Order value of voucher type = conditional
+     *
+     * @return self
+     */
+    public function setOrderValue($orderValue)
+    {
+        if (is_null($orderValue)) {
+            array_push($this->openAPINullablesSetToNull, 'orderValue');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('orderValue', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['orderValue'] = $orderValue;
+
+        return $this;
+    }
+
+    /**
+     * Gets redeemableSkus
+     *
+     * @return string[]|null
+     */
+    public function getRedeemableSkus()
+    {
+        return $this->container['redeemableSkus'];
+    }
+
+    /**
+     * Sets redeemableSkus
+     *
+     * @param string[]|null $redeemableSkus List of redeemable SKUs of the voucher code. For voucher type = conditional, bill number must contain at least 1 redeemable SKU of the voucher.
+     *
+     * @return self
+     */
+    public function setRedeemableSkus($redeemableSkus)
+    {
+        if (is_null($redeemableSkus)) {
+            throw new \InvalidArgumentException('non-nullable redeemableSkus cannot be null');
+        }
+        $this->container['redeemableSkus'] = $redeemableSkus;
 
         return $this;
     }

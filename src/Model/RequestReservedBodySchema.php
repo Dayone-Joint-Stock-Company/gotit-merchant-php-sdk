@@ -1,11 +1,11 @@
 <?php
 /**
- * RequestUnReservedBodySchema
+ * RequestReservedBodySchema
  *
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Dayonevn\MerchantSDK
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,21 +27,21 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Dayonevn\MerchantSDK\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Dayonevn\MerchantSDK\ObjectSerializer;
 
 /**
- * RequestUnReservedBodySchema Class Doc Comment
+ * RequestReservedBodySchema Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Dayonevn\MerchantSDK
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class RequestUnReservedBodySchema implements ModelInterface, ArrayAccess, \JsonSerializable
+class RequestReservedBodySchema implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class RequestUnReservedBodySchema implements ModelInterface, ArrayAccess, \JsonS
       *
       * @var string
       */
-    protected static $openAPIModelName = 'RequestUnReservedBodySchema';
+    protected static $openAPIModelName = 'RequestReservedBodySchema';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -61,7 +61,9 @@ class RequestUnReservedBodySchema implements ModelInterface, ArrayAccess, \JsonS
         'pin' => 'string',
         'codes' => 'string[]',
         'billNumber' => 'string',
-        'billCreatedAt' => 'string'
+        'totalBill' => 'int',
+        'billCreatedAt' => 'string',
+        'skusInfo' => '\Dayonevn\MerchantSDK\Model\RequestCheckMultipleBodySchemaSkusInfoInner[]'
     ];
 
     /**
@@ -75,7 +77,9 @@ class RequestUnReservedBodySchema implements ModelInterface, ArrayAccess, \JsonS
         'pin' => null,
         'codes' => null,
         'billNumber' => null,
-        'billCreatedAt' => null
+        'totalBill' => null,
+        'billCreatedAt' => null,
+        'skusInfo' => null
     ];
 
     /**
@@ -87,7 +91,9 @@ class RequestUnReservedBodySchema implements ModelInterface, ArrayAccess, \JsonS
         'pin' => false,
         'codes' => false,
         'billNumber' => false,
-        'billCreatedAt' => false
+        'totalBill' => false,
+        'billCreatedAt' => false,
+        'skusInfo' => false
     ];
 
     /**
@@ -179,7 +185,9 @@ class RequestUnReservedBodySchema implements ModelInterface, ArrayAccess, \JsonS
         'pin' => 'pin',
         'codes' => 'codes',
         'billNumber' => 'bill_number',
-        'billCreatedAt' => 'bill_created_at'
+        'totalBill' => 'total_bill',
+        'billCreatedAt' => 'bill_created_at',
+        'skusInfo' => 'skus_info'
     ];
 
     /**
@@ -191,7 +199,9 @@ class RequestUnReservedBodySchema implements ModelInterface, ArrayAccess, \JsonS
         'pin' => 'setPin',
         'codes' => 'setCodes',
         'billNumber' => 'setBillNumber',
-        'billCreatedAt' => 'setBillCreatedAt'
+        'totalBill' => 'setTotalBill',
+        'billCreatedAt' => 'setBillCreatedAt',
+        'skusInfo' => 'setSkusInfo'
     ];
 
     /**
@@ -203,7 +213,9 @@ class RequestUnReservedBodySchema implements ModelInterface, ArrayAccess, \JsonS
         'pin' => 'getPin',
         'codes' => 'getCodes',
         'billNumber' => 'getBillNumber',
-        'billCreatedAt' => 'getBillCreatedAt'
+        'totalBill' => 'getTotalBill',
+        'billCreatedAt' => 'getBillCreatedAt',
+        'skusInfo' => 'getSkusInfo'
     ];
 
     /**
@@ -266,7 +278,9 @@ class RequestUnReservedBodySchema implements ModelInterface, ArrayAccess, \JsonS
         $this->setIfExists('pin', $data ?? [], null);
         $this->setIfExists('codes', $data ?? [], null);
         $this->setIfExists('billNumber', $data ?? [], null);
+        $this->setIfExists('totalBill', $data ?? [], null);
         $this->setIfExists('billCreatedAt', $data ?? [], null);
+        $this->setIfExists('skusInfo', $data ?? [], null);
     }
 
     /**
@@ -393,6 +407,33 @@ class RequestUnReservedBodySchema implements ModelInterface, ArrayAccess, \JsonS
     }
 
     /**
+     * Gets totalBill
+     *
+     * @return int|null
+     */
+    public function getTotalBill()
+    {
+        return $this->container['totalBill'];
+    }
+
+    /**
+     * Sets totalBill
+     *
+     * @param int|null $totalBill Total bill amount
+     *
+     * @return self
+     */
+    public function setTotalBill($totalBill)
+    {
+        if (is_null($totalBill)) {
+            throw new \InvalidArgumentException('non-nullable totalBill cannot be null');
+        }
+        $this->container['totalBill'] = $totalBill;
+
+        return $this;
+    }
+
+    /**
      * Gets billCreatedAt
      *
      * @return string|null
@@ -415,6 +456,33 @@ class RequestUnReservedBodySchema implements ModelInterface, ArrayAccess, \JsonS
             throw new \InvalidArgumentException('non-nullable billCreatedAt cannot be null');
         }
         $this->container['billCreatedAt'] = $billCreatedAt;
+
+        return $this;
+    }
+
+    /**
+     * Gets skusInfo
+     *
+     * @return \Dayonevn\MerchantSDK\Model\RequestCheckMultipleBodySchemaSkusInfoInner[]|null
+     */
+    public function getSkusInfo()
+    {
+        return $this->container['skusInfo'];
+    }
+
+    /**
+     * Sets skusInfo
+     *
+     * @param \Dayonevn\MerchantSDK\Model\RequestCheckMultipleBodySchemaSkusInfoInner[]|null $skusInfo SKU information in bill_number
+     *
+     * @return self
+     */
+    public function setSkusInfo($skusInfo)
+    {
+        if (is_null($skusInfo)) {
+            throw new \InvalidArgumentException('non-nullable skusInfo cannot be null');
+        }
+        $this->container['skusInfo'] = $skusInfo;
 
         return $this;
     }
